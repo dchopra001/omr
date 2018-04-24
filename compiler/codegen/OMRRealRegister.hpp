@@ -58,6 +58,18 @@ class OMR_EXTENSIBLE RealRegister : public TR::Register
       Locked    = 4
       } RegState;
 
+    /*enum class RegNum
+    {
+    #include "codegen/RealRegisterEnum.hpp"
+
+    };*/
+/*
+    enum RegMask
+    {
+    #include "codegen/RealRegisterMaskEnum.hpp"
+    };
+    */
+
    typedef enum
       {
       #include "codegen/RealRegisterEnum.hpp"
@@ -70,6 +82,18 @@ class OMR_EXTENSIBLE RealRegister : public TR::Register
 
       } RegMask;
 
+    typedef enum
+       {
+       
+       #include "codegen/PseudoRegisterEnum.hpp"
+           
+       } RegDep;
+
+    /*enum class RegDep
+    {
+    #include "codegen/RealRegisterEnum.hpp"
+    #include "codegen/PseudoRegisterEnum.hpp"
+    }*/
 
    protected:
 

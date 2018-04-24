@@ -736,6 +736,7 @@ OMR::Z::Machine::Machine(TR::CodeGenerator * cg)
    self()->initialiseRegisterFile();
    self()->initializeFPRegPairTable();
    self()->clearRegisterAssociations();
+   printf("NumRegisters: %d \n", TR::RealRegister::NumRegisters);
    }
 
 /**
