@@ -7098,7 +7098,7 @@ void OMR::Z::CodeGenerator::startInternalControlFlow(TR::Instruction *instr)
         else
           {
           TR::RealRegister::RegNum rr = postConds->getRegisterDependency(i)->getRealRegister();
-          if(rr>TR::RealRegister::NoReg && rr<=TR::RealRegister::MISC)
+          if(rr>TR::RealRegister::NoReg && rr<=TR::RealRegister::LastHPR)
             r = mach->getS390RealRegister(rr);
           }
         if(r) _internalControlFlowRegisters.push_back(r);

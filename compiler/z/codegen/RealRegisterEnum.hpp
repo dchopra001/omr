@@ -156,21 +156,19 @@
       FirstHPR          = HPR0,
       LastHPR           = HPR15,
 
-      MISC              = LastHPR,
-
-      EvenOddPair         = MISC + 1,      // Assign an even/odd pair to the reg pair
-      LegalEvenOfPair     = MISC + 2,      // Assign an even reg that is followed by an unlocked odd register
-      LegalOddOfPair      = MISC + 3,      // Assign an odd reg that is preceded by an unlocked even register
-      FPPair              = MISC + 4,      // Assign an FP pair to the reg pair
-      LegalFirstOfFPPair  = MISC + 5,      // Assign first FP reg of a FP reg Pair
-      LegalSecondOfFPPair = MISC + 6,      // Assign second FP reg of a FP reg Pair
-      AssignAny           = MISC + 7,      // Assign any register
-      KillVolAccessRegs   = MISC + 8,      // Kill all volatile access regs
-      KillVolHighRegs     = MISC + 9,      // Kill all volatile access regs
-      MayDefine           = MISC + 10,     // This instruction's result should be modelled as live before as this instruction only 'may defines' the register
-      SpilledReg          = MISC + 11,     // OOL: Any Spilled register cross OOL sequences
-      ArGprPair           = MISC + 12,     // Assign an ar/gpr pair to the reg pair
-      ArOfArGprPair       = MISC + 13,     // Assign AR register corresponding to GPR in the second RA pass
-      GprOfArGprPair      = MISC + 14,     // Assign GPR register in the first RA pass
+      EvenOddPair         = LastHPR + 1,      // Assign an even/odd pair to the reg pair
+      LegalEvenOfPair     = LastHPR + 2,      // Assign an even reg that is followed by an unlocked odd register
+      LegalOddOfPair      = LastHPR + 3,      // Assign an odd reg that is preceded by an unlocked even register
+      FPPair              = LastHPR + 4,      // Assign an FP pair to the reg pair
+      LegalFirstOfFPPair  = LastHPR + 5,      // Assign first FP reg of a FP reg Pair
+      LegalSecondOfFPPair = LastHPR + 6,      // Assign second FP reg of a FP reg Pair
+      AssignAny           = LastHPR + 7,      // Assign any register
+      KillVolAccessRegs   = LastHPR + 8,      // Kill all volatile access regs
+      KillVolHighRegs     = LastHPR + 9,      // Kill all volatile access regs
+      MayDefine           = LastHPR + 10,     // This instruction's result should be modelled as live before as this instruction only 'may defines' the register
+      SpilledReg          = LastHPR + 11,     // OOL: Any Spilled register cross OOL sequences
+      ArGprPair           = LastHPR + 12,     // Assign an ar/gpr pair to the reg pair
+      ArOfArGprPair       = LastHPR + 13,     // Assign AR register corresponding to GPR in the second RA pass
+      GprOfArGprPair      = LastHPR + 14,     // Assign GPR register in the first RA pass
 
       NumRegisters        = LastHPR + 1    // (include noReg)
