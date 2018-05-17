@@ -7285,7 +7285,7 @@ OMR::Z::Machine::createRegisterAssociationDirective(TR::Instruction * cursor)
    for (int32_t i = 0; i < last; i++)
       {
       TR::RealRegister::RegNum regNum = (TR::RealRegister::RegNum) (i + 1);
-      associations->addPostCondition(self()->getVirtualAssociatedWithReal(regNum), regNum);
+      associations->addPostCondition(self()->getVirtualAssociatedWithReal(regNum), (TR::RealRegister::RegDep)regNum);
       }
 
    if (self()->cg()->supportsHighWordFacility() && !comp->getOption(TR_DisableHighWordRA))
@@ -7293,7 +7293,7 @@ OMR::Z::Machine::createRegisterAssociationDirective(TR::Instruction * cursor)
       for (int32_t i = TR::RealRegister::FirstHPR; i < TR::RealRegister::LastHPR+1; i++)
          {
          TR::RealRegister::RegNum regNum = (TR::RealRegister::RegNum) (i);
-         associations->addPostCondition(self()->getVirtualAssociatedWithReal(regNum), regNum);
+         associations->addPostCondition(self()->getVirtualAssociatedWithReal(regNum), (TR::RealRegister::RegDep)regNum);
          }
       }
 
@@ -7553,7 +7553,7 @@ TR::RegisterDependencyConditions * OMR::Z::Machine::createDepCondForLiveGPRs(TR:
             //{
                 //TR_ASSERTC(comp, !spilledRegisterList || !spilledRegisterList->find(virtReg),
                 // "a register should not be in both an assigned state and in the spilled list\n");
-            deps->addPostCondition(virtReg, realReg->getRegisterNumber());
+            deps->addPostCondition(virtReg, (TR::RealRegister::RegDep)realReg->getRegisterNumber());
                //}
 
             //virtReg->incTotalUseCount();
@@ -7568,7 +7568,7 @@ TR::RegisterDependencyConditions * OMR::Z::Machine::createDepCondForLiveGPRs(TR:
                {
                if(self()->getS390RealRegister(i)->getAssignedRegister() != self()->getS390RealRegister(i)->getLowWordRegister()->getAssignedRegister())
                   {
-                  deps->addPostCondition(self()->getS390RealRegister(i)->getAssignedRegister(),self()->getS390RealRegister(i)->getRegisterNumber());
+                  deps->addPostCondition(self()->getS390RealRegister(i)->getAssignedRegister(),(TR::RealRegister::RegDep)self()->getS390RealRegister(i)->getRegisterNumber());
                   self()->getS390RealRegister(i)->getAssignedRegister()->incFutureUseCount();
                   }
                // if a HPR is assigned to a virtReg but a virtReg is not assigned to HPR, we must have spilled the virtReg to HPR

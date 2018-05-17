@@ -160,8 +160,8 @@ OMR::Z::RegisterDependencyConditions::RegisterDependencyConditions(TR::CodeGener
       reg->setAssociation(regNum);
       cg->setRealRegisterAssociation(reg, regNum);
 
-      addPreCondition(reg, regNum);
-      addPostCondition(reg, regNum);
+      addPreCondition(reg, (TR::RealRegister::RegDep)regNum);
+      addPostCondition(reg, (TR::RealRegister::RegDep)regNum);
 
       if (copyHPR != NULL)
          {
@@ -177,8 +177,8 @@ OMR::Z::RegisterDependencyConditions::RegisterDependencyConditions(TR::CodeGener
          {
          highReg->setAssociation(highRegNum);
          cg->setRealRegisterAssociation(highReg, highRegNum);
-         addPreCondition(highReg, highRegNum);
-         addPostCondition(highReg, highRegNum);
+         addPreCondition(highReg, (TR::RealRegister::RegDep)highRegNum);
+         addPostCondition(highReg, (TR::RealRegister::RegDep)highRegNum);
          if (highCopyReg != NULL)
             {
             cg->stopUsingRegister(highCopyReg);
@@ -240,7 +240,7 @@ OMR::Z::RegisterDependencyConditions::RegisterDependencyConditions(TR::RegisterD
            vr   = dep->getRegister(_cg);
            rr   = dep->getRealRegister();
 
-           _preConditions->setDependencyInfo(_addCursorForPre++, vr, rr, flag);
+           _preConditions->setDependencyInfo(_addCursorForPre++, vr, (TR::RealRegister::RegDep)rr, flag);
            }
 
         depGroup = iConds->getPostConditions();
@@ -253,7 +253,7 @@ OMR::Z::RegisterDependencyConditions::RegisterDependencyConditions(TR::RegisterD
            vr   = dep->getRegister(_cg);
            rr   = dep->getRealRegister();
 
-           _postConditions->setDependencyInfo(_addCursorForPost++, vr, rr, flag);
+           _postConditions->setDependencyInfo(_addCursorForPost++, vr, (TR::RealRegister::RegDep)rr, flag);
            }
         }
    }
@@ -302,7 +302,7 @@ OMR::Z::RegisterDependencyConditions::RegisterDependencyConditions(TR::RegisterD
          {
          _numPreConditions--;
          }
-      else if( !addPreConditionIfNotAlreadyInserted( vr, rr, flag ) )
+      else if( !addPreConditionIfNotAlreadyInserted( vr, (TR::RealRegister::RegDep)rr, flag ) )
          {
          _numPreConditions--;
          }
@@ -321,7 +321,7 @@ OMR::Z::RegisterDependencyConditions::RegisterDependencyConditions(TR::RegisterD
          {
          _numPreConditions--;
          }
-      else if( !addPreConditionIfNotAlreadyInserted( vr, rr, flag ) )
+      else if( !addPreConditionIfNotAlreadyInserted( vr, (TR::RealRegister::RegDep)rr, flag ) )
          {
          _numPreConditions--;
          }
@@ -341,7 +341,7 @@ OMR::Z::RegisterDependencyConditions::RegisterDependencyConditions(TR::RegisterD
          {
          _numPostConditions--;
          }
-      else if( !addPostConditionIfNotAlreadyInserted( vr, rr, flag ) )
+      else if( !addPostConditionIfNotAlreadyInserted( vr, (TR::RealRegister::RegDep)rr, flag ) )
          {
          _numPostConditions--;
          }
@@ -360,7 +360,7 @@ OMR::Z::RegisterDependencyConditions::RegisterDependencyConditions(TR::RegisterD
          {
          _numPostConditions--;
          }
-      else if( !addPostConditionIfNotAlreadyInserted( vr, rr, flag ) )
+      else if( !addPostConditionIfNotAlreadyInserted( vr, (TR::RealRegister::RegDep)rr, flag ) )
          {
          _numPostConditions--;
          }
@@ -548,13 +548,13 @@ TR::RegisterDependencyConditions  *OMR::Z::RegisterDependencyConditions::clone(T
    for (i = _numPreConditions-1; i >= 0; --i)
       {
       TR::RegisterDependency  *dep = getPreConditions()->getRegisterDependency(i);
-      other->getPreConditions()->setDependencyInfo(i, dep->getRegister(_cg), dep->getRealRegister(), dep->getFlags());
+      other->getPreConditions()->setDependencyInfo(i, dep->getRegister(_cg), (TR::RealRegister::RegDep)dep->getRealRegister(), dep->getFlags());
       }
 
    for (i = _numPostConditions-1; i >= 0; --i)
       {
       TR::RegisterDependency  *dep = getPostConditions()->getRegisterDependency(i);
-      other->getPostConditions()->setDependencyInfo(i, dep->getRegister(_cg), dep->getRealRegister(), dep->getFlags());
+      other->getPostConditions()->setDependencyInfo(i, dep->getRegister(_cg), (TR::RealRegister::RegDep)dep->getRealRegister(), dep->getFlags());
       }
 
    other->setAddCursorForPre(_addCursorForPre);
@@ -1845,7 +1845,7 @@ bool OMR::Z::RegisterDependencyConditions::doesPostConditionExist( TR::Register 
  * @sa addPostConditionIfNotAlreadyInserted()
  */
 bool OMR::Z::RegisterDependencyConditions::addPreConditionIfNotAlreadyInserted(TR::Register *vr,
-                                                                                  TR::RealRegister::RegNum rr,
+                                                                                  TR::RealRegister::RegDep rr,
                                                                                   uint8_t flag)
    {
    int32_t pos = -1;
@@ -1875,7 +1875,7 @@ bool OMR::Z::RegisterDependencyConditions::addPreConditionIfNotAlreadyInserted(T
  * @sa addPreConditionIfNotAlreadyInserted()
  */
 bool OMR::Z::RegisterDependencyConditions::addPostConditionIfNotAlreadyInserted(TR::Register *vr,
-                                                                                   TR::RealRegister::RegNum rr,
+                                                                                   TR::RealRegister::RegDep rr,
                                                                                    uint8_t flag)
    {
    int32_t pos = -1;
