@@ -123,7 +123,7 @@ void killRegisterIfNotLocked(TR::CodeGenerator * cg, TR::RealRegister::RegNum re
             if (deps == NULL)
                deps = new (cg->trHeapMemory()) TR::RegisterDependencyConditions(0, 1, cg);
             dummy = cg->allocateRegister();
-            deps->addPostCondition(dummy, TR::RealRegister::GPR4);
+            deps->addPostCondition(dummy, (TR::RealRegister::RegDep)TR::RealRegister::GPR4);
             dummy->setPlaceholderReg();
             instr->setDependencyConditions(deps);
             cg->stopUsingRegister(dummy);
@@ -1131,17 +1131,17 @@ OMR::Z::TreeEvaluator::returnEvaluator(TR::Node * node, TR::CodeGenerator * cg)
       {
       case TR::areturn:
          comp->setReturnInfo(TR_ObjectReturn);
-         dependencies->addPostCondition(returnValRegister, linkage->getIntegerReturnRegister());
+         dependencies->addPostCondition(returnValRegister, (TR::RealRegister::RegDep)linkage->getIntegerReturnRegister());
          break;
       case TR::ireturn:
-         dependencies->addPostCondition(returnValRegister, linkage->getIntegerReturnRegister());
+         dependencies->addPostCondition(returnValRegister, (TR::RealRegister::RegDep)linkage->getIntegerReturnRegister());
          comp->setReturnInfo(TR_IntReturn);
          if (linkage->isNeedsWidening())
             new (cg->trHeapMemory()) TR::S390RRInstruction(TR::InstOpCode::LGFR, node, returnValRegister, returnValRegister, cg);
          break;
       case TR::iureturn:
          comp->setReturnInfo(TR_IntReturn);
-         dependencies->addPostCondition(returnValRegister, linkage->getIntegerReturnRegister());
+         dependencies->addPostCondition(returnValRegister, (TR::RealRegister::RegDep)linkage->getIntegerReturnRegister());
          if (linkage->isNeedsWidening())
             new (cg->trHeapMemory()) TR::S390RRInstruction(TR::InstOpCode::LLGFR, node, returnValRegister, returnValRegister, cg);
          break;
@@ -1155,19 +1155,19 @@ OMR::Z::TreeEvaluator::returnEvaluator(TR::Node * node, TR::CodeGenerator * cg)
 
             generateRSInstruction(cg, TR::InstOpCode::SRLG, node, highRegister, returnValRegister, 32);
 
-            dependencies->addPostCondition(returnValRegister, linkage->getLongLowReturnRegister());
-            dependencies->addPostCondition(highRegister, linkage->getLongHighReturnRegister());
+            dependencies->addPostCondition(returnValRegister, (TR::RealRegister::RegDep)linkage->getLongLowReturnRegister());
+            dependencies->addPostCondition(highRegister, (TR::RealRegister::RegDep)linkage->getLongHighReturnRegister());
 
             cg->stopUsingRegister(highRegister);
             }
          else if (TR::Compiler->target.is64Bit())
             {
-            dependencies->addPostCondition(returnValRegister, linkage->getLongReturnRegister());
+            dependencies->addPostCondition(returnValRegister, (TR::RealRegister::RegDep)linkage->getLongReturnRegister());
             }
          else
             {
-            dependencies->addPostCondition(returnValRegister->getLowOrder(), linkage->getLongLowReturnRegister());
-            dependencies->addPostCondition(returnValRegister->getHighOrder(), linkage->getLongHighReturnRegister());
+            dependencies->addPostCondition(returnValRegister->getLowOrder(), (TR::RealRegister::RegDep)linkage->getLongLowReturnRegister());
+            dependencies->addPostCondition(returnValRegister->getHighOrder(), (TR::RealRegister::RegDep)linkage->getLongHighReturnRegister());
             }
          break;
       case TR::freturn:
@@ -1175,20 +1175,20 @@ OMR::Z::TreeEvaluator::returnEvaluator(TR::Node * node, TR::CodeGenerator * cg)
       case TR::dfreturn:
 #endif
          comp->setReturnInfo(TR_FloatReturn);
-         dependencies->addPostCondition(returnValRegister, linkage->getFloatReturnRegister());
+         dependencies->addPostCondition(returnValRegister, (TR::RealRegister::RegDep)linkage->getFloatReturnRegister());
          break;
       case TR::dreturn:
 #ifdef J9_PROJECT_SPECIFIC
       case TR::ddreturn:
 #endif
          comp->setReturnInfo(TR_DoubleReturn);
-         dependencies->addPostCondition(returnValRegister, linkage->getDoubleReturnRegister());
+         dependencies->addPostCondition(returnValRegister, (TR::RealRegister::RegDep)linkage->getDoubleReturnRegister());
          break;
 #ifdef J9_PROJECT_SPECIFIC
       case TR::dereturn:
          comp->setReturnInfo(TR_DoubleReturn);
-         dependencies->addPostCondition(returnValRegister->getHighOrder(), linkage->getLongDoubleReturnRegister0());
-         dependencies->addPostCondition(returnValRegister->getLowOrder(), linkage->getLongDoubleReturnRegister2());
+         dependencies->addPostCondition(returnValRegister->getHighOrder(), (TR::RealRegister::RegDep)linkage->getLongDoubleReturnRegister0());
+         dependencies->addPostCondition(returnValRegister->getLowOrder(), (TR::RealRegister::RegDep)linkage->getLongDoubleReturnRegister2());
          break;
 #endif
       case TR::Return:

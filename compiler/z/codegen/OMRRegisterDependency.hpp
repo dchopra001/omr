@@ -103,12 +103,12 @@ class TR_S390RegisterDependencyGroup
 
    void setDependencyInfo(uint32_t                                  index,
                           TR::Register                              *vr,
-                          TR::RealRegister::RegNum rr,
+                          TR::RealRegister::RegDep rr,
                           uint8_t                                   flag)
       {
       _dependencies[index].setRegister(vr);
       _dependencies[index].assignFlags(flag);
-      _dependencies[index].setRealRegister(rr);
+      _dependencies[index].setRealRegister((TR::RealRegister::RegNum)rr);
       if (vr) vr->setDependencySet(true);
       if (vr != NULL)
          vr->setIsNotHighWordUpgradable(true);
@@ -389,7 +389,7 @@ class RegisterDependencyConditions: public OMR::RegisterDependencyConditions
       }
 
    void addPreCondition(TR::Register                              *vr,
-                        TR::RealRegister::RegNum rr,
+                        TR::RealRegister::RegDep rr,
                         uint8_t                                   flag = ReferencesDependentRegister)
       {
       TR_ASSERT(!getIsUsed(), "ERROR: cannot add pre conditions to an used dependency, create a copy first\n");
@@ -405,7 +405,7 @@ class RegisterDependencyConditions: public OMR::RegisterDependencyConditions
          TR_ASSERT(0,"ERROR: addPreCondition list overflow\n");
          _cg->comp()->failCompilation<TR::CompilationException>("addPreCondition list overflow, abort compilation\n");
          }
-      _preConditions->setDependencyInfo(_addCursorForPre++, vr, rr, flag);
+      _preConditions->setDependencyInfo(_addCursorForPre++, vr, (TR::RealRegister::RegDep)rr, flag);
       }
 
    TR_S390RegisterDependencyGroup *getPostConditions() {return _postConditions;}
@@ -426,7 +426,7 @@ class RegisterDependencyConditions: public OMR::RegisterDependencyConditions
       }
 
    void addPostCondition(TR::Register                              *vr,
-                         TR::RealRegister::RegNum rr,
+                         TR::RealRegister::RegDep rr,
                          uint8_t                                   flag = ReferencesDependentRegister)
       {
       TR_ASSERT(!getIsUsed(), "ERROR: cannot add post conditions to an used dependency, create a copy first\n");
@@ -509,10 +509,10 @@ class RegisterDependencyConditions: public OMR::RegisterDependencyConditions
    // These methods are temporary until dependencies are re-engineered down the road
    // We only add in the post condition if the desired virt reg is not already spoken for
    bool addPreConditionIfNotAlreadyInserted(TR::Register *vr,
-                                            TR::RealRegister::RegNum rr,
+                                            TR::RealRegister::RegDep rr,
 				                                uint8_t flag = ReferencesDependentRegister);
    bool addPostConditionIfNotAlreadyInserted(TR::Register *vr,
-                                             TR::RealRegister::RegNum rr,
+                                             TR::RealRegister::RegDep rr,
 				                                 uint8_t flag = ReferencesDependentRegister);
 
    TR::RegisterDependencyConditions *clone(TR::CodeGenerator *cg, int32_t additionalRegDeps);

@@ -1034,10 +1034,10 @@ lDivRemGenericEvaluator(TR::Node * node, TR::CodeGenerator * cg, bool isDivision
       TR::RegisterDependencyConditions * dependencies = new (cg->trHeapMemory()) TR::RegisterDependencyConditions(4, 11, cg);
 
       // Setup arguments
-      dependencies->addPreCondition(dividendPair->getLowOrder(), TR::RealRegister::GPR3);
-      dependencies->addPreCondition(dividendPair->getHighOrder(), TR::RealRegister::GPR2);
-      dependencies->addPreCondition(divisorPair->getLowOrder(), TR::RealRegister::GPR9);
-      dependencies->addPreCondition(divisorPair->getHighOrder(), TR::RealRegister::GPR8);
+      dependencies->addPreCondition(dividendPair->getLowOrder(), (TR::RealRegister::RegDep)TR::RealRegister::GPR3);
+      dependencies->addPreCondition(dividendPair->getHighOrder(), (TR::RealRegister::RegDep)TR::RealRegister::GPR2);
+      dependencies->addPreCondition(divisorPair->getLowOrder(), (TR::RealRegister::RegDep)TR::RealRegister::GPR9);
+      dependencies->addPreCondition(divisorPair->getHighOrder(), (TR::RealRegister::RegDep)TR::RealRegister::GPR8);
 
       cg->stopUsingRegister(dividendPair);
       cg->stopUsingRegister(divisorPair);
@@ -1048,20 +1048,20 @@ lDivRemGenericEvaluator(TR::Node * node, TR::CodeGenerator * cg, bool isDivision
       TR::Register * tempReg4 = cg->allocateRegister();
       TR::Register * tempReg5 = cg->allocateRegister();
       TR::Register * tempReg6 = cg->allocateRegister();
-      dependencies->addPostCondition(tempReg1, TR::RealRegister::GPR0);
-      dependencies->addPostCondition(tempReg2, TR::RealRegister::GPR1);
-      dependencies->addPostCondition(tempReg3, TR::RealRegister::GPR9);
-      dependencies->addPostCondition(tempReg4, TR::RealRegister::GPR8);
+      dependencies->addPostCondition(tempReg1, (TR::RealRegister::RegDep)TR::RealRegister::GPR0);
+      dependencies->addPostCondition(tempReg2, (TR::RealRegister::RegDep)TR::RealRegister::GPR1);
+      dependencies->addPostCondition(tempReg3, (TR::RealRegister::RegDep)TR::RealRegister::GPR9);
+      dependencies->addPostCondition(tempReg4, (TR::RealRegister::RegDep)TR::RealRegister::GPR8);
 
-      dependencies->addPostCondition(evenRegister, TR::RealRegister::GPR2);
+      dependencies->addPostCondition(evenRegister, (TR::RealRegister::RegDep)TR::RealRegister::GPR2);
 
-      dependencies->addPostCondition(oddRegister, TR::RealRegister::GPR3);
-      dependencies->addPostCondition(tempReg5, TR::RealRegister::GPR10);
-      dependencies->addPostCondition(tempReg6, TR::RealRegister::GPR11);
+      dependencies->addPostCondition(oddRegister, (TR::RealRegister::RegDep)TR::RealRegister::GPR3);
+      dependencies->addPostCondition(tempReg5, (TR::RealRegister::RegDep)TR::RealRegister::GPR10);
+      dependencies->addPostCondition(tempReg6, (TR::RealRegister::RegDep)TR::RealRegister::GPR11);
 
       // Setup regs for call out
-      dependencies->addPostCondition(EPReg, cg->getEntryPointRegister());
-      dependencies->addPostCondition(RAReg, cg->getReturnAddressRegister());
+      dependencies->addPostCondition(EPReg, (TR::RealRegister::RegDep)cg->getEntryPointRegister());
+      dependencies->addPostCondition(RAReg, (TR::RealRegister::RegDep)cg->getReturnAddressRegister());
 
       // call out
       // Setup return value

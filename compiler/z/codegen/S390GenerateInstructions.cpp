@@ -2412,8 +2412,8 @@ generateSnippetCall(TR::CodeGenerator * cg, TR::Node * callNode, TR::Snippet * s
       TR::RegisterDependencyConditions *postDeps = new (INSN_HEAP) TR::RegisterDependencyConditions(0, 2, cg);
       TR::Register * killRegRA = cg->allocateRegister();
       TR::Register * killRegEP = cg->allocateRegister();
-      postDeps->addPostCondition(killRegRA, cg->getReturnAddressRegister());
-      postDeps->addPostCondition(killRegEP, cg->getEntryPointRegister());
+      postDeps->addPostCondition(killRegRA, (TR::RealRegister::RegDep)cg->getReturnAddressRegister());
+      postDeps->addPostCondition(killRegEP, (TR::RealRegister::RegDep)cg->getEntryPointRegister());
 
       // Need to put the preDeps on the label, and not on the BRASL
       // because we use virtual reg from preDeps after the BRASL
@@ -2818,7 +2818,7 @@ generateRegUnresolvedSym(TR::CodeGenerator * cg, TR::InstOpCode::Mnemonic op, TR
 
    // Return address register is used in the snippet code so we need to kill it after the call
    deps = new (INSN_HEAP) TR::RegisterDependencyConditions(0, 1, cg);
-   deps->addPostCondition(tempReg, cg->getReturnAddressRegister());
+   deps->addPostCondition(tempReg, (TR::RealRegister::RegDep)cg->getReturnAddressRegister());
 
    TR::Register * tempReg2 = treg;
    if (node->getOpCode().isStore() || tempReg2 == NULL)
