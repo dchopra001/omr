@@ -136,8 +136,8 @@ TR::Register *inlineTrtEvaluator(
       }
 
    TR::RegisterDependencyConditions *regDeps = new (cg->trHeapMemory()) TR::RegisterDependencyConditions(0, 2, cg);
-   regDeps->addPostCondition(r1Reg, (TR::RealRegister::RegDep)TR::RealRegister::GPR1,DefinesDependentRegister);
-   regDeps->addPostCondition(r2Reg, (TR::RealRegister::RegDep)TR::RealRegister::GPR2,DefinesDependentRegister);
+   regDeps->addPostCondition(r1Reg, TR::RealRegister::GPR1,DefinesDependentRegister);
+   regDeps->addPostCondition(r2Reg, TR::RealRegister::GPR2,DefinesDependentRegister);
 
    if (lengthNode->getOpCode().isLoadConst())
       {

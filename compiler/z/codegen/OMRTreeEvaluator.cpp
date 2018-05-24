@@ -12207,7 +12207,7 @@ OMR::Z::TreeEvaluator::arraytranslateAndTestEvaluator(TR::Node * node, TR::CodeG
       TR::Register * endReg = cg->gprClobberEvaluate(node->getChild(2));
 
       TR::RegisterDependencyConditions * dependencies = new (cg->trHeapMemory()) TR::RegisterDependencyConditions(0, 3, cg);
-      dependencies->addPostCondition(stopCharReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR0);
+      dependencies->addPostCondition(stopCharReg, TR::RealRegister::GPR0);
       dependencies->addPostCondition(inputReg, TR::RealRegister::AssignAny);
       dependencies->addPostCondition(endReg, TR::RealRegister::AssignAny);
 
@@ -12360,12 +12360,12 @@ OMR::Z::TreeEvaluator::arraytranslateAndTestEvaluator(TR::Node * node, TR::CodeG
 
       if (isUsingTRT)
          {
-         dependencies->addPostCondition(tableReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR3);  // For helper
-         dependencies->addPostCondition(ptrReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR1);  // GPR1 is used/clobbered in TRT
-         dependencies->addPostCondition(tmpReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR2); // GPR2 is implicitly clobbered in TRT
+         dependencies->addPostCondition(tableReg, TR::RealRegister::GPR3);  // For helper
+         dependencies->addPostCondition(ptrReg, TR::RealRegister::GPR1);  // GPR1 is used/clobbered in TRT
+         dependencies->addPostCondition(tmpReg, TR::RealRegister::GPR2); // GPR2 is implicitly clobbered in TRT
 
          TR::Register * raReg = cg->allocateRegister();
-         dependencies->addPostCondition(raReg, (TR::RealRegister::RegDep)cg->getReturnAddressRegister());
+         dependencies->addPostCondition(raReg, cg->getReturnAddressRegister());
 
          // At first, load up the branch address into raReg, because
          // to ensure that no wierd spilling happens if the code decides it needs
@@ -12519,7 +12519,7 @@ OMR::Z::TreeEvaluator::arraytranslateAndTestEvaluator(TR::Node * node, TR::CodeG
          //    CC 1:  character specified in GPR0 is found, address of character found is set in R1
          //    CC 2:  address of next character == address in R1.  End of search.
          //    CC 3:  CPU defined limit (at least 256 characters searched).  R2 is updated to point to next character.
-         dependencies->addPostCondition(tableReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR0);
+         dependencies->addPostCondition(tableReg, TR::RealRegister::GPR0);
          dependencies->addPostCondition(tmpReg, TR::RealRegister::AssignAny);
          dependencies->addPostCondition(ptrReg, TR::RealRegister::AssignAny);
          TR::Register *endReg = NULL;
@@ -12834,8 +12834,8 @@ OMR::Z::TreeEvaluator::arraytranslateEvaluator(TR::Node * node, TR::CodeGenerato
    dependencies->addPostCondition(outputReg, TR::RealRegister::LegalEvenOfPair);
    dependencies->addPostCondition(inputLenReg, TR::RealRegister::LegalOddOfPair);
    dependencies->addPostCondition(outputPair, TR::RealRegister::EvenOddPair);
-   dependencies->addPostCondition(termCharReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR0);
-   dependencies->addPostCondition(tableReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR1);
+   dependencies->addPostCondition(termCharReg, TR::RealRegister::GPR0);
+   dependencies->addPostCondition(tableReg, TR::RealRegister::GPR1);
    dependencies->addPostCondition(inputReg, TR::RealRegister::AssignAny);
 
    cursor->setDependencyConditions(dependencies);
@@ -14023,10 +14023,10 @@ OMR::Z::TreeEvaluator::long2StringEvaluator(TR::Node * node, TR::CodeGenerator *
    TR::RegisterDependencyConditions * dependencies;
    dependencies = new (cg->trHeapMemory()) TR::RegisterDependencyConditions(0, 5, cg);
    dependencies->addPostCondition(inputReg, TR::RealRegister::AssignAny);
-   dependencies->addPostCondition(baseReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR2);  // for helper
-   dependencies->addPostCondition(workReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR1);  // for helper
+   dependencies->addPostCondition(baseReg, TR::RealRegister::GPR2);  // for helper
+   dependencies->addPostCondition(workReg, TR::RealRegister::GPR1);  // for helper
    dependencies->addPostCondition(countReg, TR::RealRegister::AssignAny);
-   dependencies->addPostCondition(raReg, (TR::RealRegister::RegDep)cg->getReturnAddressRegister());
+   dependencies->addPostCondition(raReg, cg->getReturnAddressRegister());
 
    TR::LabelSymbol * labelEnd = TR::LabelSymbol::create(cg->trHeapMemory());
    labelEnd->setEndInternalControlFlow();
@@ -16903,8 +16903,8 @@ OMR::Z::TreeEvaluator::arraytranslateDecodeSIMDEvaluator(TR::Node * node, TR::Co
    dependencies->addPostCondition(translated, TR::RealRegister::AssignAny);
 
    // These two need to be adjacent since we use VSTM
-   dependencies->addPostCondition(vOutput1,   (TR::RealRegister::RegDep)TR::RealRegister::VRF16);
-   dependencies->addPostCondition(vOutput2,   (TR::RealRegister::RegDep)TR::RealRegister::VRF17);
+   dependencies->addPostCondition(vOutput1,   TR::RealRegister::VRF16);
+   dependencies->addPostCondition(vOutput2,   TR::RealRegister::VRF17);
    dependencies->addPostCondition(vInput,     TR::RealRegister::AssignAny);
    dependencies->addPostCondition(vSaturated, TR::RealRegister::AssignAny);
 
@@ -17238,8 +17238,8 @@ OMR::Z::TreeEvaluator::arraytranslateEncodeSIMDEvaluator(TR::Node * node, TR::Co
    dependencies->addPostCondition(translated, TR::RealRegister::AssignAny);
 
    // These two need to be adjacent since we use VLM
-   dependencies->addPostCondition(vInput1,       (TR::RealRegister::RegDep)TR::RealRegister::VRF16);
-   dependencies->addPostCondition(vInput2,       (TR::RealRegister::RegDep)TR::RealRegister::VRF17);
+   dependencies->addPostCondition(vInput1,       TR::RealRegister::VRF16);
+   dependencies->addPostCondition(vInput2,       TR::RealRegister::VRF17);
    dependencies->addPostCondition(vOutput,       TR::RealRegister::AssignAny);
    dependencies->addPostCondition(vSaturated,    TR::RealRegister::AssignAny);
    dependencies->addPostCondition(vRange,        TR::RealRegister::AssignAny);
@@ -18946,7 +18946,7 @@ OMR::Z::TreeEvaluator::vreturnEvaluator(TR::Node *node, TR::CodeGenerator *cg)
 
    TR::RegisterDependencyConditions * dependencies = NULL ;
    dependencies= new (cg->trHeapMemory()) TR::RegisterDependencyConditions(0, 1, cg);
-   dependencies->addPostCondition(returnValRegister, (TR::RealRegister::RegDep)linkage->getVectorReturnRegister());
+   dependencies->addPostCondition(returnValRegister, linkage->getVectorReturnRegister());
    TR::Instruction * inst = generateS390PseudoInstruction(cg, TR::InstOpCode::RET, node, dependencies);
    cg->stopUsingRegister(returnAddressReg);
    cg->decReferenceCount(node->getFirstChild());

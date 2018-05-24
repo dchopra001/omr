@@ -405,7 +405,7 @@ class RegisterDependencyConditions: public OMR::RegisterDependencyConditions
          TR_ASSERT(0,"ERROR: addPreCondition list overflow\n");
          _cg->comp()->failCompilation<TR::CompilationException>("addPreCondition list overflow, abort compilation\n");
          }
-      _preConditions->setDependencyInfo(_addCursorForPre++, vr, (TR::RealRegister::RegDep)rr, flag);
+      _preConditions->setDependencyInfo(_addCursorForPre++, vr, rr, flag);
       }
 
    TR_S390RegisterDependencyGroup *getPostConditions() {return _postConditions;}

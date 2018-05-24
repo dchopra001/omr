@@ -711,9 +711,9 @@ MemInitConstLenMacroOp::generateDependencies()
          }
       else
          {
-         dependencies->addPostCondition(_dstReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR1, RefsAndDefsDependentRegister);
-         if (_initReg) dependencies->addPostCondition(_initReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR2);
-         dependencies->addPostCondition(_itersReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR0);
+         dependencies->addPostCondition(_dstReg, TR::RealRegister::GPR1, RefsAndDefsDependentRegister);
+         if (_initReg) dependencies->addPostCondition(_initReg, TR::RealRegister::GPR2);
+         dependencies->addPostCondition(_itersReg, TR::RealRegister::GPR0);
          }
       }
    return dependencies;
@@ -744,8 +744,8 @@ MemClearConstLenMacroOp::generateDependencies()
          }
        else
          {
-         dependencies->addPostCondition(_dstReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR1, RefsAndDefsDependentRegister);
-         dependencies->addPostCondition(_itersReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR0);
+         dependencies->addPostCondition(_dstReg, TR::RealRegister::GPR1, RefsAndDefsDependentRegister);
+         dependencies->addPostCondition(_itersReg, TR::RealRegister::GPR0);
          }
        }
      }
@@ -779,9 +779,9 @@ MemCpyConstLenMacroOp::generateDependencies()
             }
          else
             {
-            dependencies->addPostCondition(_dstReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR1, RefsAndDefsDependentRegister);
-            dependencies->addPostCondition(_srcReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR2, RefsAndDefsDependentRegister);
-            dependencies->addPostCondition(_itersReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR0);
+            dependencies->addPostCondition(_dstReg, TR::RealRegister::GPR1, RefsAndDefsDependentRegister);
+            dependencies->addPostCondition(_srcReg, TR::RealRegister::GPR2, RefsAndDefsDependentRegister);
+            dependencies->addPostCondition(_itersReg, TR::RealRegister::GPR0);
             }
          }
       if (_inNestedICF)
@@ -819,9 +819,9 @@ BitOpMemConstLenMacroOp::generateDependencies()
          }
       else
          {
-         dependencies->addPostCondition(_dstReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR1, RefsAndDefsDependentRegister);
-         dependencies->addPostCondition(_srcReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR2, RefsAndDefsDependentRegister);
-         dependencies->addPostCondition(_itersReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR0);
+         dependencies->addPostCondition(_dstReg, TR::RealRegister::GPR1, RefsAndDefsDependentRegister);
+         dependencies->addPostCondition(_srcReg, TR::RealRegister::GPR2, RefsAndDefsDependentRegister);
+         dependencies->addPostCondition(_itersReg, TR::RealRegister::GPR0);
          }
       }
    return dependencies;
@@ -853,9 +853,9 @@ MemCmpConstLenMacroOp::generateDependencies()
          }
       else
          {
-         dependencies->addPostCondition(_dstReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR1, RefsAndDefsDependentRegister);
-         dependencies->addPostCondition(_srcReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR2, RefsAndDefsDependentRegister);
-         dependencies->addPostCondition(_itersReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR0);
+         dependencies->addPostCondition(_dstReg, TR::RealRegister::GPR1, RefsAndDefsDependentRegister);
+         dependencies->addPostCondition(_srcReg, TR::RealRegister::GPR2, RefsAndDefsDependentRegister);
+         dependencies->addPostCondition(_itersReg, TR::RealRegister::GPR0);
          }
       dependencies->addPostCondition(_resultReg, TR::RealRegister::AssignAny);
       }
@@ -870,7 +870,7 @@ MemInitVarLenMacroOp::generateDependencies()
 
    TR::RegisterDependencyConditions * dependencies = generateRegisterDependencyConditions(0, 7, _cg);
 
-   if (_raReg) dependencies->addPostCondition(_raReg, (TR::RealRegister::RegDep)_cg->getReturnAddressRegister());
+   if (_raReg) dependencies->addPostCondition(_raReg, _cg->getReturnAddressRegister());
    if (useEXForRemainder())
       {
       if (_dstReg) dependencies->addPostCondition(_dstReg, TR::RealRegister::AssignAny);
@@ -879,9 +879,9 @@ MemInitVarLenMacroOp::generateDependencies()
       }
    else
       {
-      if (_dstReg) dependencies->addPostCondition(_dstReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR1);
-      if (_initReg) dependencies->addPostCondition(_initReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR2);
-      if (_itersReg) dependencies->addPostCondition(_itersReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR0);
+      if (_dstReg) dependencies->addPostCondition(_dstReg, TR::RealRegister::GPR1);
+      if (_initReg) dependencies->addPostCondition(_initReg, TR::RealRegister::GPR2);
+      if (_itersReg) dependencies->addPostCondition(_itersReg, TR::RealRegister::GPR0);
       }
    if (_regLen) dependencies->addPostCondition(_regLen, TR::RealRegister::AssignAny);
    if (_litReg) dependencies->addPostCondition(_litReg, TR::RealRegister::AssignAny);
@@ -905,10 +905,10 @@ MemClearVarLenMacroOp::generateDependencies()
       }
    else
       {
-      if (_dstReg) dependencies->addPostCondition(_dstReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR1);
-      if (_itersReg) dependencies->addPostCondition(_itersReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR0);
+      if (_dstReg) dependencies->addPostCondition(_dstReg, TR::RealRegister::GPR1);
+      if (_itersReg) dependencies->addPostCondition(_itersReg, TR::RealRegister::GPR0);
       }
-   if (_raReg) dependencies->addPostCondition(_raReg, (TR::RealRegister::RegDep)_cg->getReturnAddressRegister());
+   if (_raReg) dependencies->addPostCondition(_raReg, _cg->getReturnAddressRegister());
    if (_regLen) dependencies->addPostCondition(_regLen, TR::RealRegister::AssignAny);
    if (_litReg) dependencies->addPostCondition(_litReg, TR::RealRegister::AssignAny);
 
@@ -922,7 +922,7 @@ MemCpyVarLenMacroOp::generateDependencies()
      return NULL;
 
    TR::RegisterDependencyConditions * dependencies = generateRegisterDependencyConditions(0, 6, _cg);
-   if (_raReg) dependencies->addPostCondition(_raReg, (TR::RealRegister::RegDep)_cg->getReturnAddressRegister());
+   if (_raReg) dependencies->addPostCondition(_raReg, _cg->getReturnAddressRegister());
    if (useEXForRemainder())
       {
       if (_dstReg) dependencies->addPostCondition(_dstReg, TR::RealRegister::AssignAny);
@@ -931,9 +931,9 @@ MemCpyVarLenMacroOp::generateDependencies()
       }
    else
       {
-      if (_dstReg) dependencies->addPostCondition(_dstReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR1);
-      if (_srcReg) dependencies->addPostCondition(_srcReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR2);
-      if (_itersReg) dependencies->addPostCondition(_itersReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR0);
+      if (_dstReg) dependencies->addPostCondition(_dstReg, TR::RealRegister::GPR1);
+      if (_srcReg) dependencies->addPostCondition(_srcReg, TR::RealRegister::GPR2);
+      if (_itersReg) dependencies->addPostCondition(_itersReg, TR::RealRegister::GPR0);
       }
    if (_regLen) dependencies->addPostCondition(_regLen, TR::RealRegister::AssignAny);
    if (_litReg) dependencies->addPostCondition(_litReg, TR::RealRegister::AssignAny);
@@ -949,7 +949,7 @@ BitOpMemVarLenMacroOp::generateDependencies()
 
    TR::RegisterDependencyConditions * dependencies = generateRegisterDependencyConditions(0, 6, _cg);
 
-   if (_raReg) dependencies->addPostCondition(_raReg, (TR::RealRegister::RegDep)_cg->getReturnAddressRegister());
+   if (_raReg) dependencies->addPostCondition(_raReg, _cg->getReturnAddressRegister());
    if (useEXForRemainder())
       {
       if (_dstReg) dependencies->addPostCondition(_dstReg, TR::RealRegister::AssignAny);
@@ -958,9 +958,9 @@ BitOpMemVarLenMacroOp::generateDependencies()
       }
    else
       {
-      if (_dstReg) dependencies->addPostCondition(_dstReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR1);
-      if (_srcReg) dependencies->addPostCondition(_srcReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR2);
-      if (_itersReg) dependencies->addPostCondition(_itersReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR0);
+      if (_dstReg) dependencies->addPostCondition(_dstReg, TR::RealRegister::GPR1);
+      if (_srcReg) dependencies->addPostCondition(_srcReg, TR::RealRegister::GPR2);
+      if (_itersReg) dependencies->addPostCondition(_itersReg, TR::RealRegister::GPR0);
       }
    if (_regLen) dependencies->addPostCondition(_regLen, TR::RealRegister::AssignAny);
    if (_litReg) dependencies->addPostCondition(_litReg, TR::RealRegister::AssignAny);
@@ -976,7 +976,7 @@ MemCmpVarLenMacroOp::generateDependencies()
 
    TR::RegisterDependencyConditions * dependencies = generateRegisterDependencyConditions(0, 8, _cg);
 
-   if (_raReg) dependencies->addPostCondition(_raReg, (TR::RealRegister::RegDep)_cg->getReturnAddressRegister());
+   if (_raReg) dependencies->addPostCondition(_raReg, _cg->getReturnAddressRegister());
    if (useEXForRemainder())
       {
       if (_dstReg) dependencies->addPostCondition(_dstReg, TR::RealRegister::AssignAny);
@@ -985,9 +985,9 @@ MemCmpVarLenMacroOp::generateDependencies()
       }
    else
       {
-      if (_dstReg) dependencies->addPostCondition(_dstReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR1);
-      if (_srcReg) dependencies->addPostCondition(_srcReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR2);
-      if (_itersReg) dependencies->addPostCondition(_itersReg, (TR::RealRegister::RegDep)TR::RealRegister::GPR0);
+      if (_dstReg) dependencies->addPostCondition(_dstReg, TR::RealRegister::GPR1);
+      if (_srcReg) dependencies->addPostCondition(_srcReg, TR::RealRegister::GPR2);
+      if (_itersReg) dependencies->addPostCondition(_itersReg, TR::RealRegister::GPR0);
       }
    if (_resultReg) dependencies->addPostCondition(_resultReg, TR::RealRegister::AssignAny);
    if (_regLen) dependencies->addPostCondition(_regLen, TR::RealRegister::AssignAny);

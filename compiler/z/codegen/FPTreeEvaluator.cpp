@@ -657,7 +657,7 @@ commonLong2FloatEvaluator(TR::Node * node, TR::CodeGenerator * cg)
 
    // the 64 bit register gprTemp64 is going to be clobbered and R0 is safe to clobber (so are R1,R15)
    if (restrictToGPR0)
-      deps->addPostCondition(gprTemp64, (TR::RealRegister::RegDep)TR::RealRegister::GPR0);
+      deps->addPostCondition(gprTemp64, TR::RealRegister::GPR0);
    generateRSInstruction(cg, TR::InstOpCode::SLLG, node, gprTemp64, srcReg->getHighOrder(), 32);
    TR::Instruction *cursor = generateRRInstruction(cg, TR::InstOpCode::LR, node, gprTemp64, srcReg->getLowOrder());
 

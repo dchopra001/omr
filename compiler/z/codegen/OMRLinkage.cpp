@@ -1717,11 +1717,11 @@ OMR::Z::Linkage::pushLongArg32(TR::Node * callNode, TR::Node * child, int32_t nu
          argRegNum = self()->getLongHighArgumentRegister(numIntegerArgs);
          if (argRegNum != TR::RealRegister::NoReg)
             {
-            dependencies->addPreCondition(argRegisterHigh, (TR::RealRegister::RegDep)argRegNum);
+            dependencies->addPreCondition(argRegisterHigh, argRegNum);
             argRegNum = self()->getIntegerArgumentRegister(numIntegerArgs+1);
             if (argRegNum != TR::RealRegister::NoReg)
                {
-               dependencies->addPreCondition(argRegisterLow, (TR::RealRegister::RegDep)argRegNum);
+               dependencies->addPreCondition(argRegisterLow, argRegNum);
                }
             else
                {
@@ -1733,7 +1733,7 @@ OMR::Z::Linkage::pushLongArg32(TR::Node * callNode, TR::Node * child, int32_t nu
             argRegNum = self()->getIntegerArgumentRegister(numIntegerArgs);
             if (argRegNum != TR::RealRegister::NoReg)
                {
-               dependencies->addPreCondition(argRegisterHigh, (TR::RealRegister::RegDep)argRegNum);
+               dependencies->addPreCondition(argRegisterHigh, argRegNum);
                }
 
             isStorePair = true;
@@ -1894,17 +1894,17 @@ OMR::Z::Linkage::pushArg(TR::Node * callNode, TR::Node * child, int32_t numInteg
          {
          TR::Register *argRegisterHigh = argRegister->getRegisterPair()->getHighOrder();
          TR::Register *argRegisterLow = argRegister->getRegisterPair()->getLowOrder();
-         dependencies->addPreCondition(argRegisterHigh, (TR::RealRegister::RegDep)argRegNum);
-         dependencies->addPreCondition(argRegisterLow, (TR::RealRegister::RegDep)argRegNum2);
+         dependencies->addPreCondition(argRegisterHigh, argRegNum);
+         dependencies->addPreCondition(argRegisterLow, argRegNum2);
          }
       else
 #endif
          {
-         dependencies->addPreCondition(argRegister, (TR::RealRegister::RegDep)argRegNum);
+         dependencies->addPreCondition(argRegister, argRegNum);
          // See comment related to IntegerArgumentAddToPost in S390Linkage.hpp
          if (self()->getIntegerArgumentAddToPost(argRegNum) != 0)
             {
-            dependencies->addPostCondition(argRegister, (TR::RealRegister::RegDep)argRegNum);
+            dependencies->addPostCondition(argRegister, argRegNum);
             }
          }
       }
@@ -2064,7 +2064,7 @@ OMR::Z::Linkage::pushVectorArg(TR::Node * callNode, TR::Node * child, int32_t nu
          // TODO     argRegister = copyArgRegister(callNode, child, argRegister);
          }
 
-   dependencies->addPreCondition(argRegister, (TR::RealRegister::RegDep)argRegNum);
+   dependencies->addPreCondition(argRegister, argRegNum);
 
    if (!self()->isFirstParmAtFixedOffset())
       {
@@ -2116,7 +2116,7 @@ OMR::Z::Linkage::loadIntArgumentsFromStack(TR::Node *callNode, TR::RegisterDepen
       for (int32_t i = 0; i < regsNeeded; i++)
          {
          TR::Register *argRegister = self()->cg()->allocateRegister();
-         dependencies->addPreCondition(argRegister, (TR::RealRegister::RegDep)argRegNum);
+         dependencies->addPreCondition(argRegister, argRegNum);
          TR::MemoryReference * argMemRef = generateS390MemoryReference(stackRegister, stackOffset , self()->cg());
          TR::InstOpCode::Mnemonic loadOp = TR::InstOpCode::getLoadOpCode();
 #ifdef J9_PROJECT_SPECIFIC
@@ -2305,7 +2305,7 @@ OMR::Z::Linkage::buildArgs(TR::Node * callNode, TR::RegisterDependencyConditions
          TR::RealRegister * stackPtr = self()->getNormalStackPointerRealRegister();
          generateRXInstruction(self()->cg(), TR::InstOpCode::LA, callNode, r1Reg,
                    generateS390MemoryReference(stackPtr, stackOffset, self()->cg()));
-         dependencies->addPreCondition(r1Reg, (TR::RealRegister::RegDep)TR::RealRegister::GPR1);
+         dependencies->addPreCondition(r1Reg, TR::RealRegister::GPR1);
          self()->cg()->stopUsingRegister(r1Reg);
          }
       }
@@ -2500,7 +2500,7 @@ OMR::Z::Linkage::buildArgs(TR::Node * callNode, TR::RegisterDependencyConditions
 #endif
             resultReg = self()->cg()->allocateRegister(TR_FPR);
             self()->cg()->setRealRegisterAssociation(resultReg, self()->getFloatReturnRegister());
-            dependencies->addPostCondition(resultReg, (TR::RealRegister::RegDep)self()->getFloatReturnRegister(),DefinesDependentRegister);
+            dependencies->addPostCondition(resultReg, self()->getFloatReturnRegister(),DefinesDependentRegister);
             killMask &= (~(0x1L << REGINDEX(self()->getFloatReturnRegister())));
             break;
 #ifdef J9_PROJECT_SPECIFIC
@@ -2509,9 +2509,9 @@ OMR::Z::Linkage::buildArgs(TR::Node * callNode, TR::RegisterDependencyConditions
             TR::Register * lowReg = self()->cg()->allocateRegister(TR_FPR);
             TR::Register * highReg = self()->cg()->allocateRegister(TR_FPR);
             self()->cg()->setRealRegisterAssociation(highReg, self()->getLongDoubleReturnRegister0());
-            dependencies->addPostCondition(highReg, (TR::RealRegister::RegDep)self()->getLongDoubleReturnRegister0(),DefinesDependentRegister);
+            dependencies->addPostCondition(highReg, self()->getLongDoubleReturnRegister0(),DefinesDependentRegister);
             self()->cg()->setRealRegisterAssociation(lowReg, self()->getLongDoubleReturnRegister2());
-            dependencies->addPostCondition(lowReg, (TR::RealRegister::RegDep)self()->getLongDoubleReturnRegister2(),DefinesDependentRegister);
+            dependencies->addPostCondition(lowReg, self()->getLongDoubleReturnRegister2(),DefinesDependentRegister);
             killMask &= (~(0x1L << REGINDEX(self()->getLongDoubleReturnRegister0())));
             killMask &= (~(0x1L << REGINDEX(self()->getLongDoubleReturnRegister2())));
             break;
@@ -2533,11 +2533,11 @@ OMR::Z::Linkage::buildArgs(TR::Node * callNode, TR::RegisterDependencyConditions
                   resultRegHigh = self()->cg()->allocateRegister();
                   }
                self()->cg()->setRealRegisterAssociation(resultRegLow, self()->getLongLowReturnRegister());
-               dependencies->addPostCondition(resultRegLow, (TR::RealRegister::RegDep)self()->getLongLowReturnRegister(),DefinesDependentRegister);
+               dependencies->addPostCondition(resultRegLow, self()->getLongLowReturnRegister(),DefinesDependentRegister);
                killMask &= (~(0x1L << REGINDEX(self()->getLongLowReturnRegister())));
 
                self()->cg()->setRealRegisterAssociation(resultRegHigh, self()->getLongHighReturnRegister());
-               dependencies->addPostCondition(resultRegHigh, (TR::RealRegister::RegDep)self()->getLongHighReturnRegister(),DefinesDependentRegister);
+               dependencies->addPostCondition(resultRegHigh, self()->getLongHighReturnRegister(),DefinesDependentRegister);
                killMask &= (~(0x1L << REGINDEX(self()->getLongHighReturnRegister())));
                break;
                }
@@ -2547,7 +2547,7 @@ OMR::Z::Linkage::buildArgs(TR::Node * callNode, TR::RegisterDependencyConditions
          case TR::Int32:
             resultReg = (resType.isAddress())? self()->cg()->allocateCollectedReferenceRegister() : self()->cg()->allocateRegister();
             self()->cg()->setRealRegisterAssociation(resultReg, self()->getIntegerReturnRegister());
-            dependencies->addPostCondition(resultReg, (TR::RealRegister::RegDep)self()->getIntegerReturnRegister(),DefinesDependentRegister);
+            dependencies->addPostCondition(resultReg, self()->getIntegerReturnRegister(),DefinesDependentRegister);
             killMask &= (~(0x1L << REGINDEX(self()->getIntegerReturnRegister())));
             //add extra return register dependency
             killMask = self()->addFECustomizedReturnRegDependency(killMask, self(), resType, dependencies);
@@ -2559,7 +2559,7 @@ OMR::Z::Linkage::buildArgs(TR::Node * callNode, TR::RegisterDependencyConditions
          case TR::VectorDouble:
             resultReg = self()->cg()->allocateRegister(TR_VRF);
             self()->cg()->setRealRegisterAssociation(resultReg, self()->getVectorReturnRegister());
-            dependencies->addPostCondition(resultReg, (TR::RealRegister::RegDep)self()->getVectorReturnRegister(),DefinesDependentRegister);
+            dependencies->addPostCondition(resultReg, self()->getVectorReturnRegister(),DefinesDependentRegister);
             killMask &= (~(0x1L << REGINDEX(self()->getVectorReturnRegister())));
             break;
       }
@@ -2753,7 +2753,7 @@ OMR::Z::Linkage::killAndAssignRegister(int64_t killMask, TR::RegisterDependencyC
 
       // edTODO vrf linkage : killAndAssignRegister unimplemented
 
-      deps->addPostCondition(*virtualRegPtr, (TR::RealRegister::RegDep)regNum, DefinesDependentRegister);
+      deps->addPostCondition(*virtualRegPtr, regNum, DefinesDependentRegister);
       if (isAllocate)
          codeGen->stopUsingRegister(*virtualRegPtr);
 
@@ -2897,7 +2897,7 @@ OMR::Z::Linkage::setupBuildArgForLinkage(TR::Node * callNode, TR_DispatchType di
       for(int i = 0; i < glRegDeps->getAddCursorForPre(); i++)
          {
          regDep = glRegDeps->getPreConditions()->getRegisterDependency(i);
-         deps->addPreConditionIfNotAlreadyInserted(regDep->getRegister(self()->cg()), (TR::RealRegister::RegDep)regDep->getRealRegister());
+         deps->addPreConditionIfNotAlreadyInserted(regDep->getRegister(self()->cg()), regDep->getRealRegister());
 //         TR_ASSERTC(deps->addPreConditionIfNotAlreadyInserted(regDep->getRegister(cg()), regDep->getRealRegister()), cg()->comp(),
 //                     "Duplicate precondition found while merging call deps with global reg deps");
          }
@@ -2906,7 +2906,7 @@ OMR::Z::Linkage::setupBuildArgForLinkage(TR::Node * callNode, TR_DispatchType di
       for(int i = 0; i < glRegDeps->getAddCursorForPost(); i++)
          {
          regDep = glRegDeps->getPostConditions()->getRegisterDependency(i);
-         deps->addPostConditionIfNotAlreadyInserted(regDep->getRegister(self()->cg()), (TR::RealRegister::RegDep)regDep->getRealRegister());
+         deps->addPostConditionIfNotAlreadyInserted(regDep->getRegister(self()->cg()), regDep->getRealRegister());
 //         TR_ASSERTC(deps->addPostConditionIfNotAlreadyInserted(regDep->getRegister(cg()), regDep->getRealRegister()), cg()->comp(),
 //                     "Duplicate postcondition found while merging call deps with global reg deps");
          }
