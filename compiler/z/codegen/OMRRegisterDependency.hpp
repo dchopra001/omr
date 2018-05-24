@@ -105,10 +105,18 @@ class TR_S390RegisterDependencyGroup
                           TR::Register                              *vr,
                           TR::RealRegister::RegDep rr,
                           uint8_t                                   flag)
+     {
+     setDependencyInfo(index, vr, (TR::RealRegister::RegNum)rr, flag);
+     }
+
+   void setDependencyInfo(uint32_t                                  index,
+                          TR::Register                              *vr,
+                          TR::RealRegister::RegNum rr,
+                          uint8_t                                   flag)
       {
       _dependencies[index].setRegister(vr);
       _dependencies[index].assignFlags(flag);
-      _dependencies[index].setRealRegister((TR::RealRegister::RegNum)rr);
+      _dependencies[index].setRealRegister(rr);
       if (vr) vr->setDependencySet(true);
       if (vr != NULL)
          vr->setIsNotHighWordUpgradable(true);
