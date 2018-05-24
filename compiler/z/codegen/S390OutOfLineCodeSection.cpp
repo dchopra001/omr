@@ -143,12 +143,12 @@ TR::RegisterDependencyConditions *TR_S390OutOfLineCodeSection::formEvaluatedArgu
             TR::RegisterPair *regPair = reg->getRegisterPair();
             if (regPair)
                {
-               depConds->addPostCondition(regPair->getLowOrder(), (TR::RealRegister::RegDep)TR::RealRegister::NoReg);
-               depConds->addPostCondition(regPair->getHighOrder(), (TR::RealRegister::RegDep)TR::RealRegister::NoReg);
+               depConds->addPostCondition(regPair->getLowOrder(), TR::RealRegister::NoReg);
+               depConds->addPostCondition(regPair->getHighOrder(), TR::RealRegister::NoReg);
                }
             else
                {
-               depConds->addPostCondition(regPair->getLowOrder(), (TR::RealRegister::RegDep)TR::RealRegister::NoReg);
+               depConds->addPostCondition(regPair->getLowOrder(), TR::RealRegister::NoReg);
                }
             }
          }

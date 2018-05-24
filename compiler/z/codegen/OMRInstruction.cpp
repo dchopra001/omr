@@ -3353,13 +3353,13 @@ OMR::Z::Instruction::addARDependencyCondition(TR::Register * virtAR, TR::Registe
       {
        self()->cg()->traceRegisterAssignment("PRE dependancy for instruction %p on virtual reg %s -> %s to be added\n",
       self(),self()->cg()->getDebug()->getName(virtAR), self()->cg()->getDebug()->getName(assignedGPR));
-      newCondition = self()->getDependencyConditions()->addPreConditionIfNotAlreadyInserted(virtAR, (TR::RealRegister::RegDep)REGNUM(TR::RealRegister::FirstAR - TR::RealRegister::FirstGPR + toRealRegister(assignedGPR)->getRegisterNumber()));
+      newCondition = self()->getDependencyConditions()->addPreConditionIfNotAlreadyInserted(virtAR, REGNUM(TR::RealRegister::FirstAR - TR::RealRegister::FirstGPR + toRealRegister(assignedGPR)->getRegisterNumber()));
       }
    else
       {
       self()->cg()->traceRegisterAssignment("POST dependancy for instruction %p on virtual reg %s -> %s to be added\n",
       self(),self()->cg()->getDebug()->getName(virtAR), self()->cg()->getDebug()->getName(assignedGPR));
-      newCondition = self()->getDependencyConditions()->addPostConditionIfNotAlreadyInserted(virtAR, (TR::RealRegister::RegDep)REGNUM(TR::RealRegister::FirstAR - TR::RealRegister::FirstGPR + toRealRegister(assignedGPR)->getRegisterNumber()));
+      newCondition = self()->getDependencyConditions()->addPostConditionIfNotAlreadyInserted(virtAR, REGNUM(TR::RealRegister::FirstAR - TR::RealRegister::FirstGPR + toRealRegister(assignedGPR)->getRegisterNumber()));
       }
 
    if (newCondition)
