@@ -1834,6 +1834,13 @@ bool OMR::Z::RegisterDependencyConditions::doesPostConditionExist( TR::Register 
    }
 
 
+bool OMR::Z::RegisterDependencyConditions::addPreConditionIfNotAlreadyInserted(TR::Register *vr,
+                                                                                  TR::RealRegister::RegNum rr,
+                                                                                  uint8_t flag)
+   {
+   return addPreConditionIfNotAlreadyInserted(vr, (TR::RealRegister::RegDep)rr, flag);  
+   }
+
 /**
  * Checks for an existing pre-condition for given virtual register.  If found,
  * the flags are updated.  If not found, a new pre-condition is created with
@@ -1863,6 +1870,12 @@ bool OMR::Z::RegisterDependencyConditions::addPreConditionIfNotAlreadyInserted(T
    return false;
    }
 
+bool OMR::Z::RegisterDependencyConditions::addPostConditionIfNotAlreadyInserted(TR::Register *vr,
+                                                                                   TR::RealRegister::RegNum rr,
+                                                                                   uint8_t flag)
+   {
+   return addPostConditionIfNotAlreadyInserted(vr, (TR::RealRegister::RegDep)rr, flag);
+   }
 
 /**
  * Checks for an existing post-condition for given virtual register.  If found,

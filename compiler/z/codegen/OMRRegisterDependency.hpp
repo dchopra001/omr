@@ -389,6 +389,13 @@ class RegisterDependencyConditions: public OMR::RegisterDependencyConditions
       }
 
    void addPreCondition(TR::Register                              *vr,
+                        TR::RealRegister::RegNum rr,
+                        uint8_t                                   flag = ReferencesDependentRegister)
+       {
+       addPreCondition(vr, (TR::RealRegister::RegDep)rr, flag);
+       }
+
+   void addPreCondition(TR::Register                              *vr,
                         TR::RealRegister::RegDep rr,
                         uint8_t                                   flag = ReferencesDependentRegister)
       {
@@ -423,6 +430,13 @@ class RegisterDependencyConditions: public OMR::RegisterDependencyConditions
          {
          addPostConditionIfNotAlreadyInserted(indx, TR::RealRegister::AssignAny, ReferencesDependentRegister);
          }
+      }
+
+   void addPostCondition(TR::Register                              *vr,
+                         TR::RealRegister::RegNum rr,
+                         uint8_t                                   flag = ReferencesDependentRegister)
+      {
+      addPostCondition(vr,(TR::RealRegister::RegDep)rr, flag);
       }
 
    void addPostCondition(TR::Register                              *vr,
@@ -509,8 +523,15 @@ class RegisterDependencyConditions: public OMR::RegisterDependencyConditions
    // These methods are temporary until dependencies are re-engineered down the road
    // We only add in the post condition if the desired virt reg is not already spoken for
    bool addPreConditionIfNotAlreadyInserted(TR::Register *vr,
+                                            TR::RealRegister::RegNum rr,
+				                                uint8_t flag = ReferencesDependentRegister);
+   bool addPreConditionIfNotAlreadyInserted(TR::Register *vr,
                                             TR::RealRegister::RegDep rr,
 				                                uint8_t flag = ReferencesDependentRegister);
+
+   bool addPostConditionIfNotAlreadyInserted(TR::Register *vr,
+                                             TR::RealRegister::RegNum rr,
+				                                 uint8_t flag = ReferencesDependentRegister);                                     
    bool addPostConditionIfNotAlreadyInserted(TR::Register *vr,
                                              TR::RealRegister::RegDep rr,
 				                                 uint8_t flag = ReferencesDependentRegister);
