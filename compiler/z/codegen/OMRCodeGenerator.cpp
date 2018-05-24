@@ -10142,7 +10142,7 @@ OMR::Z::CodeGenerator::addVMThreadPreCondition(TR::RegisterDependencyConditions 
       //TODO: using addPreConditionIfNotAlreadyInserted() is slower than using addPreCondition()
       //think about changing the name of this method to addVMThreadPreConditionIfNotAlreadyInserted()
       //and add one for addVMThreadPreCondition, which uses deps->addPreCondition()
-      deps->addPreConditionIfNotAlreadyInserted(reg,self()->getVMThreadRegister()->getAssociation());
+      deps->addPreConditionIfNotAlreadyInserted(reg,(TR::RealRegister::RegDep)self()->getVMThreadRegister()->getAssociation());
       }
    return deps;
    }
@@ -10167,7 +10167,7 @@ OMR::Z::CodeGenerator::addVMThreadPostCondition(TR::RegisterDependencyConditions
       //TODO: using addPostConditionIfNotAlreadyInserted() is slower than using addPostCondition()
       //think about changing the name of this method to addVMThreadPostConditionIfNotAlreadyInserted()
       //and add one for addVMThreadPostCondition, which uses deps->addPostCondition()
-      deps->addPostConditionIfNotAlreadyInserted(reg,self()->getVMThreadRegister()->getAssociation());
+      deps->addPostConditionIfNotAlreadyInserted(reg,(TR::RealRegister::RegDep)self()->getVMThreadRegister()->getAssociation());
       }
    return deps;
    }
