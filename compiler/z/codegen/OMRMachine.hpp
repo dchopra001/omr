@@ -39,6 +39,7 @@ namespace OMR { typedef OMR::Z::Machine MachineConnector; }
 #include "il/DataTypes.hpp"          // for CONSTANT64, etc
 #include "infra/Flags.hpp"           // for flags32_t
 #include "infra/TRlist.hpp"
+#include "z/codegen/MyArray.hpp"
 
 class TR_Debug;
 namespace TR { class CodeGenerator; }
@@ -183,7 +184,8 @@ namespace Z
 
 class OMR_EXTENSIBLE Machine : public OMR::Machine
    {
-   TR::RealRegister            *_registerFile[TR::RealRegister::NumRegisters];
+   //TR::RealRegister            *_registerFile[TR::RealRegister::NumRegisters];
+   my_array<TR::RealRegister*, TR::RealRegister::NumRegisters> _registerFile;
    TR::Register                *_registerAssociations[TR::RealRegister::NumRegisters];
    uint32_t                     _globalRegisterNumberToRealRegisterMap[NUM_S390_GPR+NUM_S390_FPR+NUM_S390_VRF+NUM_S390_HPR];
    TR::RealRegister::RegNum     _S390FirstOfFPRegisterPairs[NUM_S390_FPR_PAIRS];
