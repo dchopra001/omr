@@ -239,6 +239,7 @@ void TR_LoadExtensions::findPreferredLoadExtensions(TR::Node* parent)
             // a non-load operation.
             if (useDefInfo != NULL && useDefInfo->infoIsValid() && useRegLoad->getUseDefIndex() != 0 && useDefInfo->isUseIndex(useRegLoad->getUseDefIndex() != 0))
                {
+               TR::DebugCounter::incStaticDebugCounter(comp(), TR::DebugCounter::debugCounterName(comp(), "codegen/LoadExtensions/available/useDefInfo/%s", comp()->signature()));
                TR_UseDefInfo::BitVector info(comp()->allocator());
                if (useDefInfo->getUseDef(info, useRegLoad->getUseDefIndex()))
                   {
@@ -368,6 +369,7 @@ void TR_LoadExtensions::flagPreferredLoadExtensions(TR::Node* parent)
 
                if (useDefInfo != NULL && useDefInfo->infoIsValid() && useRegLoad->getUseDefIndex() != 0 && useDefInfo->isUseIndex(useRegLoad->getUseDefIndex() != 0))
                   {
+                  TR::DebugCounter::incStaticDebugCounter(comp(), TR::DebugCounter::debugCounterName(comp(), "codegen/LoadExtensions/available/useDefInfo/%s", comp()->signature()));
                   TR_UseDefInfo::BitVector info(comp()->allocator());
 
                   if (useDefInfo->getUseDef(info, useRegLoad->getUseDefIndex()))
@@ -444,6 +446,7 @@ void TR_LoadExtensions::flagPreferredLoadExtensions(TR::Node* parent)
 
                            if (useDefInfo->getUseDef(info, useRegLoad->getUseDefIndex()))
                               {
+                              TR::DebugCounter::incStaticDebugCounter(comp(), TR::DebugCounter::debugCounterName(comp(), "codegen/LoadExtensions/available/useDefInfo/%s", comp()->signature()));
                               TR_UseDefInfo::BitVector::Cursor cursor(info);
 
                               for (cursor.SetToFirstOne(); cursor.Valid(); cursor.SetToNextOne())
