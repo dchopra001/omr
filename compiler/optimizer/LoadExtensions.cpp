@@ -73,7 +73,7 @@ int32_t TR_LoadExtensions::perform()
 
       optimizer()->setUseDefInfo(NULL);
 
-      TR_UseDefInfo* useDefInfo = new (comp()->allocator()) TR_UseDefInfo(comp(), comp()->getFlowGraph(), optimizer(), false, false, false, true, true);
+      /*TR_UseDefInfo* useDefInfo = new (comp()->allocator()) TR_UseDefInfo(comp(), comp()->getFlowGraph(), optimizer(), false, false, false, true, true);
 
       if (useDefInfo->infoIsValid())
          {
@@ -82,7 +82,7 @@ int32_t TR_LoadExtensions::perform()
       else
          {
          delete useDefInfo;
-         }
+         }*/
       }
 
    TR::StackMemoryRegion stackMemoryRegion(*trMemory());
