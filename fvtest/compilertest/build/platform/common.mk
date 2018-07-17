@@ -25,11 +25,18 @@
 # HOST and TARGET files
 #
 
+targetBits="--64"
+ifneq (,$(SPEC))
+    ifeq (,$(findstring -64,$(SPEC)))
+        targetBits="--32"
+    endif
+endif
+
 #
 # Try and guess platform if user didn't give it
 #
 ifeq (,$(PLATFORM))
-    PLATFORM:=$(shell $(SHELL) $(JIT_SCRIPT_DIR)/guess-platform.sh)
+    PLATFORM:=$(shell $(SHELL) $(JIT_SCRIPT_DIR)/guess-platform.sh $(targetBits))
     $(warning PLATFORM not set. Guessing '$(PLATFORM)')
 endif
 
