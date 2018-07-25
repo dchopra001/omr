@@ -1204,6 +1204,27 @@ OMR::Z::TreeEvaluator::fbits2iEvaluator(TR::Node * node, TR::CodeGenerator * cg)
    TR::Register * targetReg;
    TR::Register * sourceReg;
    TR::Instruction * cursor = NULL;
+
+
+   TR::MemoryReference  *tempmemref;
+
+   if (node->getFirstChild()->getRegister() == NULL &&
+      node->getFirstChild()->getOpCode().isLoadVar() &&
+      node->getFirstChild()->getOpCode().hasSymbolReference() &&
+      (node->getFirstChild()->getReferenceCount() == 1) &&
+      !(node->normalizeNanValues()))
+      {
+      targetReg = cg->allocateRegister();
+      tempmemref = generateS390MemoryReference(node->getFirstChild(), cg);
+      targetReg = genericLoadHelper<32, 32, MemReg>(node, cg, tempmemref, NULL, false, true);
+      tempmemref->decNodeReferenceCounts(cg);
+
+      node->setRegister(targetReg);
+      cg->decReferenceCount(node->getFirstChild());
+      return targetReg;
+      }
+
+
    TR::RegisterDependencyConditions * deps = new (cg->trHeapMemory()) TR::RegisterDependencyConditions(0, 2, cg);
    //Disable FPE Version For Now Due To Performance Reasons
    bool disabled = true;
