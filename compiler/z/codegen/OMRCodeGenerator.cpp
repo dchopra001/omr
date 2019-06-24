@@ -490,7 +490,7 @@ OMR::Z::CodeGenerator::CodeGenerator()
       }
    self()->setSupportsArrayCmp();
    self()->setSupportsArrayCmpSign();
-   if (!comp->compileRelocatableCode())
+   if (!(comp->compileRelocatableCode() || comp->isOutOfProcessCompilation()))
       {
       self()->setSupportsArrayTranslateTRxx();
       }
@@ -618,7 +618,7 @@ OMR::Z::CodeGenerator::CodeGenerator()
       self()->setVRFRegisterIterator(new (self()->trHeapMemory()) TR::RegisterIterator(self()->machine(), TR::RealRegister::FirstVRF, TR::RealRegister::LastVRF));
       }
 
-   if (!comp->getOption(TR_DisableTLHPrefetch) && !comp->compileRelocatableCode())
+   if (!comp->getOption(TR_DisableTLHPrefetch) && !(comp->compileRelocatableCode() || comp->isOutOfProcessCompilation()))
       {
       self()->setEnableTLHPrefetching();
       }
@@ -2117,7 +2117,7 @@ OMR::Z::CodeGenerator::supportsMergingGuards()
    {
    return self()->getSupportsVirtualGuardNOPing() &&
           self()->comp()->performVirtualGuardNOPing() &&
-          !self()->comp()->compileRelocatableCode();
+          !(self()->comp()->compileRelocatableCode() || self()->comp()->isOutOfProcessCompilation());
    }
 
 bool
@@ -2322,7 +2322,7 @@ OMR::Z::CodeGenerator::doBinaryEncoding()
 
    // Padding for JIT Entry Point
    //
-   if (!self()->comp()->compileRelocatableCode())
+   if (!(self()->comp()->compileRelocatableCode() || self()->comp()->isOutOfProcessCompilation()))
       {
       data.estimate += 256;
       }
@@ -2463,7 +2463,7 @@ OMR::Z::CodeGenerator::doBinaryEncoding()
    static char *disableAlignJITEP = feGetEnv("TR_DisableAlignJITEP");
 
    // Adjust the binary buffer cursor with appropriate padding.
-   if (!disableAlignJITEP && !self()->comp()->compileRelocatableCode() && self()->allowSplitWarmAndColdBlocks())
+   if (!disableAlignJITEP && !(self()->comp()->compileRelocatableCode() || self()->comp()->isOutOfProcessCompilation()) && self()->allowSplitWarmAndColdBlocks())
       {
       int32_t alignedBase = 256 - self()->getPreprologueOffset();
       int32_t padBase = ( 256 + alignedBase - ((intptrj_t)temp) % 256) % 256;

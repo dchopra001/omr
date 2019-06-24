@@ -2477,12 +2477,24 @@ TR::S390RILInstruction::generateBinaryEncoding()
                }
 #endif
             (*(int32_t *) (cursor + 2)) = boi(i2);
+            // DCDCDCDC
+            TR::Symbol *sym = getSymbolReference()->getSymbol();
+            TR::ResolvedMethodSymbol *resolvedMethodSym = sym->getResolvedMethodSymbol();
+            TR_ResolvedMethod *resolvedMethod = resolvedMethodSym ? resolvedMethodSym->getResolvedMethod() : 0;
+            traceMsg(comp, "DCDCDCDC trying to add relocations cursor=%x\n", cursor);
             if (getSymbolReference() && getSymbolReference()->getSymbol()->castToMethodSymbol()->isHelper())
                {
                AOTcgDiag1(comp, "add TR_HelperAddress cursor=%x\n", cursor);
                cg()->addProjectSpecializedRelocation(cursor+2, (uint8_t*) getSymbolReference(), NULL, TR_HelperAddress,
                      __FILE__, __LINE__, getNode());
                }
+            else if (resolvedMethod) // DCDCDCDC
+               {
+               AOTcgDiag1(comp, "DCDCDCDC add TR_MethodCallAddress cursor=%x\n", cursor); 
+               traceMsg(comp, "DCDCDCDC add TR_MethodCallAddress cursor=%x\n", cursor);
+               cg()->addProjectSpecializedRelocation(cursor+2, (uint8_t *)getSymbolReference(), NULL, TR_MethodCallAddress, __FILE__, __LINE__, getNode());
+               }
+            traceMsg(comp, "DCDCDCDC DONE trying to add relocations cursor=%x\n", cursor);
             }
          }
       cursor += getOpCode().getInstructionLength();
