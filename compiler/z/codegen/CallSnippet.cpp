@@ -382,7 +382,7 @@ TR_RuntimeHelper TR::S390CallSnippet::getInterpretedDispatchHelper(
       isJitInduceOSRCall = true;
       }
 
-   if (methodSymRef->isUnresolved() || ((comp->compileRelocatableCode() || comp->isOutOfProcessCompilation()) && !comp->getOption(TR_UseSymbolValidationManager)))
+   if (methodSymRef->isUnresolved() || (comp->compileRelocatableCode() && !comp->getOption(TR_UseSymbolValidationManager)))
       {
       TR_ASSERT(!isJitInduceOSRCall || !(comp->compileRelocatableCode() || comp->isOutOfProcessCompilation()), "calling jitInduceOSR is not supported yet under AOT\n");
       if (methodSymbol->isSpecial())
@@ -441,7 +441,7 @@ TR_Debug::print(TR::FILE *pOutFile, TR::S390CallSnippet * snippet)
 
    bufferPos = printS390ArgumentsFlush(pOutFile, callNode, bufferPos, snippet->getSizeOfArguments());
 
-   if (methodSymRef->isUnresolved() || ((_comp->compileRelocatableCode() || _comp->isOutOfProcessCompilation()) && !_comp->getOption(TR_UseSymbolValidationManager)))
+   if (methodSymRef->isUnresolved() || (_comp->compileRelocatableCode() && !_comp->getOption(TR_UseSymbolValidationManager)))
       {
       if (methodSymbol->isSpecial())
          {
