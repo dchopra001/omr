@@ -2490,7 +2490,7 @@ TR::S390RILInstruction::generateBinaryEncoding()
                {
                AOTcgDiag1(comp, "Adding TR_MethodCallAddress cursor=%x\n", cursor);
                traceMsg(comp, "Adding TR_MethodCallAddress cursor=%x\n", cursor);
-               cg()->addProjectSpecializedRelocation(cursor+2, (uint8_t *)getSymbolReference(), NULL, TR_MethodCallAddress, __FILE__, __LINE__, getNode());
+               cg()->addProjectSpecializedRelocation(cursor+2, (uint8_t *)getSymbolReference()->getMethodAddress(), NULL, TR_MethodCallAddress, __FILE__, __LINE__, getNode());
                }
             }
          }
