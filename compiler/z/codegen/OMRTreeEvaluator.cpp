@@ -6422,7 +6422,7 @@ OMR::Z::TreeEvaluator::checkAndSetMemRefDataSnippetRelocationType(TR::Node * nod
       int32_t reloType;
       if (node->getSymbol()->isDebugCounter())
          reloType = TR_DebugCounter;
-      else if (node->getSymbol()->isConst())
+      else if (node->getSymbol()->isConst() && !cg->comp()->isOutOfProcessCompilation())
          reloType = TR_ConstantPool;
       else if (node->getSymbol()->isClassObject())
          {
@@ -9679,7 +9679,7 @@ OMR::Z::TreeEvaluator::loadaddrEvaluator(TR::Node * node, TR::CodeGenerator * cg
                int32_t reloType;
                if (node->getSymbol()->isDebugCounter())
                   reloType = TR_DebugCounter;
-               else if (node->getSymbol()->isConst())
+               else if (node->getSymbol()->isConst() && !comp->isOutOfProcessCompilation())
                   reloType = TR_ConstantPool;
                else if (node->getSymbol()->isClassObject())
                   reloType = TR_ClassAddress;
