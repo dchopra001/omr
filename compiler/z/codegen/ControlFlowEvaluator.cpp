@@ -132,7 +132,8 @@ virtualGuardHelper(TR::Node * node, TR::CodeGenerator * cg)
    TR_VirtualGuard * virtualGuard = comp->findVirtualGuardInfo(node);
 
    TR_VirtualGuardSite * site = NULL;
-   if (comp->compileRelocatableCode() || comp->isOutOfProcessCompilation())
+   if (comp->compileRelocatableCode())// || comp->isOutOfProcessCompilation())
+//   if (cg->needClassAndMethodPointerRelocations())
       {
       site = (TR_VirtualGuardSite *)comp->addAOTNOPSite();
       TR_AOTGuardSite *aotSite = (TR_AOTGuardSite *)site;
