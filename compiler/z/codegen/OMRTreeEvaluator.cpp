@@ -6415,7 +6415,7 @@ OMR::Z::TreeEvaluator::checkAndSetMemRefDataSnippetRelocationType(TR::Node * nod
    TR::Symbol * symbol = symRef->getSymbol();
    bool isStatic = symbol->isStatic() && !symRef->isUnresolved();
 
-   if (cg->comp()->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation())
+   if (cg->comp()->compileRelocatableCode())// || cg->comp()->isOutOfProcessCompilation())
       {
       int32_t reloType;
       if (node->getSymbol()->isDebugCounter())
@@ -9672,7 +9672,7 @@ OMR::Z::TreeEvaluator::loadaddrEvaluator(TR::Node * node, TR::CodeGenerator * cg
                cursor = generateRILInstruction(cg, TR::InstOpCode::LARL, node, targetRegister, node->getSymbolReference(),
                                                 reinterpret_cast<void*>(sym->getStaticAddress()),  NULL);
                }
-            else if (comp->compileRelocatableCode() || comp->isOutOfProcessCompilation())
+            else if (comp->compileRelocatableCode() || (comp->isOutOfProcessCompilation() && !node->getSymbol()->isClassObject() /* && !node->getSymbol()->isConst()*/ ))
                {
                int32_t reloType;
                if (node->getSymbol()->isDebugCounter())
