@@ -12015,9 +12015,9 @@ OMR::Z::TreeEvaluator::iRegStoreEvaluator(TR::Node * node, TR::CodeGenerator * c
    bool needsLGFR = node->needsSignExtension();
    bool useLGHI = false;
 
-   if (needsLGFR && child->getOpCode().isLoadConst() &&
-       (getIntegralValue(child)<MAX_IMMEDIATE_VAL) &&
-       (getIntegralValue(child)>MIN_IMMEDIATE_VAL) &&
+   if (needsLGFR && value->getOpCode().isLoadConst() &&
+       (getIntegralValue(value)<MAX_IMMEDIATE_VAL) &&
+       (getIntegralValue(value)>MIN_IMMEDIATE_VAL) &&
        !(cg->comp()->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation()))
       {
       needsLGFR = false;
