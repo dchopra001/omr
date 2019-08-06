@@ -563,8 +563,11 @@ TR::S390JNICallDataSnippet::emitSnippetBody()
 
        AOTcgDiag1(comp, "add TR_AbsoluteMethodAddress cursor=%x\n", cursor);
        cg()->addRelocation(new (cg()->trHeapMemory()) TR::LabelAbsoluteRelocation(cursor, _returnFromJNICallLabel));
-       cg()->addExternalRelocation(new (cg()->trHeapMemory()) TR::ExternalRelocation(cursor, NULL, TR_AbsoluteMethodAddress, cg()),
+//       if (!comp->isOutOfProcessCompilation())
+//       {
+          cg()->addExternalRelocation(new (cg()->trHeapMemory()) TR::ExternalRelocation(cursor, NULL, TR_AbsoluteMethodAddress, cg()),
              __FILE__, __LINE__, getNode());
+//       }
 
        cursor += TR::Compiler->om.sizeofReferenceAddress();
        // _savedPC
@@ -609,13 +612,13 @@ TR::S390JNICallDataSnippet::emitSnippetBody()
          TR_ASSERT(0,"JNI relocation not supported.");
          }
 
-      if (!cg()->comp()->isOutOfProcessCompilation())
-         {
+//      if (!cg()->comp()->isOutOfProcessCompilation())
+//         {
          cg()->addExternalRelocation(new (cg()->trHeapMemory()) TR::ExternalRelocation(cursor, (uint8_t *) callNode->getSymbolReference(),
                callNode  ? (uint8_t *)(intptr_t)callNode->getInlinedSiteIndex() : (uint8_t *)-1,
                      (TR_ExternalRelocationTargetKind) reloType, cg()),
                      __FILE__, __LINE__, callNode);
-         }
+//         }
 
       cursor += TR::Compiler->om.sizeofReferenceAddress();
 #endif
