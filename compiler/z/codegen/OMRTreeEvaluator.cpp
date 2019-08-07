@@ -4804,6 +4804,7 @@ bool relativeLongLoadHelper(TR::CodeGenerator * cg, TR::Node * node, TR::Registe
 
    TR::SymbolReference * symRef = node->getSymbolReference();
    TR::Symbol * symbol = symRef->getSymbol();
+   traceMsg(cg->comp(), "DCDCDCDC - inside relativeLongLoadHelper\n");
 
    if (TR::Compiler->target.cpu.getSupportsArch(TR::CPU::z10) &&
        symbol->isStatic() &&
@@ -4813,6 +4814,7 @@ bool relativeLongLoadHelper(TR::CodeGenerator * cg, TR::Node * node, TR::Registe
        !cg->getConditionalMovesEvaluationMode()
       )
       {
+   traceMsg(cg->comp(), "DCDCDCDC - shouldn't be here...\n");
       uintptrj_t staticAddress = (uintptrj_t)symRef->getSymbol()->getStaticSymbol()->getStaticAddress();
 
       TR::InstOpCode::Mnemonic op = TR::InstOpCode::BAD;
@@ -4861,6 +4863,7 @@ bool relativeLongLoadHelper(TR::CodeGenerator * cg, TR::Node * node, TR::Registe
          return true;
          }
       }
+   traceMsg(cg->comp(), "DCDCDCDC - exiting relativeLongLoadHelper\n");
 
    return false;
    }
@@ -5023,6 +5026,7 @@ aloadHelper(TR::Node * node, TR::CodeGenerator * cg, TR::MemoryReference * tempM
            && !(cg->comp()->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation()) // AOT Class Address are loaded via snippets already
            && cg->wantToPatchClassPointer((TR_OpaqueClassBlock*)symbol->getStaticSymbol()->getStaticAddress(), node))
       {
+      traceMsg(comp, "DCDCDCDC - 1\n");
       if (tempMR == NULL)
          {
          uintptrj_t value = (uintptrj_t) symbol->getStaticSymbol()->getStaticAddress();
@@ -5039,6 +5043,7 @@ aloadHelper(TR::Node * node, TR::CodeGenerator * cg, TR::MemoryReference * tempM
       }
    else if ((symRef->isLiteralPoolAddress()) && (node->getOpCodeValue() == TR::aload))
       {
+      traceMsg(comp, "DCDCDCDC - 2\n");
       // the imm. operand will be patched when the actual address of
       // the literal pool is known
       generateLoadLiteralPoolAddress(cg, node, tempReg);
@@ -5047,6 +5052,7 @@ aloadHelper(TR::Node * node, TR::CodeGenerator * cg, TR::MemoryReference * tempM
             && (node->getOpCodeValue() == TR::aloadi)
             && constNode->isClassUnloadingConst())
       {
+      traceMsg(comp, "DCDCDCDC - 3\n");
       uintptrj_t value = constNode->getAddress();
       TR::Instruction *unloadableConstInstr = generateRILInstruction(cg, TR::InstOpCode::LARL, node, tempReg, reinterpret_cast<void*>(value));
       TR_OpaqueClassBlock* unloadableClass = NULL;
@@ -5062,6 +5068,7 @@ aloadHelper(TR::Node * node, TR::CodeGenerator * cg, TR::MemoryReference * tempM
          }
       else
          {
+      traceMsg(comp, "DCDCDCDC - 4\n");
          unloadableClass = (TR_OpaqueClassBlock *) value;
          if (cg->fe()->isUnloadAssumptionRequired(unloadableClass, comp->getCurrentMethod()) ||
              cg->profiledPointersRequireRelocation())
@@ -5072,11 +5079,14 @@ aloadHelper(TR::Node * node, TR::CodeGenerator * cg, TR::MemoryReference * tempM
       }
    else if(relativeLongLoadHelper(cg, node, tempReg))
       {
+      traceMsg(comp, "DCDCDCDC - 5\n");
       }
    else
       {
+      traceMsg(comp, "DCDCDCDC - 6\n");
       if (tempMR == NULL)
          {
+         traceMsg(comp, "DCDCDCDC - creating memRef and setting relo type\n");
          tempMR = generateS390MemoryReference(node, cg);
          TR::TreeEvaluator::checkAndSetMemRefDataSnippetRelocationType(node, cg, tempMR);
          }
@@ -5085,6 +5095,7 @@ aloadHelper(TR::Node * node, TR::CodeGenerator * cg, TR::MemoryReference * tempM
       //
       if (cg->isCompressedClassPointerOfObjectHeader(node) && !dynLitPoolLoad)
          {
+      traceMsg(comp, "DCDCDCDC - 7\n");
          if (node->getSymbolReference() == comp->getSymRefTab()->findVftSymbolRef())
             TR::TreeEvaluator::genLoadForObjectHeadersMasked(cg, node, tempReg, tempMR, NULL);
          else
@@ -6417,23 +6428,39 @@ OMR::Z::TreeEvaluator::checkAndSetMemRefDataSnippetRelocationType(TR::Node * nod
    TR::Symbol * symbol = symRef->getSymbol();
    bool isStatic = symbol->isStatic() && !symRef->isUnresolved();
 
-   if (cg->comp()->compileRelocatableCode())// || cg->comp()->isOutOfProcessCompilation())
+   if (cg->comp()->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation())
       {
       int32_t reloType;
       if (node->getSymbol()->isDebugCounter())
+      {
+	 traceMsg(cg->comp(), "DCDCDCDC - debug counter\n");
          reloType = TR_DebugCounter;
+      }
       else if (node->getSymbol()->isConst() && !cg->comp()->isOutOfProcessCompilation())
+      {
+	 traceMsg(cg->comp(), "DCDCDCDC -  const\n");
          reloType = TR_ConstantPool;
+      }
       else if (node->getSymbol()->isClassObject())
          {
+	 traceMsg(cg->comp(), "DCDCDCDC - class object\n");
          reloType = TR_ClassAddress;
          }
       else if (node->getSymbol()->isMethod())
+      {
+	 traceMsg(cg->comp(), "DCDCDCDC - method\n");
          reloType = TR_MethodObject;
+      }
       else if (isStatic && !node->getSymbol()->isNotDataAddress())
+      {
+	 traceMsg(cg->comp(), "DCDCDCDC - Data Address\n");
          reloType = TR_DataAddress;
+      }
       else
+      {
+	 traceMsg(cg->comp(), "DCDCDCDC - 0 relo type!\n");
          reloType = 0;
+      }
 
       if (reloType != 0)
          {
