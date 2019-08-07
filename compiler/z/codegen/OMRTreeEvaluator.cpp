@@ -6382,7 +6382,7 @@ OMR::Z::TreeEvaluator::checkAndSetMemRefDataSnippetRelocationType(TR::Node * nod
    TR::Symbol * symbol = symRef->getSymbol();
    bool isStatic = symbol->isStatic() && !symRef->isUnresolved();
 
-   if (cg->comp()->compileRelocatableCode())
+   if (cg->comp()->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation())
       {
       int32_t reloType;
       if (node->getSymbol()->isDebugCounter())
