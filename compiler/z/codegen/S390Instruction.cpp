@@ -2477,11 +2477,20 @@ TR::S390RILInstruction::generateBinaryEncoding()
                }
 #endif
             (*(int32_t *) (cursor + 2)) = boi(i2);
+            TR::Symbol *sym = getSymbolReference()->getSymbol();
+            TR::ResolvedMethodSymbol *resolvedMethodSym = sym->getResolvedMethodSymbol();
+            TR_ResolvedMethod *resolvedMethod = resolvedMethodSym ? resolvedMethodSym->getResolvedMethod() : 0;
             if (getSymbolReference() && getSymbolReference()->getSymbol()->castToMethodSymbol()->isHelper())
                {
                AOTcgDiag1(comp, "add TR_HelperAddress cursor=%x\n", cursor);
                cg()->addProjectSpecializedRelocation(cursor+2, (uint8_t*) getSymbolReference(), NULL, TR_HelperAddress,
                      __FILE__, __LINE__, getNode());
+               }
+            else if (resolvedMethod)
+               {
+               AOTcgDiag1(comp, "Adding TR_MethodCallAddress cursor=%x\n", cursor);
+               traceMsg(comp, "Adding TR_MethodCallAddress cursor=%x\n", cursor);
+               cg()->addProjectSpecializedRelocation(cursor+2, (uint8_t *)getSymbolReference(), NULL, TR_MethodCallAddress, __FILE__, __LINE__, getNode());
                }
             }
          }
