@@ -159,7 +159,7 @@ generateLoad32BitConstant(TR::CodeGenerator* cg, TR::Node* node, int32_t value, 
       {
       if (sym)
          {
-         if (cg->comp()->compileRelocatableCode() && sym->isDebugCounter())
+         if ((cg->comp()->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation()) && sym->isDebugCounter())
             return generateRegLitRefInstruction(cg, TR::InstOpCode::L, node, targetRegister, value, TR_DebugCounter, dependencies, cursor, literalPoolRegister);
          if (sym->isStatic() && !sym->isClassObject() && !sym->isNotDataAddress())
             return generateRegLitRefInstruction(cg, TR::InstOpCode::L, node, targetRegister, value, TR_DataAddress, dependencies, cursor, literalPoolRegister);
@@ -192,26 +192,26 @@ genLoadLongConstant(TR::CodeGenerator * cg, TR::Node * node, int64_t value, TR::
    if (node->getOpCode().hasSymbolReference())
       sym = node->getSymbol();
 
-   if (cg->comp()->compileRelocatableCode() && sym && sym->isDebugCounter())
+   if ((cg->comp()->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation()) && sym && sym->isDebugCounter())
       {
       cursor = generateRegLitRefInstruction(cg, TR::InstOpCode::LG, node, targetRegister, value, TR_DebugCounter, cond, cursor, base);
       }
-   else if (comp->compileRelocatableCode() && sym && (sym->isCountForRecompile()))
+   else if ((comp->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation()) && sym && (sym->isCountForRecompile()))
       {
       TR::Instruction * temp = cursor;
       cursor = generateRegLitRefInstruction(cg, TR::InstOpCode::LG, node, targetRegister, value, TR_GlobalValue, cond, cursor, base);
       }
-   else if (comp->compileRelocatableCode() && sym && (sym->isRecompilationCounter()))
+   else if ((comp->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation()) && sym && (sym->isRecompilationCounter()))
       {
       TR::Instruction * temp = cursor;
       cursor = generateRegLitRefInstruction(cg, TR::InstOpCode::LG, node, targetRegister, value, TR_BodyInfoAddress, cond, cursor, base);
       }
-   else if (comp->compileRelocatableCode() && sym && sym->isStatic() && !sym->isClassObject() && !sym->isNotDataAddress())
+   else if ((comp->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation()) && sym && sym->isStatic() && !sym->isClassObject() && !sym->isNotDataAddress())
       {
       TR::Instruction * temp = cursor;
       cursor = generateRegLitRefInstruction(cg, TR::InstOpCode::LG, node, targetRegister, value, TR_DataAddress, cond, cursor, base);
       }
-   else if (value >= MIN_IMMEDIATE_VAL && value <= MAX_IMMEDIATE_VAL && !(comp->compileRelocatableCode()))
+   else if (value >= MIN_IMMEDIATE_VAL && value <= MAX_IMMEDIATE_VAL && !(comp->compileRelocatableCode() || comp->isOutOfProcessCompilation()))
       {
       cursor = generateRIInstruction(cg, TR::InstOpCode::LGHI, node, targetRegister, value, cursor);
       }
@@ -234,7 +234,7 @@ genLoadLongConstant(TR::CodeGenerator * cg, TR::Node * node, int64_t value, TR::
    //disable LARL for AOT for easier relocation
    //cannot safely generate LARL for longs on 31-bit
    else if (cg->canUseRelativeLongInstructions(value) &&
-            TR::Compiler->target.is64Bit() && !(comp->compileRelocatableCode()))
+            TR::Compiler->target.is64Bit() && !(comp->compileRelocatableCode() || comp->isOutOfProcessCompilation()))
       {
       cursor = generateRILInstruction(cg, TR::InstOpCode::LARL, node, targetRegister, reinterpret_cast<void*>(value), cursor);
       }
@@ -281,7 +281,7 @@ genLoadAddressConstant(TR::CodeGenerator * cg, TR::Node * node, uintptrj_t value
    if (node && node->getOpCode().hasSymbolReference())
       symbol = node->getSymbol();
    bool isPICCandidate = symbol ? symbol->isStatic() && symbol->isClassObject() : false;
-   if (isPICCandidate && !cg->comp()->compileRelocatableCode()
+   if (isPICCandidate && !(cg->comp()->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation())
        && cg->wantToPatchClassPointer((TR_OpaqueClassBlock*)value, node))
       return genLoadAddressConstantInSnippet(cg, node, (uintptrj_t)value, targetRegister, cursor, cond, base, true);
 
@@ -4042,7 +4042,7 @@ containsValidOpCodesForConditionalMoves(TR::Node* node, TR::CodeGenerator* cg)
 static TR::Block *
 checkForCandidateBlockForConditionalLoadAndStores(TR::Node* node, TR::CodeGenerator* cg, TR::Block * currentBlock, bool *isLoadOrStoreOnConditionCandidateFallthrough)
    {
-   if (cg->comp()->compileRelocatableCode())
+   if ((cg->comp()->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation()))
       return NULL;
 
    if (node->getBranchDestination() == NULL)
@@ -4808,7 +4808,7 @@ bool relativeLongLoadHelper(TR::CodeGenerator * cg, TR::Node * node, TR::Registe
    if (TR::Compiler->target.cpu.getSupportsArch(TR::CPU::z10) &&
        symbol->isStatic() &&
        !symRef->isUnresolved() &&
-       !cg->comp()->compileRelocatableCode() &&
+       !(cg->comp()->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation()) &&
        !node->getOpCode().isIndirect() &&
        !cg->getConditionalMovesEvaluationMode()
       )
@@ -5018,7 +5018,7 @@ aloadHelper(TR::Node * node, TR::CodeGenerator * cg, TR::MemoryReference * tempM
    bool isStatic = symbol->isStatic() && !symRef->isUnresolved();
    bool isPICCandidate = isStatic && symbol->isClassObject();
    if (isPICCandidate
-           && !cg->comp()->compileRelocatableCode() // AOT Class Address are loaded via snippets already
+           && !(cg->comp()->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation()) // AOT Class Address are loaded via snippets already
            && cg->wantToPatchClassPointer((TR_OpaqueClassBlock*)symbol->getStaticSymbol()->getStaticAddress(), node))
       {
       if (tempMR == NULL)
@@ -5151,7 +5151,7 @@ bool relativeLongStoreHelper(TR::CodeGenerator * cg, TR::Node * node, TR::Node *
    if (TR::Compiler->target.cpu.getSupportsArch(TR::CPU::z10) &&
        symbol->isStatic() &&
        !symRef->isUnresolved() &&
-       !cg->comp()->compileRelocatableCode() &&
+       !(cg->comp()->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation()) &&
        !node->getOpCode().isIndirect() &&
        !cg->getConditionalMovesEvaluationMode()
       )
@@ -6415,7 +6415,7 @@ OMR::Z::TreeEvaluator::checkAndSetMemRefDataSnippetRelocationType(TR::Node * nod
    TR::Symbol * symbol = symRef->getSymbol();
    bool isStatic = symbol->isStatic() && !symRef->isUnresolved();
 
-   if (cg->comp()->compileRelocatableCode())
+   if (cg->comp()->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation())
       {
       int32_t reloType;
       if (node->getSymbol()->isDebugCounter())
@@ -9661,7 +9661,7 @@ OMR::Z::TreeEvaluator::loadaddrEvaluator(TR::Node * node, TR::CodeGenerator * cg
          TR::Instruction * cursor;
 
          // A static symbol may either contain a static address or require a register (i.e. DLT MetaData)
-         if (comp->getOption(TR_EnableHCR) && node->getSymbol()->isMethod() && !cg->comp()->compileRelocatableCode()) // AOT Class Address are loaded via snippets already
+         if (comp->getOption(TR_EnableHCR) && node->getSymbol()->isMethod() && !(cg->comp()->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation())) // AOT Class Address are loaded via snippets already
             cursor = genLoadAddressConstantInSnippet(cg, node, (uintptrj_t) node->getSymbol()->getStaticSymbol()->getStaticAddress(), targetRegister, NULL, NULL, NULL, true);
          else
             {
@@ -9672,7 +9672,7 @@ OMR::Z::TreeEvaluator::loadaddrEvaluator(TR::Node * node, TR::CodeGenerator * cg
                cursor = generateRILInstruction(cg, TR::InstOpCode::LARL, node, targetRegister, node->getSymbolReference(),
                                                 reinterpret_cast<void*>(sym->getStaticAddress()),  NULL);
                }
-            else if (comp->compileRelocatableCode())
+            else if (comp->compileRelocatableCode() || comp->isOutOfProcessCompilation())
                {
                int32_t reloType;
                if (node->getSymbol()->isDebugCounter())
@@ -12014,9 +12014,9 @@ OMR::Z::TreeEvaluator::iRegStoreEvaluator(TR::Node * node, TR::CodeGenerator * c
    bool useLGHI = false;
 
    if (needsLGFR && value->getOpCode().isLoadConst() &&
-       getIntegralValue(value) < MAX_IMMEDIATE_VAL &&
-       getIntegralValue(value) > MIN_IMMEDIATE_VAL &&
-       !cg->comp()->compileRelocatableCode())
+       (getIntegralValue(value) < MAX_IMMEDIATE_VAL) &&
+       (getIntegralValue(value) > MIN_IMMEDIATE_VAL) &&
+       !(cg->comp()->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation()))
       {
       needsLGFR = false;
       if (TR::Compiler->target.is64Bit())
