@@ -3108,7 +3108,7 @@ OMR::Power::CodeGenerator::loadAddressConstantFixed(
    if (tempReg == NULL)
       {
       // lis trgReg, upper 16-bits
-      cursor = firstInstruction = generateTrg1ImmInstruction(self(), TR::InstOpCode::lis, node, trgReg, isAOT? 0: (value>>48) , cursor);
+      cursor = firstInstruction = generateTrg1ImmInstruction(self(), TR::InstOpCode::lis, node, trgReg, isAOT? 0: (value>>48) , cursor);  // DCDCDCDC --> we need to do something about the isAOT check here... even though it may be functionally alright to leave as is
 
       // ori trgReg, trgReg, next 16-bits
       cursor = generateTrg1Src1ImmInstruction(self(), TR::InstOpCode::ori, node, trgReg, trgReg, isAOT ? 0 : ((value>>32) & 0x0000ffff), cursor);

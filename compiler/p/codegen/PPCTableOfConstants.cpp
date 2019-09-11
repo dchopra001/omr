@@ -510,7 +510,8 @@ int32_t TR_PPCTableOfConstants::lookUp(TR::SymbolReference *symRef, TR::CodeGene
       else
          {
 #ifdef J9_PROJECT_SPECIFIC
-         myTag = (intptrj_t)cg->fej9()->getClassLoader(myClass) ;
+         //myTag = (intptrj_t)((comp->getOwningMethodSymbol(symRef->getOwningMethodIndex())->getResolvedMethod())->getClassLoader()); //(intptrj_t)cg->fej9()->getClassLoader(myClass) ;
+	 myTag = (intptrj_t)(cg->fej9())->getClassLoader(myClass) ;
 #endif
          }
 
