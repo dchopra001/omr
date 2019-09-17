@@ -560,7 +560,8 @@ int32_t TR_PPCTableOfConstants::allocateChunk(uint32_t numEntries, TR::CodeGener
    {
    TR_PPCTableOfConstants *tocManagement = toPPCTableOfConstants(TR_PersistentMemory::getNonThreadSafePersistentInfo()->getPersistentTOC());
 
-   if (tocManagement == NULL || cg->comp()->compileRelocatableCode() || (cg->comp()->getOption(TR_EnableHCR) && cg->comp()->getOption(TR_HCRPatchClassPointers)))
+   // DCDCDCDC --> OMR doesn't know about JITServer.. so we may need a more sophisticated front end query here instead of the isOutOfProcessCompilation check
+   if (tocManagement == NULL || cg->comp()->isOutOfProcessCompilation() || cg->comp()->compileRelocatableCode() || (cg->comp()->getOption(TR_EnableHCR) && cg->comp()->getOption(TR_HCRPatchClassPointers)))
       return PTOC_FULL_INDEX;
 
    if (grabMonitor)

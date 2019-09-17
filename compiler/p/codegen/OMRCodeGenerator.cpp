@@ -3259,7 +3259,7 @@ OMR::Power::CodeGenerator::addMetaDataFor64BitFixedLoadLabelAddressIntoReg(
       TR::Instruction **q)
    {
 
-   if (!self()->comp()->compileRelocatableCode())
+   if (!self()->comp()->compileRelocatableCode() && !self()->comp()->isOutOfProcessCompilation())
       {
       self()->addRelocation(new (self()->trHeapMemory()) TR::PPCPairedLabelAbsoluteRelocation(q[0], q[1], q[2], q[3], label));
       }
@@ -3287,7 +3287,7 @@ OMR::Power::CodeGenerator::fixedLoadLabelAddressIntoReg(
       {
       int32_t offset = TR_PPCTableOfConstants::allocateChunk(1, self());
 
-      if (offset != PTOC_FULL_INDEX)
+      if (offset != PTOC_FULL_INDEX && !comp->isOutOfProcessCompilation())  // DCDCDCDC This JITServer chekc is probably unnecessary because allcateChunk returns FULL_INDEX when JITServer is on
          {
          offset *= 8;
          self()->itemTracking(offset, label);
