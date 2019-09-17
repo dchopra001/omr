@@ -1674,7 +1674,7 @@ void OMR::Power::MemoryReference::accessStaticItem(TR::Node *node, TR::SymbolRef
          else if (isStaticField && !ref->isUnresolved()) // DCDCDCDC --> we probably need this...
             {
             TR::Register *reg = _baseRegister = cg->allocateRegister();
-            loadAddressConstant(cg, nodeForSymbol, 1, reg, NULL, false, TR_DataAddress);
+            loadAddressConstant(cg, nodeForSymbol, 1, reg, NULL, false, TR_DataAddress, true);
             return;
             }
          else if (isClass && !ref->isUnresolved() && comp->getOption(TR_UseSymbolValidationManager)) // DCDC SVM.. so I'll ignore this for now
