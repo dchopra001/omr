@@ -3091,7 +3091,7 @@ OMR::Power::CodeGenerator::loadAddressConstantFixed(
       bool doAOTRelocation)
    {
    TR::Compilation *comp = self()->comp();
-   bool isAOT = comp->compileRelocatableCode();
+   bool isAOT = comp->compileRelocatableCode() || comp->isOutOfProcessCompilation();
 
    if (TR::Compiler->target.is32Bit())
       {
@@ -3107,16 +3107,20 @@ OMR::Power::CodeGenerator::loadAddressConstantFixed(
 
    if (tempReg == NULL)
       {
+      traceMsg(comp, "DCDCDCDC - value: %d, lis, value>>48: %d\n", value, value>>48);
       // lis trgReg, upper 16-bits
       cursor = firstInstruction = generateTrg1ImmInstruction(self(), TR::InstOpCode::lis, node, trgReg, isAOT? 0: (value>>48) , cursor);  // DCDCDCDC --> we need to do something about the isAOT check here... even though it may be functionally alright to leave as is
 
+      traceMsg(comp, "DCDCDCDC - value: %d, ori,(value>>32) & 0x0000ffff : %d\n", value, (value>>32) & 0x0000ffff);
       // ori trgReg, trgReg, next 16-bits
       cursor = generateTrg1Src1ImmInstruction(self(), TR::InstOpCode::ori, node, trgReg, trgReg, isAOT ? 0 : ((value>>32) & 0x0000ffff), cursor);
       // shiftli trgReg, trgReg, 32
       cursor = generateTrg1Src1Imm2Instruction(self(), TR::InstOpCode::rldicr, node, trgReg, trgReg, 32, CONSTANT64(0xFFFFFFFF00000000), cursor);
       // oris trgReg, trgReg, next 16-bits
+      traceMsg(comp, "DCDCDCDC - value: %d, oris, (value>>16) & 0x0000ffff): %d\n", value, (value>>16) & 0x0000ffff);
       cursor = generateTrg1Src1ImmInstruction(self(), TR::InstOpCode::oris, node, trgReg, trgReg, isAOT ? 0 : ((value>>16) & 0x0000ffff), cursor);
       // ori trgReg, trgReg, last 16-bits
+      traceMsg(comp, "DCDCDCDC - value: %d, ori, (value & 0x0000ffff): %d\n", value, (value & 0x0000ffff));
       cursor = generateTrg1Src1ImmInstruction(self(), TR::InstOpCode::ori, node, trgReg, trgReg, isAOT ? 0 : (value & 0x0000ffff), cursor);
       }
    else
