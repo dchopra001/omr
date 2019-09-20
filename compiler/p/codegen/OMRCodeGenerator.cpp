@@ -3091,7 +3091,7 @@ OMR::Power::CodeGenerator::loadAddressConstantFixed(
       bool doAOTRelocation)
    {
    TR::Compilation *comp = self()->comp();
-   bool isAOT = comp->compileRelocatableCode();
+   bool isAOT = comp->compileRelocatableCode() || comp->isOutOfProcessCompilation();
 
    if (TR::Compiler->target.is32Bit())
       {
