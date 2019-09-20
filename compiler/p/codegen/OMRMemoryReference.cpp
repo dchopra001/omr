@@ -1578,11 +1578,11 @@ void OMR::Power::MemoryReference::accessStaticItem(TR::Node *node, TR::SymbolRef
       int32_t  tocIndex = cg->comp()->isOutOfProcessCompilation() ? PTOC_FULL_INDEX : symbol->getStaticSymbol()->getTOCIndex(); // DCDCDCDC --> we eventually wanna change this to check if disableTOC option is enabled.
 
       
-//      /* don't want to trash node prematurely by the code for handling other symbols */
-//      TR::Node *nodeForSymbol = node;
-//      if (!nodeForSymbol)
-//         nodeForSymbol = cg->getCurrentEvaluationTreeTop()->getNode();
-/*
+      /* don't want to trash node prematurely by the code for handling other symbols */
+      TR::Node *nodeForSymbol = node;
+      if (!nodeForSymbol)
+         nodeForSymbol = cg->getCurrentEvaluationTreeTop()->getNode();
+
       if (symbol->isDebugCounter() && cg->comp()->compileRelocatableCode())
          {
          TR::Register *reg = _baseRegister = cg->allocateRegister();
@@ -1630,10 +1630,10 @@ void OMR::Power::MemoryReference::accessStaticItem(TR::Node *node, TR::SymbolRef
          {
          TR_ASSERT_FATAL(!comp->getOption(TR_UseSymbolValidationManager) || ref->isUnresolved(), "SVM relocation unhandled");
          }
-*/
+
 ///////////////////////////// OLD VERSION OF ABOVE /////////////////////////////////////////////
 
-      if (cg->comp()->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation())
+/*      if (cg->comp()->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation())
          {
          // don't want to trash node prematurely by the code for handling other symbols
          TR::Node *nodeForSymbol = node;
@@ -1673,6 +1673,7 @@ void OMR::Power::MemoryReference::accessStaticItem(TR::Node *node, TR::SymbolRef
             }
          else if (isStaticField && !ref->isUnresolved()) // DCDCDCDC --> we probably need this...
             {
+	    traceMsg(cg->comp(), "DCDCDCDC adding TR_DataAddress Relo\n");
             TR::Register *reg = _baseRegister = cg->allocateRegister();
             loadAddressConstant(cg, nodeForSymbol, 1, reg, NULL, false, TR_DataAddress, true);
             return;
@@ -1688,6 +1689,7 @@ void OMR::Power::MemoryReference::accessStaticItem(TR::Node *node, TR::SymbolRef
             TR_ASSERT_FATAL(!comp->getOption(TR_UseSymbolValidationManager) || ref->isUnresolved(), "SVM relocation unhandled");
             }
          }
+	 */
 
       // TODO: find a better default uninitialized value --- 0x80000000
       //       Deciding particular static references through TOC or not
