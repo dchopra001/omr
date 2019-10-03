@@ -215,7 +215,6 @@ OMR::Power::MemoryReference::MemoryReference(TR::Node *node, TR::SymbolReference
    {
    TR::Symbol *symbol = symRef->getSymbol();
 
-
    if (symbol->isStatic())
       {
       self()->accessStaticItem(node, symRef, false, cg);
@@ -1601,13 +1600,13 @@ void OMR::Power::MemoryReference::accessStaticItem(TR::Node *node, TR::SymbolRef
 	 loadAddressConstant(cg, nodeForSymbol, 1, reg, NULL, false, TR_BodyInfoAddressLoad, true);
 	 return;
          }
-      else if (symbol->isCompiledMethod() && cg->needRelocationsForStatics())
+      else if (symbol->isCompiledMethod() && (cg->comp()->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation()))  // cg->needRelocationsForStatics())
          {
          TR::Register *reg = _baseRegister = cg->allocateRegister();
 	 loadAddressConstant(cg, nodeForSymbol, 1, reg, NULL, false, TR_RamMethodSequence, true);
 	 return;
          }
-      else if (symbol->isStartPC() && cg->needRelocationsForStatics())
+      else if (symbol->isStartPC() && (cg->comp()->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation()))// && cg->needRelocationsForStatics())
          {
          // use inSnippet, as the relocation mechanism is already set up there
          TR::Register *reg = _baseRegister = cg->allocateRegister();
@@ -1628,7 +1627,7 @@ void OMR::Power::MemoryReference::accessStaticItem(TR::Node *node, TR::SymbolRef
          }
       else
          {
-         TR_ASSERT_FATAL(!comp->getOption(TR_UseSymbolValidationManager) || ref->isUnresolved(), "SVM relocation unhandled");
+         TR_ASSERT_FATAL(!comp->getOption(TR_UseSymbolValidationManager) || ref->isUnresolved(), "SVM relocation unhandled"); // Is this query even correct? We use non-SVM relocations here...
          }
 
 ///////////////////////////// OLD VERSION OF ABOVE /////////////////////////////////////////////
@@ -1673,7 +1672,6 @@ void OMR::Power::MemoryReference::accessStaticItem(TR::Node *node, TR::SymbolRef
             }
          else if (isStaticField && !ref->isUnresolved()) // DCDCDCDC --> we probably need this...
             {
-	    traceMsg(cg->comp(), "DCDCDCDC adding TR_DataAddress Relo\n");
             TR::Register *reg = _baseRegister = cg->allocateRegister();
             loadAddressConstant(cg, nodeForSymbol, 1, reg, NULL, false, TR_DataAddress, true);
             return;
@@ -1713,6 +1711,8 @@ void OMR::Power::MemoryReference::accessStaticItem(TR::Node *node, TR::SymbolRef
          cg->addSnippet(snippet);
          }
 
+
+      TR_ASSERT_FATAL(!cg->comp()->isOutOfProcessCompilation(), "We cannot generate TOC code when compiling on the JITServer\n");
       // TODO: Improve the code sequence for cases when we know pTOC is full.
       TR::MemoryReference *tocRef = new (cg->trHeapMemory()) TR::MemoryReference(cg->getTOCBaseRegister(), 0, sizeof(uintptrj_t), cg);
       tocRef->setSymbol(symbol, cg);
@@ -1727,6 +1727,7 @@ void OMR::Power::MemoryReference::accessStaticItem(TR::Node *node, TR::SymbolRef
       TR::Register *addrReg = cg->allocateRegister();
       TR::InstOpCode::Mnemonic loadOp = TR::InstOpCode::ld;
 
+      
       generateTrg1MemInstruction(cg, loadOp, node==NULL?topNode:node, addrReg, tocRef);
       if (snippet != NULL)
          cg->stopUsingRegister(tocRef->getModBase());
