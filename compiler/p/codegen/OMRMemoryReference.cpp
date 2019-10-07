@@ -1651,6 +1651,8 @@ void OMR::Power::MemoryReference::accessStaticItem(TR::Node *node, TR::SymbolRef
          cg->addSnippet(snippet);
          }
 
+/*      TR_ASSERT_FATAL(!cg->comp()->isOutOfProcessCompilation(), "We cannot generate TOC code when compiling on the JITServer. symbol->isDebugCounter():%d, symbol->isCountForRecompile():%d, symbol->isRecompilationCounter():%d, symbol->isCompiledMethod():%d, symbol->isStartPC():%d, isStaticField:%d, !ref->isUnresolved():%d, isClass:%d, !ref->isUnresolved():%d, comp->getOption(TR_UseSymbolValidationManager):%d, cg->needClassAndMethodPointerRelocations():%d\n",symbol->isDebugCounter(),symbol->isCountForRecompile(),symbol->isRecompilationCounter(),symbol->isCompiledMethod(),symbol->isStartPC(),isStaticField,!ref->isUnresolved(),isClass,!ref->isUnresolved(), comp->getOption(TR_UseSymbolValidationManager), cg->needClassAndMethodPointerRelocations());
+ */
       // TODO: Improve the code sequence for cases when we know pTOC is full.
       TR::MemoryReference *tocRef = new (cg->trHeapMemory()) TR::MemoryReference(cg->getTOCBaseRegister(), 0, sizeof(uintptrj_t), cg);
       tocRef->setSymbol(symbol, cg);
