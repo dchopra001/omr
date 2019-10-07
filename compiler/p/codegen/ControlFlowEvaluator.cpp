@@ -2995,6 +2995,7 @@ static void lookupScheme1(TR::Node *node, bool unbalanced, bool fromTableEval, T
    TR::Register *cndRegister = cg->allocateRegister(TR_CCR);
    TR::RegisterDependencyConditions *acond, *bcond, *conditions = new (cg->trHeapMemory()) TR::RegisterDependencyConditions(3, 3, cg->trMemory());
    TR::Node     *secondChild = node->getSecondChild();
+   traceMsg(cg->comp(), "DCDCDCDC - lookupScheme1\n");
 
    TR::LabelSymbol *toDefaultLabel = NULL;
    if (two_reg)
@@ -3070,6 +3071,7 @@ static void lookupScheme2(TR::Node *node, bool unbalanced, bool fromTableEval, T
    TR::Register *selector = cg->evaluate(node->getFirstChild());
    TR::Register *cndRegister = cg->allocateRegister(TR_CCR);
    TR::Register *valRegister = NULL;
+   traceMsg(cg->comp(), "DCDCDCDC - lookupScheme2\n");
 
    bool         isInt64 = false;
    bool two_reg = (TR::Compiler->target.is32Bit()) && isInt64;
@@ -3206,6 +3208,7 @@ static void lookupScheme3(TR::Node *node, bool unbalanced, TR::CodeGenerator *cg
    int32_t     *dataTable = NULL;
    int64_t     *dataTable64 = NULL;
    bool        isInt64 = false;
+   traceMsg(cg->comp(), "DCDCDCDC - lookupScheme3\n");
    TR::Compilation *comp = cg->comp();
    bool        two_reg = isInt64 && TR::Compiler->target.is32Bit();
    if (isInt64)
@@ -3287,9 +3290,11 @@ static void lookupScheme3(TR::Node *node, bool unbalanced, TR::CodeGenerator *cg
 	 }
       else
 	 {
-         if (cg->comp()->compileRelocatableCode())
+         traceMsg(cg->comp(), "DCDCDCDC - PTOC is full, but compileRelocatableCode query will also fail in lookupScheme3\n");
+         if (cg->comp()->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation())
             {
-            loadAddressConstant(cg, node, address, addrRegister);
+            loadAddressConstant(cg, node, address, addrRegister, NULL, false, -1, true);
+	    // loadAddressConstant(cg, node, address, addrRegister, NULL, false, -1, cg->comp()->isOutOfProcessCompilation());
             generateTrg1MemInstruction(cg, TR::InstOpCode::lwz, node, dataRegister, new (cg->trHeapMemory()) TR::MemoryReference(addrRegister, 0, 4, cg));
             }
          else
@@ -3499,6 +3504,7 @@ static void lookupScheme4(TR::Node *node, TR::CodeGenerator *cg)
    int32_t *dataTable = NULL;
    int64_t *dataTable64 = NULL;
    intptrj_t  address = NULL;
+   traceMsg(cg->comp(), "DCDCDCDC - lookupScheme4\n");
    if (isInt64)
       {
       dataTableSize *= 2;
@@ -3588,7 +3594,7 @@ static void lookupScheme4(TR::Node *node, TR::CodeGenerator *cg)
 	 }
       else
 	 {
-         loadAddressConstant(cg, node, address, addrRegister);
+         loadAddressConstant(cg, node, address, addrRegister, NULL, false, -1, cg->comp()->isOutOfProcessCompilation());
 	 }
       }
    else
