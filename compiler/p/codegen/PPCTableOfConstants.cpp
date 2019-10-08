@@ -175,12 +175,14 @@ static int32_t hashValue(int8_t *key, int32_t len)
    return value;
    }
 
+
+// DCDC -- disable TOC here...?
 int32_t
 TR_PPCTableOfConstants::lookUp(int32_t val, struct TR_tocHashEntry *tmplate, int32_t *offsetInSlot, TR::CodeGenerator *cg)
    {
    TR::Compilation *comp = cg->comp();
 
-   if (comp->compileRelocatableCode() || (comp->getOption(TR_EnableHCR) && comp->getOption(TR_HCRPatchClassPointers)) || comp->getOption(TR_MimicInterpreterFrameShape))
+   if (comp->compileRelocatableCode() || comp->isOutOfProcessCompilation() || (comp->getOption(TR_EnableHCR) && comp->getOption(TR_HCRPatchClassPointers)) || comp->getOption(TR_MimicInterpreterFrameShape))
       return PTOC_FULL_INDEX;
 
    if (comp->isOptServer())
@@ -383,7 +385,7 @@ TR_PPCTableOfConstants::lookUp(int32_t val, struct TR_tocHashEntry *tmplate, int
    tocManagement->getTOCMonitor()->exit();
    return rval;
    }
-
+// DCDC - here as well
 int32_t TR_PPCTableOfConstants::lookUp(int8_t *name, int32_t len, bool isAddr, intptrj_t keyTag, TR::CodeGenerator *cg)
    {
    TR::Compilation *comp = cg->comp();
@@ -391,7 +393,7 @@ int32_t TR_PPCTableOfConstants::lookUp(int8_t *name, int32_t len, bool isAddr, i
    struct TR_tocHashEntry localEntry;
    int32_t                val, offsetInSlot;
 
-   if (comp->compileRelocatableCode() || (comp->getOption(TR_EnableHCR) && comp->getOption(TR_HCRPatchClassPointers)))
+   if (comp->compileRelocatableCode() || comp->isOutOfProcessCompilation() || (comp->getOption(TR_EnableHCR) && comp->getOption(TR_HCRPatchClassPointers)))
       return PTOC_FULL_INDEX;
 
    if (comp->isOptServer())
@@ -430,6 +432,9 @@ int32_t TR_PPCTableOfConstants::lookUp(double dvalue, TR::CodeGenerator *cg)
          return PTOC_FULL_INDEX;
       }
 
+   if (comp->isOutOfProcessCompilation())
+      return PTOC_FULL_INDEX;
+
    struct TR_tocHashEntry localEntry;
    int32_t                offsetInSlot, val, tindex;
    int8_t                 seed[8] = {'U', 'p', 'E', 'd', 'G', 'a', 'M', 'e'};
@@ -455,6 +460,9 @@ int32_t TR_PPCTableOfConstants::lookUp(float fvalue, TR::CodeGenerator *cg)
       if (comp->getMethodHotness() < warm || comp->isDLT() || comp->isProfilingCompilation() || cg->getCurrentBlock()->isCold())
          return PTOC_FULL_INDEX;
       }
+
+   if (comp->isOutOfProcessCompilation())
+      return PTOC_FULL_INDEX;
 
    struct TR_tocHashEntry localEntry;
    intptrj_t              entryVal = 0;
@@ -483,6 +491,9 @@ int32_t TR_PPCTableOfConstants::lookUp(TR::SymbolReference *symRef, TR::CodeGene
       if (comp->getMethodHotness() < warm || comp->isDLT() || comp->isProfilingCompilation() || cg->getCurrentBlock()->isCold())
          return PTOC_FULL_INDEX;
       }
+
+   if (comp->isOutOfProcessCompilation())
+      return PTOC_FULL_INDEX;
 
    TR::StaticSymbol *sym = symRef->getSymbol()->castToStaticSymbol();
    intptrj_t        addr = (intptrj_t)sym->getStaticAddress();
@@ -559,7 +570,7 @@ int32_t TR_PPCTableOfConstants::allocateChunk(uint32_t numEntries, TR::CodeGener
    {
    TR_PPCTableOfConstants *tocManagement = toPPCTableOfConstants(TR_PersistentMemory::getNonThreadSafePersistentInfo()->getPersistentTOC());
 
-   if (tocManagement == NULL || cg->comp()->compileRelocatableCode() || (cg->comp()->getOption(TR_EnableHCR) && cg->comp()->getOption(TR_HCRPatchClassPointers)))
+   if (tocManagement == NULL || cg->comp()->isOutOfProcessCompilation() || cg->comp()->compileRelocatableCode() || (cg->comp()->getOption(TR_EnableHCR) && cg->comp()->getOption(TR_HCRPatchClassPointers)))
       return PTOC_FULL_INDEX;
 
    if (grabMonitor)
