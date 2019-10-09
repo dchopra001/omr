@@ -482,7 +482,7 @@ public:
    bool                   canCauseGC();
    bool                   isGCSafePointWithSymRef();
 
-   bool                   dontEliminateStores(bool isForLocalDeadStore = false);
+   virtual bool           dontEliminateStores(bool isForLocalDeadStore = false);
 
    bool                   isNotCollected();
    bool                   computeIsInternalPointer();
