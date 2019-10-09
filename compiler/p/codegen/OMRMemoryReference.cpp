@@ -215,7 +215,6 @@ OMR::Power::MemoryReference::MemoryReference(TR::Node *node, TR::SymbolReference
    {
    TR::Symbol *symbol = symRef->getSymbol();
 
-
    if (symbol->isStatic())
       {
       self()->accessStaticItem(node, symRef, false, cg);
@@ -1600,13 +1599,13 @@ void OMR::Power::MemoryReference::accessStaticItem(TR::Node *node, TR::SymbolRef
          loadAddressConstant(cg, nodeForSymbol, 1, reg, NULL, false, TR_BodyInfoAddressLoad, true);
          return;
          }
-      else if (symbol->isCompiledMethod() && cg->needRelocationsForStatics())
+      else if (symbol->isCompiledMethod() && (cg->comp()->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation()))
          {
          TR::Register *reg = _baseRegister = cg->allocateRegister();
          loadAddressConstant(cg, nodeForSymbol, 1, reg, NULL, false, TR_RamMethodSequence, true);
          return;
          }
-      else if (symbol->isStartPC() && cg->needRelocationsForStatics())
+      else if (symbol->isStartPC() && (cg->comp()->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation()))
          {
          // use inSnippet, as the relocation mechanism is already set up there
          TR::Register *reg = _baseRegister = cg->allocateRegister();
