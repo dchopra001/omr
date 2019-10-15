@@ -490,7 +490,7 @@ OMR::Z::CodeGenerator::CodeGenerator()
       }
    self()->setSupportsArrayCmp();
    self()->setSupportsArrayCmpSign();
-   if (!comp->compileRelocatableCode())
+   if (!(comp->compileRelocatableCode() || comp->isOutOfProcessCompilation()))
       {
       self()->setSupportsArrayTranslateTRxx();
       }
