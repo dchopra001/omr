@@ -9672,14 +9672,14 @@ OMR::Z::TreeEvaluator::loadaddrEvaluator(TR::Node * node, TR::CodeGenerator * cg
                cursor = generateRILInstruction(cg, TR::InstOpCode::LARL, node, targetRegister, node->getSymbolReference(),
                                                 reinterpret_cast<void*>(sym->getStaticAddress()),  NULL);
                }
-            else if (comp->compileRelocatableCode())
+            else if (comp->compileRelocatableCode() || comp->isOutOfProcessCompilation())
                {
                int32_t reloType;
                if (node->getSymbol()->isDebugCounter())
                   reloType = TR_DebugCounter;
                else if (node->getSymbol()->isConst())
                   reloType = TR_ConstantPool;
-               else if (node->getSymbol()->isClassObject())
+               else if (node->getSymbol()->isClassObject() && cg->needClassAndMethodPointerRelocations())
                   reloType = TR_ClassAddress;
                else if (node->getSymbol()->isMethod())
                   reloType = TR_MethodObject;
