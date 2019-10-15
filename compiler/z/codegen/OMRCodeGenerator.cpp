@@ -618,7 +618,7 @@ OMR::Z::CodeGenerator::CodeGenerator()
       self()->setVRFRegisterIterator(new (self()->trHeapMemory()) TR::RegisterIterator(self()->machine(), TR::RealRegister::FirstVRF, TR::RealRegister::LastVRF));
       }
 
-   if (!comp->getOption(TR_DisableTLHPrefetch) && !comp->compileRelocatableCode())
+   if (!comp->getOption(TR_DisableTLHPrefetch) && !(comp->compileRelocatableCode() || comp->isOutOfProcessCompilation()))
       {
       self()->setEnableTLHPrefetching();
       }
@@ -2117,7 +2117,7 @@ OMR::Z::CodeGenerator::supportsMergingGuards()
    {
    return self()->getSupportsVirtualGuardNOPing() &&
           self()->comp()->performVirtualGuardNOPing() &&
-          !self()->comp()->compileRelocatableCode();
+          !(self()->comp()->compileRelocatableCode() || self()->comp()->isOutOfProcessCompilation());
    }
 
 bool
@@ -2322,7 +2322,7 @@ OMR::Z::CodeGenerator::doBinaryEncoding()
 
    // Padding for JIT Entry Point
    //
-   if (!self()->comp()->compileRelocatableCode())
+   if (!(self()->comp()->compileRelocatableCode() || self()->comp()->isOutOfProcessCompilation()))
       {
       data.estimate += 256;
       }
