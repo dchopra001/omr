@@ -1587,19 +1587,19 @@ void OMR::Power::MemoryReference::accessStaticItem(TR::Node *node, TR::SymbolRef
          loadAddressConstant(cg, true, nodeForSymbol, 1, reg, NULL, false, TR_DebugCounter);
          return;
          }
-      if (symbol->isCountForRecompile() && cg->needRelocationsForPersistentInfoData())
+      if (symbol->isCountForRecompile() && (cg->needRelocationsForPersistentInfoData() || cg->needRelocationsForStatics()))
          {
          TR::Register *reg = _baseRegister = cg->allocateRegister();
          loadAddressConstant(cg, true, nodeForSymbol, TR_CountForRecompile, reg, NULL, false, TR_GlobalValue);
          return;
          }
-      else if (symbol->isRecompilationCounter() && cg->needRelocationsForBodyInfoData())
+      else if (symbol->isRecompilationCounter() && (cg->needRelocationsForBodyInfoData() || cg->needRelocationsForStatics()))
          {
          TR::Register *reg = _baseRegister = cg->allocateRegister();
          loadAddressConstant(cg, true, nodeForSymbol, 1, reg, NULL, false, TR_BodyInfoAddressLoad);
          return;
          }
-      else if (symbol->isCompiledMethod() && cg->needRelocationsForCurrentMethodPC())
+      else if (symbol->isCompiledMethod() && (cg->comp()->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation()))
          {
          TR::Register *reg = _baseRegister = cg->allocateRegister();
          loadAddressConstant(cg, true, nodeForSymbol, 1, reg, NULL, false, TR_RamMethodSequence);
@@ -1685,22 +1685,22 @@ void OMR::Power::MemoryReference::accessStaticItem(TR::Node *node, TR::SymbolRef
          loadAddressConstant(cg, comp->compileRelocatableCode(), nodeForSymbol, 1, reg, NULL, false, TR_DebugCounter);
          return;
          }
-      else if ((refIsUnresolved || cg->needRelocationsForPersistentInfoData()) && symbol->isCountForRecompile())
+      else if ((refIsUnresolved || cg->needRelocationsForPersistentInfoData() || cg->needRelocationsForStatics()) && symbol->isCountForRecompile())
          {
          TR::Register *reg = _baseRegister = cg->allocateRegister();
-         loadAddressConstant(cg, cg->needRelocationsForPersistentInfoData(), nodeForSymbol, TR_CountForRecompile, reg, NULL, false, TR_GlobalValue);
+         loadAddressConstant(cg, cg->needRelocationsForPersistentInfoData() || cg->needRelocationsForStatics(), nodeForSymbol, TR_CountForRecompile, reg, NULL, false, TR_GlobalValue);
          return;
          }
-      else if ((refIsUnresolved || cg->needRelocationsForBodyInfoData()) && symbol->isRecompilationCounter())
+      else if ((refIsUnresolved || cg->needRelocationsForBodyInfoData() || cg->needRelocationsForStatics()) && symbol->isRecompilationCounter())
          {
          TR::Register *reg = _baseRegister = cg->allocateRegister();
-         loadAddressConstant(cg, cg->needRelocationsForBodyInfoData(), nodeForSymbol, 0, reg, NULL, false, TR_BodyInfoAddressLoad);
+         loadAddressConstant(cg, cg->needRelocationsForBodyInfoData() || cg->needRelocationsForStatics(), nodeForSymbol, 0, reg, NULL, false, TR_BodyInfoAddressLoad);
          return;
          }
-      else if (symbol->isCompiledMethod() && (ref->isUnresolved() || cg->needRelocationsForCurrentMethodPC()))
+      else if (symbol->isCompiledMethod() && (ref->isUnresolved() || comp->compileRelocatableCode() || comp->isOutOfProcessCompilation()))
          {
          TR::Register *reg = _baseRegister = cg->allocateRegister();
-         loadAddressConstant(cg, cg->needRelocationsForCurrentMethodPC(), nodeForSymbol, 0, reg, NULL, false, TR_RamMethodSequence);
+         loadAddressConstant(cg, comp->compileRelocatableCode() || comp->isOutOfProcessCompilation(), nodeForSymbol, 0, reg, NULL, false, TR_RamMethodSequence);
          return;
          }
       else if (symbol->isStartPC() && (ref->isUnresolved() || cg->needRelocationsForCurrentMethodPC()))
