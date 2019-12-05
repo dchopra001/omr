@@ -1587,38 +1587,38 @@ void OMR::Power::MemoryReference::accessStaticItem(TR::Node *node, TR::SymbolRef
          loadAddressConstant(cg, true, nodeForSymbol, 1, reg, NULL, false, TR_DebugCounter);
          return;
          }
-      if (symbol->isCountForRecompile() && cg->needRelocationsForPersistentInfoData())
+      if (symbol->isCountForRecompile() && (cg->needRelocationsForPersistentInfoData() || cg->comp()->compileRelocatableCode()))
          {
          TR::Register *reg = _baseRegister = cg->allocateRegister();
          loadAddressConstant(cg, true, nodeForSymbol, TR_CountForRecompile, reg, NULL, false, TR_GlobalValue);
          return;
          }
-      else if (symbol->isRecompilationCounter() && cg->needRelocationsForBodyInfoData())
+      else if (symbol->isRecompilationCounter() && (cg->needRelocationsForBodyInfoData() || cg->comp()->compileRelocatableCode()))
          {
          TR::Register *reg = _baseRegister = cg->allocateRegister();
          loadAddressConstant(cg, true, nodeForSymbol, 1, reg, NULL, false, TR_BodyInfoAddressLoad);
          return;
          }
-      else if (symbol->isCompiledMethod() && cg->needRelocationsForCurrentMethodPC())
+      else if (symbol->isCompiledMethod() && (cg->needRelocationsForCurrentMethodPC() || cg->comp()->compileRelocatableCode()))
          {
          TR::Register *reg = _baseRegister = cg->allocateRegister();
          loadAddressConstant(cg, true, nodeForSymbol, 1, reg, NULL, false, TR_RamMethodSequence);
          return;
          }
-      else if (symbol->isStartPC() && cg->needRelocationsForCurrentMethodPC())
+      else if (symbol->isStartPC() && (cg->needRelocationsForCurrentMethodPC() || cg->comp()->compileRelocatableCode()))
          {
          // use inSnippet, as the relocation mechanism is already set up there
          TR::Register *reg = _baseRegister = cg->allocateRegister();
          loadAddressConstantInSnippet(cg, nodeForSymbol, 0, reg, NULL, TR::InstOpCode::addi, false, NULL);
          return;
          }
-      else if (isStaticField && !ref->isUnresolved() && cg->needRelocationsForStatics())
+      else if (isStaticField && !ref->isUnresolved() && (cg->needRelocationsForStatics() || cg->comp()->compileRelocatableCode()))
          {
          TR::Register *reg = _baseRegister = cg->allocateRegister();
          loadAddressConstant(cg, true, nodeForSymbol, 1, reg, NULL, false, TR_DataAddress);
          return;
          }
-      else if (isClass && !ref->isUnresolved() && comp->getOption(TR_UseSymbolValidationManager) && cg->needClassAndMethodPointerRelocations())
+      else if (isClass && !ref->isUnresolved() && comp->getOption(TR_UseSymbolValidationManager) && (cg->needClassAndMethodPointerRelocations() || cg->comp()->compileRelocatableCode()))
          {
          TR::Register *reg = _baseRegister = cg->allocateRegister();
          loadAddressConstant(cg, true, nodeForSymbol, (intptrj_t)ref, reg, NULL, false, TR_ClassAddress);
