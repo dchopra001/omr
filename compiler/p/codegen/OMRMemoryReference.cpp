@@ -1612,7 +1612,7 @@ void OMR::Power::MemoryReference::accessStaticItem(TR::Node *node, TR::SymbolRef
          loadAddressConstantInSnippet(cg, nodeForSymbol, 0, reg, NULL, TR::InstOpCode::addi, false, NULL);
          return;
          }
-      else if (isStaticField && !ref->isUnresolved() && (cg->needRelocationsForStatics() || cg->comp()->compileRelocatableCode()))
+      else if (isStaticField && !ref->isUnresolved() && cg->needRelocationsForStatics())
          {
          TR::Register *reg = _baseRegister = cg->allocateRegister();
          loadAddressConstant(cg, true, nodeForSymbol, 1, reg, NULL, false, TR_DataAddress);
