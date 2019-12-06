@@ -1062,6 +1062,36 @@ OMR::CodeGenerator::needRelocationsForCurrentMethodPC()
    }
 
 bool
+OMR::CodeGenerator::needClassAndMethodPointerRelocations()
+   {
+   return self()->comp()->compileRelocatableCode();
+   }
+
+bool
+OMR::CodeGenerator::needRelocationsForStatics()
+   {
+   return self()->comp()->compileRelocatableCode();
+   }
+
+bool
+OMR::CodeGenerator::needRelocationsForBodyInfoData()
+   {
+   return self()->comp()->compileRelocatableCode();
+   }
+
+bool
+OMR::CodeGenerator::needRelocationsForPersistentInfoData()
+   {
+   return self()->comp()->compileRelocatableCode();
+   }
+
+bool
+OMR::CodeGenerator::needRelocationsForHelpers()
+   {
+   return self()->comp()->compileRelocatableCode();
+   }
+
+bool
 OMR::CodeGenerator::isGlobalVRF(TR_GlobalRegisterNumber n)
    {
    return self()->hasGlobalVRF() &&
