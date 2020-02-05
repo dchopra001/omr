@@ -2295,7 +2295,7 @@ OMR::Z::CodeGenerator::doBinaryEncoding()
 
    // Padding for JIT Entry Point
    //
-   if (!(self()->comp()->compileRelocatableCode() || self()->comp()->isOutOfProcessCompilation()))
+   if (!(self()->comp()->compileRelocatableCode()))
       {
       data.estimate += 256;
       }
