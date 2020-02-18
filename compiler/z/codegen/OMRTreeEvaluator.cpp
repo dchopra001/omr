@@ -196,7 +196,7 @@ genLoadLongConstant(TR::CodeGenerator * cg, TR::Node * node, int64_t value, TR::
       {
       cursor = generateRegLitRefInstruction(cg, TR::InstOpCode::LG, node, targetRegister, value, TR_DebugCounter, cond, cursor, base);
       }
-   else if (cg->needRelocationsForStatics() || cg->needRelocationsForPersistentInfoData() && sym && (sym->isCountForRecompile()))
+   else if ((cg->needRelocationsForStatics() || cg->needRelocationsForPersistentInfoData()) && sym && (sym->isCountForRecompile()))
       {
       TR::Instruction * temp = cursor;
       cursor = generateRegLitRefInstruction(cg, TR::InstOpCode::LG, node, targetRegister, value, TR_GlobalValue, cond, cursor, base);
