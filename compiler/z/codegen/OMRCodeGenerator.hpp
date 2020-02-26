@@ -285,6 +285,8 @@ public:
 
    bool supportsMergingGuards();
 
+   bool allowGuardMerging() { return false; }
+
    bool supportsNonHelper(TR::SymbolReferenceTable::CommonNonhelperSymbol symbol);
 
    bool supportsDirectJNICallsForAOT() { return true;}

@@ -281,7 +281,7 @@ genLoadAddressConstant(TR::CodeGenerator * cg, TR::Node * node, uintptrj_t value
    if (node && node->getOpCode().hasSymbolReference())
       symbol = node->getSymbol();
    bool isPICCandidate = symbol ? symbol->isStatic() && symbol->isClassObject() : false;
-   if (isPICCandidate && !(cg->comp()->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation())
+   if (isPICCandidate && !(cg->comp()->compileRelocatableCode())
        && cg->wantToPatchClassPointer((TR_OpaqueClassBlock*)value, node))
       return genLoadAddressConstantInSnippet(cg, node, (uintptrj_t)value, targetRegister, cursor, cond, base, true);
 
@@ -4010,7 +4010,7 @@ containsValidOpCodesForConditionalMoves(TR::Node* node, TR::CodeGenerator* cg)
 static TR::Block *
 checkForCandidateBlockForConditionalLoadAndStores(TR::Node* node, TR::CodeGenerator* cg, TR::Block * currentBlock, bool *isLoadOrStoreOnConditionCandidateFallthrough)
    {
-   if ((cg->comp()->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation()))
+   if ((cg->comp()->compileRelocatableCode()))
       return NULL;
 
    if (node->getBranchDestination() == NULL)
@@ -4776,7 +4776,7 @@ bool relativeLongLoadHelper(TR::CodeGenerator * cg, TR::Node * node, TR::Registe
    if (cg->comp()->target().cpu.getSupportsArch(TR::CPU::z10) &&
        symbol->isStatic() &&
        !symRef->isUnresolved() &&
-       !(cg->comp()->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation()) &&
+       !(cg->comp()->compileRelocatableCode()) &&
        !node->getOpCode().isIndirect() &&
        !cg->getConditionalMovesEvaluationMode()
       )
@@ -4986,7 +4986,7 @@ aloadHelper(TR::Node * node, TR::CodeGenerator * cg, TR::MemoryReference * tempM
    bool isStatic = symbol->isStatic() && !symRef->isUnresolved();
    bool isPICCandidate = isStatic && symbol->isClassObject();
    if (isPICCandidate
-           && !(cg->comp()->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation()) // AOT Class Address are loaded via snippets already
+           && !(cg->comp()->compileRelocatableCode()) // AOT Class Address are loaded via snippets already
            && cg->wantToPatchClassPointer((TR_OpaqueClassBlock*)symbol->getStaticSymbol()->getStaticAddress(), node))
       {
       if (tempMR == NULL)
@@ -5119,7 +5119,7 @@ bool relativeLongStoreHelper(TR::CodeGenerator * cg, TR::Node * node, TR::Node *
    if (cg->comp()->target().cpu.getSupportsArch(TR::CPU::z10) &&
        symbol->isStatic() &&
        !symRef->isUnresolved() &&
-       !(cg->comp()->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation()) &&
+       !(cg->comp()->compileRelocatableCode()) &&
        !node->getOpCode().isIndirect() &&
        !cg->getConditionalMovesEvaluationMode()
       )
@@ -9540,7 +9540,7 @@ OMR::Z::TreeEvaluator::loadaddrEvaluator(TR::Node * node, TR::CodeGenerator * cg
          TR::Instruction * cursor;
 
          // A static symbol may either contain a static address or require a register (i.e. DLT MetaData)
-         if (comp->getOption(TR_EnableHCR) && node->getSymbol()->isMethod() && !(cg->comp()->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation())) // AOT Class Address are loaded via snippets already
+         if (comp->getOption(TR_EnableHCR) && node->getSymbol()->isMethod() && !(cg->comp()->compileRelocatableCode())) // AOT Class Address are loaded via snippets already
             cursor = genLoadAddressConstantInSnippet(cg, node, (uintptrj_t) node->getSymbol()->getStaticSymbol()->getStaticAddress(), targetRegister, NULL, NULL, NULL, true);
          else
             {
@@ -11890,7 +11890,7 @@ OMR::Z::TreeEvaluator::iRegStoreEvaluator(TR::Node * node, TR::CodeGenerator * c
    if (needsLGFR && value->getOpCode().isLoadConst() &&
        getIntegralValue(value) < MAX_IMMEDIATE_VAL &&
        getIntegralValue(value) > MIN_IMMEDIATE_VAL &&
-       !(cg->comp()->compileRelocatableCode() || cg->comp()->isOutOfProcessCompilation()))
+       !(cg->comp()->compileRelocatableCode()))
       {
       needsLGFR = false;
       if (cg->comp()->target().is64Bit())

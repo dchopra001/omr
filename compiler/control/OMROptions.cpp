@@ -2058,6 +2058,7 @@ OMR::Options::jitLatePostProcess(TR::OptionSet *optionSet, void * jitConfig)
          self()->setOption(TR_DisableEDO);
          self()->setOption(TR_DisableAggressiveRecompilations);
          self()->setOption(TR_EnableHardwareProfileRecompilation, false);
+	 self()->setIsVariableHeapBaseForBarrierRange0(true);  // DCDCDCDC REMOVE FOR REGULAR JIT... THIS IS JUST TO HAMPER THE JIT AS MUCH AS JITSERVER
          OMR::Options::_sampleThreshold = 0;
 
 #ifdef J9_PROJECT_SPECIFIC

@@ -602,7 +602,7 @@ OMR::Z::CodeGenerator::CodeGenerator()
       self()->setVRFRegisterIterator(new (self()->trHeapMemory()) TR::RegisterIterator(self()->machine(), TR::RealRegister::FirstVRF, TR::RealRegister::LastVRF));
       }
 
-   if (!comp->getOption(TR_DisableTLHPrefetch) && !(comp->compileRelocatableCode() || comp->isOutOfProcessCompilation()))
+   if (!comp->getOption(TR_DisableTLHPrefetch) && !(comp->compileRelocatableCode()))
       {
       self()->setEnableTLHPrefetching();
       }
@@ -2091,7 +2091,8 @@ OMR::Z::CodeGenerator::supportsMergingGuards()
    {
    return self()->getSupportsVirtualGuardNOPing() &&
           self()->comp()->performVirtualGuardNOPing() &&
-          !(self()->comp()->compileRelocatableCode() || self()->comp()->isOutOfProcessCompilation());
+	  self()->allowGuardMerging();
+          //!(self()->comp()->compileRelocatableCode() || self()->comp()->isOutOfProcessCompilation());
    }
 
 bool
