@@ -25,6 +25,7 @@
 #include "env/CompilerEnv.hpp"
 #include "il/Node.hpp"
 #include "il/Node_inlines.hpp"
+#include "omrport.h"
 
 const OMR::Z::InstOpCode::OpCodeMetaData OMR::Z::InstOpCode::metadata[NumOpCodes] =
    {
