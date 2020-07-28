@@ -523,7 +523,7 @@ class InstOpCode: public OMR::InstOpCode
        *  \brief
        *      The minimum architecture level set (ALS) which introduced this instruction.
        */
-      CPU::Architecture minimumALS;
+      OMRProcessorArchitecture minimumALS;
 
       /**
        *  \brief
@@ -541,7 +541,7 @@ class InstOpCode: public OMR::InstOpCode
     * \return
     *    The minimum ALS of this instruction.
     */
-   CPU::Architecture getMinimumALS() const
+   OMRProcessorArchitecture getMinimumALS() const
       {
       return metadata[_mnemonic].minimumALS;
       }
