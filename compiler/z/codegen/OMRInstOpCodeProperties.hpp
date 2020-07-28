@@ -10542,7 +10542,7 @@
    /* .opcode[0]   = */ 0xEB,
    /* .opcode[1]   = */ 0x7A,
    /* .format      = */ SIY_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsSignFlag |
@@ -10559,7 +10559,7 @@
    /* .opcode[0]   = */ 0xEB,
    /* .opcode[1]   = */ 0x7E,
    /* .format      = */ SIY_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsSignFlag |
@@ -10576,7 +10576,7 @@
    /* .opcode[0]   = */ 0xEB,
    /* .opcode[1]   = */ 0x6E,
    /* .format      = */ SIY_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsSignFlag |
@@ -10593,7 +10593,7 @@
    /* .opcode[0]   = */ 0xEB,
    /* .opcode[1]   = */ 0x6A,
    /* .format      = */ SIY_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsSignFlag |
@@ -10610,7 +10610,7 @@
    /* .opcode[0]   = */ 0xC6,
    /* .opcode[1]   = */ 0x0C,
    /* .format      = */ RILb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is32To64Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_SetsCC |
@@ -10627,7 +10627,7 @@
    /* .opcode[0]   = */ 0xC6,
    /* .opcode[1]   = */ 0x04,
    /* .format      = */ RILb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_SetsCC |
@@ -10643,7 +10643,7 @@
    /* .opcode[0]   = */ 0xE5,
    /* .opcode[1]   = */ 0x58,
    /* .format      = */ SIL_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_SetsCC |
@@ -10658,7 +10658,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0xFC,
    /* .format      = */ RIS_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_BranchOp
@@ -10671,7 +10671,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0x7C,
    /* .format      = */ RIEc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsCompare |
 
@@ -10688,7 +10688,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0x70,
    /* .format      = */ RIEa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_Trap
@@ -10701,7 +10701,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0xE4,
    /* .format      = */ RRS_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_BranchOp
@@ -10714,7 +10714,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0x64,
    /* .format      = */ RIEb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsCompare |
 
@@ -10731,7 +10731,7 @@
    /* .opcode[0]   = */ 0xC6,
    /* .opcode[1]   = */ 0x08,
    /* .format      = */ RILb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_SetsCC |
@@ -10748,7 +10748,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0x60,
    /* .format      = */ RRFc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_Trap
@@ -10761,7 +10761,7 @@
    /* .opcode[0]   = */ 0xE5,
    /* .opcode[1]   = */ 0x54,
    /* .format      = */ SIL_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_SetsCC |
@@ -10776,7 +10776,7 @@
    /* .opcode[0]   = */ 0xC6,
    /* .opcode[1]   = */ 0x05,
    /* .format      = */ RILb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_SetsCC |
@@ -10792,7 +10792,7 @@
    /* .opcode[0]   = */ 0xE5,
    /* .opcode[1]   = */ 0x5C,
    /* .format      = */ SIL_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_SetsCC |
@@ -10807,7 +10807,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0xFE,
    /* .format      = */ RIS_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_BranchOp
@@ -10820,7 +10820,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0x7E,
    /* .format      = */ RIEc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_IsCompare |
 
@@ -10837,7 +10837,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0x72,
    /* .format      = */ RIEa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_Trap
@@ -10850,7 +10850,7 @@
    /* .opcode[0]   = */ 0xE5,
    /* .opcode[1]   = */ 0x5D,
    /* .format      = */ SIL_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_SetsCC |
@@ -10865,7 +10865,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0x73,
    /* .format      = */ RIEa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_Trap
@@ -10878,7 +10878,7 @@
    /* .opcode[0]   = */ 0xC6,
    /* .opcode[1]   = */ 0x0E,
    /* .format      = */ RILb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_SetsCC |
@@ -10895,7 +10895,7 @@
    /* .opcode[0]   = */ 0xC6,
    /* .opcode[1]   = */ 0x06,
    /* .format      = */ RILb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_SetsCC |
@@ -10912,7 +10912,7 @@
    /* .opcode[0]   = */ 0xE5,
    /* .opcode[1]   = */ 0x59,
    /* .format      = */ SIL_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_SetsCC |
@@ -10927,7 +10927,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0xFD,
    /* .format      = */ RIS_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_BranchOp
@@ -10940,7 +10940,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0x7D,
    /* .format      = */ RIEc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsCompare |
 
@@ -10957,7 +10957,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0x71,
    /* .format      = */ RIEa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_Trap
@@ -10970,7 +10970,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0xE5,
    /* .format      = */ RRS_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_BranchOp
@@ -10983,7 +10983,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0x65,
    /* .format      = */ RIEb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsCompare |
 
@@ -11000,7 +11000,7 @@
    /* .opcode[0]   = */ 0xC6,
    /* .opcode[1]   = */ 0x0A,
    /* .format      = */ RILb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_SetsCC |
@@ -11017,7 +11017,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0x61,
    /* .format      = */ RRFc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_Trap
@@ -11030,7 +11030,7 @@
    /* .opcode[0]   = */ 0xE5,
    /* .opcode[1]   = */ 0x55,
    /* .format      = */ SIL_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_SetsCC |
@@ -11045,7 +11045,7 @@
    /* .opcode[0]   = */ 0xC6,
    /* .opcode[1]   = */ 0x07,
    /* .format      = */ RILb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_SetsCC |
@@ -11062,7 +11062,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0xFF,
    /* .format      = */ RIS_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_BranchOp
@@ -11075,7 +11075,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0x7F,
    /* .format      = */ RIEc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_IsCompare |
 
@@ -11092,7 +11092,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0xF7,
    /* .format      = */ RRS_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_BranchOp
@@ -11105,7 +11105,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0x77,
    /* .format      = */ RIEb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_IsCompare |
 
@@ -11122,7 +11122,7 @@
    /* .opcode[0]   = */ 0xC6,
    /* .opcode[1]   = */ 0x0F,
    /* .format      = */ RILb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_SetsCC |
@@ -11139,7 +11139,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0x73,
    /* .format      = */ RRFc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_Trap
@@ -11152,7 +11152,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0xF6,
    /* .format      = */ RRS_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_BranchOp
@@ -11165,7 +11165,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0x76,
    /* .format      = */ RIEb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_IsCompare |
 
@@ -11182,7 +11182,7 @@
    /* .opcode[0]   = */ 0xC6,
    /* .opcode[1]   = */ 0x0D,
    /* .format      = */ RILb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_SetsCC |
@@ -11199,7 +11199,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0x72,
    /* .format      = */ RRFc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_Trap
@@ -11212,7 +11212,7 @@
    /* .opcode[0]   = */ 0xEB,
    /* .opcode[1]   = */ 0x4C,
    /* .format      = */ RSYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_None
    },
 
@@ -11223,7 +11223,7 @@
    /* .opcode[0]   = */ 0xC6,
    /* .opcode[1]   = */ 0x00,
    /* .format      = */ RILb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_IsStore |
                         S390OpProp_SetsCC
    },
@@ -11235,7 +11235,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0x75,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_LongDispSupported |
                         S390OpProp_SetsOperand1
    },
@@ -11247,7 +11247,7 @@
    /* .opcode[0]   = */ 0xC4,
    /* .opcode[1]   = */ 0x0C,
    /* .format      = */ RILb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsLoad |
                         S390OpProp_SetsOperand1
@@ -11260,7 +11260,7 @@
    /* .opcode[0]   = */ 0xC4,
    /* .opcode[1]   = */ 0x08,
    /* .format      = */ RILb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsLoad |
                         S390OpProp_SetsOperand1
@@ -11273,7 +11273,7 @@
    /* .opcode[0]   = */ 0xC4,
    /* .opcode[1]   = */ 0x0E,
    /* .format      = */ RILb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsLoad |
                         S390OpProp_SetsOperand1
@@ -11286,7 +11286,7 @@
    /* .opcode[0]   = */ 0xC4,
    /* .opcode[1]   = */ 0x0D,
    /* .format      = */ RILb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_IsLoad |
                         S390OpProp_SetsOperand1
@@ -11299,7 +11299,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0x32,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_IsLoad |
                         S390OpProp_Is32To64Bit |
                         S390OpProp_SetsCC |
@@ -11315,7 +11315,7 @@
    /* .opcode[0]   = */ 0xAF,
    /* .opcode[1]   = */ 0x00,
    /* .format      = */ SI_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_IsStore
    },
 
@@ -11326,7 +11326,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0x5C,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_UsesTarget |
                         S390OpProp_IsLoad |
@@ -11342,7 +11342,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0x7C,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_UsesTarget |
                         S390OpProp_IsLoad |
@@ -11357,7 +11357,7 @@
    /* .opcode[0]   = */ 0xC2,
    /* .opcode[1]   = */ 0x01,
    /* .format      = */ RILa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_UsesTarget |
                         S390OpProp_IsExtendedImmediate |
@@ -11371,7 +11371,7 @@
    /* .opcode[0]   = */ 0xC2,
    /* .opcode[1]   = */ 0x00,
    /* .format      = */ RILa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_UsesTarget |
                         S390OpProp_IsExtendedImmediate |
@@ -11385,7 +11385,7 @@
    /* .opcode[0]   = */ 0xE5,
    /* .opcode[1]   = */ 0x48,
    /* .format      = */ SIL_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_IsStore
    },
 
@@ -11396,7 +11396,7 @@
    /* .opcode[0]   = */ 0xE5,
    /* .opcode[1]   = */ 0x44,
    /* .format      = */ SIL_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_IsStore
    },
 
@@ -11407,7 +11407,7 @@
    /* .opcode[0]   = */ 0xE5,
    /* .opcode[1]   = */ 0x4C,
    /* .format      = */ SIL_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_IsStore
    },
 
@@ -11418,7 +11418,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0x36,
    /* .format      = */ RXYb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_LongDispSupported
    },
 
@@ -11429,7 +11429,7 @@
    /* .opcode[0]   = */ 0xC6,
    /* .opcode[1]   = */ 0x02,
    /* .format      = */ RILc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_None
    },
 
@@ -11440,7 +11440,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0x55,
    /* .format      = */ RIEf_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_LongDispSupported |
                         S390OpProp_SetsCC |
@@ -11455,7 +11455,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0x54,
    /* .format      = */ RIEf_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
@@ -11470,7 +11470,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0x56,
    /* .format      = */ RIEf_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
@@ -11485,7 +11485,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0x57,
    /* .format      = */ RIEf_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
@@ -11500,7 +11500,7 @@
    /* .opcode[0]   = */ 0xC4,
    /* .opcode[1]   = */ 0x0B,
    /* .format      = */ RILb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_IsStore |
                         S390OpProp_Is64Bit
    },
@@ -11512,7 +11512,7 @@
    /* .opcode[0]   = */ 0xC4,
    /* .opcode[1]   = */ 0x0F,
    /* .format      = */ RILb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_IsStore |
                         S390OpProp_Is32Bit
    },
@@ -11524,7 +11524,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xBF,
    /* .format      = */ RRFc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_UsesTarget |
                         S390OpProp_SetsCC |
                         S390OpProp_UsesRegPairForTarget |
@@ -11540,7 +11540,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xBD,
    /* .format      = */ RRFc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z10,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z10,
    /* .properties  = */ S390OpProp_UsesTarget |
                         S390OpProp_SetsCC |
                         S390OpProp_UsesRegPairForTarget |
@@ -11556,7 +11556,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0xD9,
    /* .format      = */ RIEd_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsSignFlag |
@@ -11572,7 +11572,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xE8,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsSignFlag |
@@ -11587,7 +11587,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xC8,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsSignFlag |
                         S390OpProp_SetsOverflowFlag |
@@ -11605,7 +11605,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xD8,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsSignFlag |
                         S390OpProp_SetsOverflowFlag |
@@ -11622,7 +11622,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0xD8,
    /* .format      = */ RIEd_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsSignFlag |
@@ -11638,7 +11638,7 @@
    /* .opcode[0]   = */ 0xCC,
    /* .opcode[1]   = */ 0x08,
    /* .format      = */ RILa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsSignFlag |
                         S390OpProp_SetsOverflowFlag |
@@ -11655,7 +11655,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0xDB,
    /* .format      = */ RIEd_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
@@ -11670,7 +11670,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xEA,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
@@ -11684,7 +11684,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xCA,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
                         S390OpProp_UsesTarget |
@@ -11701,7 +11701,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xDA,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
                         S390OpProp_UsesTarget |
@@ -11717,7 +11717,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0xDA,
    /* .format      = */ RIEd_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
@@ -11732,7 +11732,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xFA,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
@@ -11746,7 +11746,7 @@
    /* .opcode[0]   = */ 0xCC,
    /* .opcode[1]   = */ 0x0A,
    /* .format      = */ RILa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
                         S390OpProp_UsesTarget |
@@ -11762,7 +11762,7 @@
    /* .opcode[0]   = */ 0xCC,
    /* .opcode[1]   = */ 0x0B,
    /* .format      = */ RILa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_UsesTarget |
                         S390OpProp_IsExtendedImmediate |
                         S390OpProp_TargetHW |
@@ -11776,7 +11776,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xF8,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsSignFlag |
@@ -11791,7 +11791,7 @@
    /* .opcode[0]   = */ 0xCC,
    /* .opcode[1]   = */ 0x06,
    /* .format      = */ RILb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_BranchOp |
                         S390OpProp_UsesTarget |
                         S390OpProp_TargetHW |
@@ -11806,7 +11806,7 @@
    /* .opcode[0]   = */ 0xB3,
    /* .opcode[1]   = */ 0x91,
    /* .format      = */ RRFe_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_DoubleFP |
                         S390OpProp_Is32Bit |
                         S390OpProp_SetsOperand1
@@ -11819,7 +11819,7 @@
    /* .opcode[0]   = */ 0xB3,
    /* .opcode[1]   = */ 0xA1,
    /* .format      = */ RRFe_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_DoubleFP |
                         S390OpProp_Is64Bit |
                         S390OpProp_SetsOperand1
@@ -11832,7 +11832,7 @@
    /* .opcode[0]   = */ 0xB3,
    /* .opcode[1]   = */ 0x90,
    /* .format      = */ RRFe_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_SingleFP |
                         S390OpProp_SetsOperand1
@@ -11845,7 +11845,7 @@
    /* .opcode[0]   = */ 0xB3,
    /* .opcode[1]   = */ 0xA0,
    /* .format      = */ RRFe_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_SetsOperand1
    },
@@ -11857,7 +11857,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0xCD,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_IsCompare |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsCompareFlag |
@@ -11873,7 +11873,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xCD,
    /* .format      = */ RRE_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_IsCompare |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsCompareFlag |
@@ -11888,7 +11888,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xDD,
    /* .format      = */ RRE_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_IsCompare |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsCompareFlag |
@@ -11902,7 +11902,7 @@
    /* .opcode[0]   = */ 0xCC,
    /* .opcode[1]   = */ 0x0D,
    /* .format      = */ RILa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_IsCompare |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsCompareFlag |
@@ -11917,7 +11917,7 @@
    /* .opcode[0]   = */ 0xB3,
    /* .opcode[1]   = */ 0x9D,
    /* .format      = */ RRFe_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_DoubleFP |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
@@ -11934,7 +11934,7 @@
    /* .opcode[0]   = */ 0xB3,
    /* .opcode[1]   = */ 0x9C,
    /* .format      = */ RRFe_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_SingleFP |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
@@ -11951,7 +11951,7 @@
    /* .opcode[0]   = */ 0xB3,
    /* .opcode[1]   = */ 0x9E,
    /* .format      = */ RRFe_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_UsesRegPairForSource |
                         S390OpProp_SetsCC |
@@ -11968,7 +11968,7 @@
    /* .opcode[0]   = */ 0xB3,
    /* .opcode[1]   = */ 0xAD,
    /* .format      = */ RRFe_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_DoubleFP |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
@@ -11985,7 +11985,7 @@
    /* .opcode[0]   = */ 0xB3,
    /* .opcode[1]   = */ 0xAC,
    /* .format      = */ RRFe_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_SingleFP |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
@@ -12002,7 +12002,7 @@
    /* .opcode[0]   = */ 0xB3,
    /* .opcode[1]   = */ 0xAE,
    /* .format      = */ RRFe_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_UsesRegPairForSource |
                         S390OpProp_SetsCC |
@@ -12019,7 +12019,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0xCF,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_IsCompare |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsCompareFlag |
@@ -12035,7 +12035,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xCF,
    /* .format      = */ RRE_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_IsCompare |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsCompareFlag |
@@ -12050,7 +12050,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xDF,
    /* .format      = */ RRE_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_IsCompare |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsCompareFlag |
@@ -12064,7 +12064,7 @@
    /* .opcode[0]   = */ 0xCC,
    /* .opcode[1]   = */ 0x0F,
    /* .format      = */ RILa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_IsCompare |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsCompareFlag |
@@ -12079,7 +12079,7 @@
    /* .opcode[0]   = */ 0xB3,
    /* .opcode[1]   = */ 0x92,
    /* .format      = */ RRFe_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_DoubleFP |
                         S390OpProp_UsesRegPairForTarget |
                         S390OpProp_SetsOperand1
@@ -12092,7 +12092,7 @@
    /* .opcode[0]   = */ 0xB3,
    /* .opcode[1]   = */ 0xA2,
    /* .format      = */ RRFe_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_DoubleFP |
                         S390OpProp_UsesRegPairForTarget |
                         S390OpProp_SetsOperand1
@@ -12105,7 +12105,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0x2D,
    /* .format      = */ RRFb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_IsLoad |
                         S390OpProp_IsStore |
@@ -12122,7 +12122,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0x2A,
    /* .format      = */ RRE_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_IsLoad |
                         S390OpProp_IsStore |
@@ -12139,7 +12139,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0x2B,
    /* .format      = */ RRE_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_IsLoad |
                         S390OpProp_IsStore |
@@ -12156,7 +12156,7 @@
    /* .opcode[0]   = */ 0xEB,
    /* .opcode[1]   = */ 0xF8,
    /* .format      = */ RSYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_IsLoad |
                         S390OpProp_IsStore |
@@ -12175,7 +12175,7 @@
    /* .opcode[0]   = */ 0xEB,
    /* .opcode[1]   = */ 0xE8,
    /* .format      = */ RSYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsLoad |
                         S390OpProp_IsStore |
@@ -12194,7 +12194,7 @@
    /* .opcode[0]   = */ 0xEB,
    /* .opcode[1]   = */ 0xFA,
    /* .format      = */ RSYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_IsLoad |
                         S390OpProp_UsesTarget |
@@ -12211,7 +12211,7 @@
    /* .opcode[0]   = */ 0xEB,
    /* .opcode[1]   = */ 0xEA,
    /* .format      = */ RSYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsLoad |
                         S390OpProp_UsesTarget |
@@ -12228,7 +12228,7 @@
    /* .opcode[0]   = */ 0xEB,
    /* .opcode[1]   = */ 0xF4,
    /* .format      = */ RSYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_IsLoad |
                         S390OpProp_IsStore |
@@ -12246,7 +12246,7 @@
    /* .opcode[0]   = */ 0xEB,
    /* .opcode[1]   = */ 0xE4,
    /* .format      = */ RSYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsLoad |
                         S390OpProp_IsStore |
@@ -12264,7 +12264,7 @@
    /* .opcode[0]   = */ 0xEB,
    /* .opcode[1]   = */ 0xF6,
    /* .format      = */ RSYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_IsLoad |
                         S390OpProp_IsStore |
@@ -12282,7 +12282,7 @@
    /* .opcode[0]   = */ 0xEB,
    /* .opcode[1]   = */ 0xE6,
    /* .format      = */ RSYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsLoad |
                         S390OpProp_IsStore |
@@ -12300,7 +12300,7 @@
    /* .opcode[0]   = */ 0xEB,
    /* .opcode[1]   = */ 0xF7,
    /* .format      = */ RSYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_IsLoad |
                         S390OpProp_IsStore |
@@ -12318,7 +12318,7 @@
    /* .opcode[0]   = */ 0xEB,
    /* .opcode[1]   = */ 0xE7,
    /* .format      = */ RSYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsLoad |
                         S390OpProp_IsStore |
@@ -12336,7 +12336,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0xC0,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_IsLoad |
                         S390OpProp_LongDispSupported |
                         S390OpProp_TargetHW |
@@ -12350,7 +12350,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0xCA,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_IsLoad |
                         S390OpProp_LongDispSupported |
                         S390OpProp_TargetHW |
@@ -12364,7 +12364,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0xC4,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_IsLoad |
                         S390OpProp_LongDispSupported |
                         S390OpProp_TargetHW |
@@ -12378,7 +12378,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0xC2,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_IsLoad |
                         S390OpProp_LongDispSupported |
                         S390OpProp_TargetHW |
@@ -12392,7 +12392,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0xC6,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_IsLoad |
                         S390OpProp_LongDispSupported |
                         S390OpProp_TargetHW |
@@ -12406,7 +12406,7 @@
    /* .opcode[0]   = */ 0xEB,
    /* .opcode[1]   = */ 0xF2,
    /* .format      = */ RSYb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_ReadsCC |
                         S390OpProp_LongDispSupported |
@@ -12422,7 +12422,7 @@
    /* .opcode[0]   = */ 0xEB,
    /* .opcode[1]   = */ 0xE2,
    /* .format      = */ RSYb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_ReadsCC |
                         S390OpProp_LongDispSupported |
@@ -12438,7 +12438,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xE2,
    /* .format      = */ RRFc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_ReadsCC |
                         S390OpProp_SetsOperand1 |
@@ -12452,7 +12452,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xF2,
    /* .format      = */ RRFc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_ReadsCC |
                         S390OpProp_SetsOperand1 |
@@ -12466,7 +12466,7 @@
    /* .opcode[0]   = */ 0xC8,
    /* .opcode[1]   = */ 0x04,
    /* .format      = */ SSF_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_IsLoad |
                         S390OpProp_UsesRegPairForTarget |
@@ -12482,7 +12482,7 @@
    /* .opcode[0]   = */ 0xC8,
    /* .opcode[1]   = */ 0x05,
    /* .format      = */ SSF_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsLoad |
                         S390OpProp_UsesRegPairForTarget |
@@ -12498,7 +12498,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xE4,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
@@ -12512,7 +12512,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xF4,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
@@ -12526,7 +12526,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xE6,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
@@ -12540,7 +12540,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xF6,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
@@ -12554,7 +12554,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xE1,
    /* .format      = */ RRFc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z15,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z15,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_UsesTarget |
                         S390OpProp_SetsCC |
@@ -12569,7 +12569,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0x5D,
    /* .format      = */ RIEf_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_LongDispSupported |
                         S390OpProp_UsesTarget |
@@ -12584,7 +12584,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0x51,
    /* .format      = */ RIEf_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_LongDispSupported |
                         S390OpProp_UsesTarget |
@@ -12598,7 +12598,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xE9,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsSignFlag |
@@ -12613,7 +12613,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xC9,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_UsesTarget |
                         S390OpProp_TargetHW |
                         S390OpProp_SrcHW |
@@ -12630,7 +12630,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xD9,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_UsesTarget |
                         S390OpProp_TargetHW |
                         S390OpProp_SrcHW |
@@ -12647,7 +12647,7 @@
    /* .opcode[0]   = */ 0xEB,
    /* .opcode[1]   = */ 0xDD,
    /* .format      = */ RSYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsSignFlag |
@@ -12663,7 +12663,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xEB,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
@@ -12677,7 +12677,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xCB,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_UsesTarget |
                         S390OpProp_TargetHW |
                         S390OpProp_SrcHW |
@@ -12693,7 +12693,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xDB,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_UsesTarget |
                         S390OpProp_TargetHW |
                         S390OpProp_SetsCC |
@@ -12708,7 +12708,7 @@
    /* .opcode[0]   = */ 0xEB,
    /* .opcode[1]   = */ 0xDF,
    /* .format      = */ RSYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_LongDispSupported |
                         S390OpProp_SetsOperand1
@@ -12721,7 +12721,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xFB,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
@@ -12735,7 +12735,7 @@
    /* .opcode[0]   = */ 0xEB,
    /* .opcode[1]   = */ 0xDC,
    /* .format      = */ RSYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsSignFlag |
@@ -12750,7 +12750,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xF9,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsSignFlag |
@@ -12765,7 +12765,7 @@
    /* .opcode[0]   = */ 0xEB,
    /* .opcode[1]   = */ 0xDE,
    /* .format      = */ RSYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_LongDispSupported |
                         S390OpProp_SetsOperand1
@@ -12778,7 +12778,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0xC3,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_IsStore |
                         S390OpProp_LongDispSupported |
                         S390OpProp_TargetHW
@@ -12791,7 +12791,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0xCB,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_IsStore |
                         S390OpProp_LongDispSupported |
                         S390OpProp_TargetHW
@@ -12804,7 +12804,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0xC7,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_IsStore |
                         S390OpProp_LongDispSupported |
                         S390OpProp_TargetHW
@@ -12817,7 +12817,7 @@
    /* .opcode[0]   = */ 0xEB,
    /* .opcode[1]   = */ 0xF3,
    /* .format      = */ RSYb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_IsStore |
                         S390OpProp_Is32Bit |
                         S390OpProp_ReadsCC |
@@ -12831,7 +12831,7 @@
    /* .opcode[0]   = */ 0xEB,
    /* .opcode[1]   = */ 0xE3,
    /* .format      = */ RSYb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_IsStore |
                         S390OpProp_Is64Bit |
                         S390OpProp_ReadsCC |
@@ -12845,7 +12845,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xE7,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
@@ -12859,7 +12859,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xF7,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z196,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z196,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
@@ -12873,7 +12873,7 @@
    /* .opcode[0]   = */ 0xC7,
    /* .opcode[1]   = */ 0x00,
    /* .format      = */ SMI_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::zEC12,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_ZEC12,
    /* .properties  = */ S390OpProp_None
    },
 
@@ -12884,7 +12884,7 @@
    /* .opcode[0]   = */ 0xC5,
    /* .opcode[1]   = */ 0x00,
    /* .format      = */ MII_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::zEC12,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_ZEC12,
    /* .properties  = */ S390OpProp_None
    },
 
@@ -12895,7 +12895,7 @@
    /* .opcode[0]   = */ 0xED,
    /* .opcode[1]   = */ 0xAA,
    /* .format      = */ RSLb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::zEC12,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_ZEC12,
    /* .properties  = */ S390OpProp_DoubleFP |
                         S390OpProp_Is64Bit |
                         S390OpProp_IsLoad |
@@ -12909,7 +12909,7 @@
    /* .opcode[0]   = */ 0xEB,
    /* .opcode[1]   = */ 0x2B,
    /* .format      = */ RSYb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::zEC12,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_ZEC12,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_Trap |
@@ -12923,7 +12923,7 @@
    /* .opcode[0]   = */ 0xEB,
    /* .opcode[1]   = */ 0x23,
    /* .format      = */ RSYb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::zEC12,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_ZEC12,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_IsCompare |
                         S390OpProp_IsLoad |
@@ -12937,7 +12937,7 @@
    /* .opcode[0]   = */ 0xED,
    /* .opcode[1]   = */ 0xAB,
    /* .format      = */ RSLb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::zEC12,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_ZEC12,
    /* .properties  = */ S390OpProp_DoubleFP |
                         S390OpProp_Is64Bit |
                         S390OpProp_IsLoad |
@@ -12952,7 +12952,7 @@
    /* .opcode[0]   = */ 0xED,
    /* .opcode[1]   = */ 0xA8,
    /* .format      = */ RSLb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::zEC12,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_ZEC12,
    /* .properties  = */ S390OpProp_DoubleFP |
                         S390OpProp_Is64Bit |
                         S390OpProp_IsStore |
@@ -12968,7 +12968,7 @@
    /* .opcode[0]   = */ 0xED,
    /* .opcode[1]   = */ 0xA9,
    /* .format      = */ RSLb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::zEC12,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_ZEC12,
    /* .properties  = */ S390OpProp_DoubleFP |
                         S390OpProp_Is64Bit |
                         S390OpProp_IsStore |
@@ -12985,7 +12985,7 @@
    /* .opcode[0]   = */ 0xB2,
    /* .opcode[1]   = */ 0xEC,
    /* .format      = */ RRE_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::zEC12,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_ZEC12,
    /* .properties  = */ S390OpProp_None
    },
 
@@ -12996,7 +12996,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0x9F,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::zEC12,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_ZEC12,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_IsLoad |
                         S390OpProp_Trap |
@@ -13011,7 +13011,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0xC8,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::zEC12,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_ZEC12,
    /* .properties  = */ S390OpProp_IsLoad |
                         S390OpProp_Trap |
                         S390OpProp_LongDispSupported |
@@ -13026,7 +13026,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0x85,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::zEC12,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_ZEC12,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsLoad |
                         S390OpProp_Trap |
@@ -13041,7 +13041,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0x9D,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::zEC12,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_ZEC12,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsLoad |
                         S390OpProp_Trap |
@@ -13056,7 +13056,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0x9C,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::zEC12,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_ZEC12,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsLoad |
                         S390OpProp_Trap |
@@ -13071,7 +13071,7 @@
    /* .opcode[0]   = */ 0xB2,
    /* .opcode[1]   = */ 0xFA,
    /* .format      = */ IE_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::zEC12,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_ZEC12,
    /* .properties  = */ S390OpProp_None
    },
 
@@ -13082,7 +13082,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0x25,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::zEC12,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_ZEC12,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsStore |
                         S390OpProp_LongDispSupported
@@ -13095,7 +13095,7 @@
    /* .opcode[0]   = */ 0xB2,
    /* .opcode[1]   = */ 0xE8,
    /* .format      = */ RRFc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::zEC12,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_ZEC12,
    /* .properties  = */ S390OpProp_UsesTarget
    },
 
@@ -13106,7 +13106,7 @@
    /* .opcode[0]   = */ 0xAA,
    /* .opcode[1]   = */ 0x04,
    /* .format      = */ RIa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::zEC12,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_ZEC12,
    /* .properties  = */ S390OpProp_UsesTarget
    },
 
@@ -13117,7 +13117,7 @@
    /* .opcode[0]   = */ 0xAA,
    /* .opcode[1]   = */ 0x00,
    /* .format      = */ RIa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::zEC12,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_ZEC12,
    /* .properties  = */ S390OpProp_None
    },
 
@@ -13128,7 +13128,7 @@
    /* .opcode[0]   = */ 0xAA,
    /* .opcode[1]   = */ 0x03,
    /* .format      = */ RIa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::zEC12,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_ZEC12,
    /* .properties  = */ S390OpProp_SetsCC
    },
 
@@ -13139,7 +13139,7 @@
    /* .opcode[0]   = */ 0xAA,
    /* .opcode[1]   = */ 0x01,
    /* .format      = */ RIa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::zEC12,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_ZEC12,
    /* .properties  = */ S390OpProp_SetsCC
    },
 
@@ -13150,7 +13150,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0x59,
    /* .format      = */ RIEf_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::zEC12,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_ZEC12,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_LongDispSupported |
                         S390OpProp_SetsOperand1 |
@@ -13164,7 +13164,7 @@
    /* .opcode[0]   = */ 0xB2,
    /* .opcode[1]   = */ 0xFC,
    /* .format      = */ S_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::zEC12,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_ZEC12,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_IsStore
    },
@@ -13176,7 +13176,7 @@
    /* .opcode[0]   = */ 0xE5,
    /* .opcode[1]   = */ 0x60,
    /* .format      = */ SIL_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::zEC12,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_ZEC12,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_IsStore
    },
@@ -13188,7 +13188,7 @@
    /* .opcode[0]   = */ 0xE5,
    /* .opcode[1]   = */ 0x61,
    /* .format      = */ SIL_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::zEC12,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_ZEC12,
    /* .properties  = */ S390OpProp_SetsCC
    },
 
@@ -13199,7 +13199,7 @@
    /* .opcode[0]   = */ 0xB2,
    /* .opcode[1]   = */ 0xF8,
    /* .format      = */ S_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::zEC12,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_ZEC12,
    /* .properties  = */ S390OpProp_SetsCC
    },
 
@@ -13210,7 +13210,7 @@
    /* .opcode[0]   = */ 0xED,
    /* .opcode[1]   = */ 0xAE,
    /* .format      = */ RSLb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_DoubleFP |
                         S390OpProp_Is64Bit |
                         S390OpProp_IsLoad |
@@ -13224,7 +13224,7 @@
    /* .opcode[0]   = */ 0xED,
    /* .opcode[1]   = */ 0xAC,
    /* .format      = */ RSLb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_DoubleFP |
                         S390OpProp_Is64Bit |
                         S390OpProp_IsStore |
@@ -13240,7 +13240,7 @@
    /* .opcode[0]   = */ 0xED,
    /* .opcode[1]   = */ 0xAD,
    /* .format      = */ RSLb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_DoubleFP |
                         S390OpProp_Is64Bit |
                         S390OpProp_IsStore |
@@ -13257,7 +13257,7 @@
    /* .opcode[0]   = */ 0xED,
    /* .opcode[1]   = */ 0xAF,
    /* .format      = */ RSLb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_DoubleFP |
                         S390OpProp_Is64Bit |
                         S390OpProp_IsLoad |
@@ -13272,7 +13272,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x27,
    /* .format      = */ RXE_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_IsLoad |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsOperand1
@@ -13285,7 +13285,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0x3A,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsLoad |
                         S390OpProp_SetsOperand1 |
@@ -13299,7 +13299,7 @@
    /* .opcode[0]   = */ 0xEB,
    /* .opcode[1]   = */ 0xE0,
    /* .format      = */ RSYb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_TargetHW |
                         S390OpProp_ReadsCC |
                         S390OpProp_LongDispSupported |
@@ -13315,7 +13315,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xE0,
    /* .format      = */ RRFc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_TargetHW |
                         S390OpProp_ReadsCC |
                         S390OpProp_IsLoad |
@@ -13330,7 +13330,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0x46,
    /* .format      = */ RIEg_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_ReadsCC |
                         S390OpProp_IsLoad |
@@ -13345,7 +13345,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0x4E,
    /* .format      = */ RIEg_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_TargetHW |
                         S390OpProp_ReadsCC |
                         S390OpProp_IsLoad |
@@ -13360,7 +13360,7 @@
    /* .opcode[0]   = */ 0xEC,
    /* .opcode[1]   = */ 0x42,
    /* .format      = */ RIEg_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_ReadsCC |
                         S390OpProp_IsLoad |
@@ -13375,7 +13375,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0x3B,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_IsLoad |
                         S390OpProp_SetsOperand1 |
@@ -13389,7 +13389,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0x2A,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_IsLoad |
                         S390OpProp_SetsOperand1 |
@@ -13403,7 +13403,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0x3C,
    /* .format      = */ RRE_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsCC
    },
 
@@ -13414,7 +13414,7 @@
    /* .opcode[0]   = */ 0xEB,
    /* .opcode[1]   = */ 0xE1,
    /* .format      = */ RSYb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_IsStore |
                         S390OpProp_TargetHW |
                         S390OpProp_ReadsCC |
@@ -13428,7 +13428,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xF3,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -13441,7 +13441,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xBB,
    /* .format      = */ VRRd_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM5
@@ -13454,7 +13454,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xF1,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -13467,7 +13467,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xB9,
    /* .format      = */ VRRd_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM5
@@ -13480,7 +13480,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xF2,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -13493,7 +13493,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xF0,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -13506,7 +13506,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xC3,
    /* .format      = */ VRRa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_VectorFPOp |
                         S390OpProp_HasExtendedMnemonic |
@@ -13522,7 +13522,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xC1,
    /* .format      = */ VRRa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_VectorFPOp |
                         S390OpProp_HasExtendedMnemonic |
@@ -13538,7 +13538,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xF8,
    /* .format      = */ VRRb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
@@ -13553,7 +13553,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xC2,
    /* .format      = */ VRRa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_VectorFPOp |
                         S390OpProp_HasExtendedMnemonic |
@@ -13569,7 +13569,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xFB,
    /* .format      = */ VRRb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
@@ -13584,7 +13584,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xF9,
    /* .format      = */ VRRb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
@@ -13599,7 +13599,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x66,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1
    },
 
@@ -13610,7 +13610,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xC0,
    /* .format      = */ VRRa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_VectorFPOp |
                         S390OpProp_HasExtendedMnemonic |
@@ -13626,7 +13626,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x53,
    /* .format      = */ VRRa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM3
@@ -13639,7 +13639,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x52,
    /* .format      = */ VRRa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM3
@@ -13652,7 +13652,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xDB,
    /* .format      = */ VRRa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM3
@@ -13665,7 +13665,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xD9,
    /* .format      = */ VRRa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM3
@@ -13678,7 +13678,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x72,
    /* .format      = */ VRId_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_UsesTarget |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
@@ -13692,7 +13692,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x33,
    /* .format      = */ VRSa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -13705,7 +13705,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x73,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -13718,7 +13718,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x30,
    /* .format      = */ VRSa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -13731,7 +13731,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x70,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -13744,7 +13744,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x3A,
    /* .format      = */ VRSa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -13757,7 +13757,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x7A,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -13770,7 +13770,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x38,
    /* .format      = */ VRSa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -13783,7 +13783,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x78,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -13796,7 +13796,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xE3,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_VectorFPOp |
                         S390OpProp_HasExtendedMnemonic |
@@ -13811,7 +13811,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x82,
    /* .format      = */ VRRb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_VectorStringOp |
@@ -13827,7 +13827,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xE8,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_VectorFPOp |
@@ -13844,7 +13844,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xEB,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_VectorFPOp |
@@ -13861,7 +13861,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xEA,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_VectorFPOp |
@@ -13878,7 +13878,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xE5,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_VectorFPOp |
                         S390OpProp_HasExtendedMnemonic |
@@ -13893,7 +13893,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x80,
    /* .format      = */ VRRb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_VectorStringOp |
@@ -13909,7 +13909,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x81,
    /* .format      = */ VRRb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_VectorStringOp |
@@ -13925,7 +13925,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xC7,
    /* .format      = */ VRRa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_VectorFPOp |
                         S390OpProp_HasExtendedMnemonic |
@@ -13941,7 +13941,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xE7,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_VectorFPOp |
                         S390OpProp_HasExtendedMnemonic |
@@ -13956,7 +13956,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x8F,
    /* .format      = */ VRRe_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_VectorFPOp |
                         S390OpProp_HasExtendedMnemonic |
@@ -13971,7 +13971,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x8E,
    /* .format      = */ VRRe_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_VectorFPOp |
                         S390OpProp_HasExtendedMnemonic |
@@ -13986,7 +13986,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xCC,
    /* .format      = */ VRRa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_VectorFPOp |
                         S390OpProp_HasExtendedMnemonic |
@@ -14002,7 +14002,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xE2,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_VectorFPOp |
                         S390OpProp_HasExtendedMnemonic |
@@ -14017,7 +14017,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xCE,
    /* .format      = */ VRRa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_VectorFPOp |
                         S390OpProp_HasExtendedMnemonic |
@@ -14032,7 +14032,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x4A,
    /* .format      = */ VRIe_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_VectorFPOp |
@@ -14048,7 +14048,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x44,
    /* .format      = */ VRIa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1
    },
 
@@ -14059,7 +14059,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x13,
    /* .format      = */ VRV_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_UsesTarget |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM3
@@ -14072,7 +14072,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x12,
    /* .format      = */ VRV_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_UsesTarget |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM3
@@ -14085,7 +14085,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xB4,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -14098,7 +14098,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xBC,
    /* .format      = */ VRRd_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM5
@@ -14111,7 +14111,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x46,
    /* .format      = */ VRIb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -14124,7 +14124,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x5C,
    /* .format      = */ VRRa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_VectorStringOp |
@@ -14140,7 +14140,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x06,
    /* .format      = */ VRX_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_IsLoad |
                         S390OpProp_SetsOperand1
    },
@@ -14152,7 +14152,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x07,
    /* .format      = */ VRX_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_IsLoad |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM3
@@ -14165,7 +14165,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xDE,
    /* .format      = */ VRRa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM3
@@ -14178,7 +14178,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xC4,
    /* .format      = */ VRRa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_VectorFPOp |
                         S390OpProp_HasExtendedMnemonic |
@@ -14193,7 +14193,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x00,
    /* .format      = */ VRX_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_IsLoad |
                         S390OpProp_UsesTarget |
                         S390OpProp_SetsOperand1 |
@@ -14207,7 +14207,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xC5,
    /* .format      = */ VRRa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_VectorFPOp |
                         S390OpProp_HasExtendedMnemonic |
@@ -14223,7 +14223,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x03,
    /* .format      = */ VRX_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_IsLoad |
                         S390OpProp_UsesTarget |
                         S390OpProp_SetsOperand1 |
@@ -14237,7 +14237,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x02,
    /* .format      = */ VRX_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_IsLoad |
                         S390OpProp_UsesTarget |
                         S390OpProp_SetsOperand1 |
@@ -14251,7 +14251,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x01,
    /* .format      = */ VRX_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_IsLoad |
                         S390OpProp_UsesTarget |
                         S390OpProp_SetsOperand1 |
@@ -14265,7 +14265,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x40,
    /* .format      = */ VRIa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_UsesTarget |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM3
@@ -14278,7 +14278,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x43,
    /* .format      = */ VRIa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_UsesTarget |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM3
@@ -14291,7 +14291,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x42,
    /* .format      = */ VRIa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_UsesTarget |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM3
@@ -14304,7 +14304,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x41,
    /* .format      = */ VRIa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_UsesTarget |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM3
@@ -14317,7 +14317,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x21,
    /* .format      = */ VRSc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_Is64Bit |
                         S390OpProp_HasExtendedMnemonic |
@@ -14331,7 +14331,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x37,
    /* .format      = */ VRSb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_IsLoad |
                         S390OpProp_SetsOperand1
    },
@@ -14343,7 +14343,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x04,
    /* .format      = */ VRX_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_IsLoad |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
@@ -14357,7 +14357,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x36,
    /* .format      = */ VRSa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_IsLoad |
                         S390OpProp_UsesRegRangeForTarget |
                         S390OpProp_SetsOperand1 |
@@ -14371,7 +14371,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xDF,
    /* .format      = */ VRRa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM3
@@ -14384,7 +14384,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x56,
    /* .format      = */ VRRa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_IsRegCopy |
                         S390OpProp_SetsOperand1
    },
@@ -14396,7 +14396,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x05,
    /* .format      = */ VRX_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_IsLoad |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
@@ -14410,7 +14410,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x22,
    /* .format      = */ VRSb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_IsLoad |
                         S390OpProp_UsesTarget |
                         S390OpProp_SetsOperand1 |
@@ -14426,7 +14426,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x62,
    /* .format      = */ VRRf_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_Is64Bit
    },
@@ -14438,7 +14438,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xAE,
    /* .format      = */ VRRd_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM5
@@ -14451,7 +14451,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xAB,
    /* .format      = */ VRRd_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM5
@@ -14464,7 +14464,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xAA,
    /* .format      = */ VRRd_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM5
@@ -14477,7 +14477,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xAC,
    /* .format      = */ VRRd_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM5
@@ -14490,7 +14490,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xA9,
    /* .format      = */ VRRd_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM5
@@ -14503,7 +14503,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xAD,
    /* .format      = */ VRRd_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM5
@@ -14516,7 +14516,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xAF,
    /* .format      = */ VRRd_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM5
@@ -14529,7 +14529,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xA6,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -14542,7 +14542,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xA3,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -14555,7 +14555,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xA2,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -14568,7 +14568,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xA4,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -14581,7 +14581,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xA1,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -14594,7 +14594,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xA5,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -14607,7 +14607,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xFE,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -14620,7 +14620,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xFC,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -14633,7 +14633,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xA7,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -14646,7 +14646,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x61,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -14659,7 +14659,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x60,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -14672,7 +14672,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xFF,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -14685,7 +14685,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xFD,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -14698,7 +14698,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x68,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1
    },
 
@@ -14709,7 +14709,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x69,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1
    },
 
@@ -14720,7 +14720,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x6B,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1
    },
 
@@ -14731,7 +14731,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x6A,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1
    },
 
@@ -14742,7 +14742,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x84,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM4
    },
@@ -14754,7 +14754,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x8C,
    /* .format      = */ VRRe_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1
    },
 
@@ -14765,7 +14765,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x94,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -14778,7 +14778,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x95,
    /* .format      = */ VRRb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_SetsCC |
                         S390OpProp_HasExtendedMnemonic |
@@ -14793,7 +14793,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x97,
    /* .format      = */ VRRb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_SetsCC |
                         S390OpProp_HasExtendedMnemonic |
@@ -14808,7 +14808,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x50,
    /* .format      = */ VRRa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM3
@@ -14821,7 +14821,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x4D,
    /* .format      = */ VRIc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -14834,7 +14834,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x45,
    /* .format      = */ VRIa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM3
@@ -14847,7 +14847,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xF7,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -14860,7 +14860,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xBD,
    /* .format      = */ VRRd_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM5
@@ -14873,7 +14873,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xBF,
    /* .format      = */ VRRd_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM5
@@ -14886,7 +14886,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xF5,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -14899,7 +14899,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x1B,
    /* .format      = */ VRV_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_IsStore |
                         S390OpProp_UsesM3
    },
@@ -14911,7 +14911,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x1A,
    /* .format      = */ VRV_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_IsStore |
                         S390OpProp_UsesM3
    },
@@ -14923,7 +14923,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x5F,
    /* .format      = */ VRRa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM3
@@ -14936,7 +14936,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x8D,
    /* .format      = */ VRRe_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1
    },
 
@@ -14947,7 +14947,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x74,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1
    },
 
@@ -14958,7 +14958,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x75,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1
    },
 
@@ -14969,7 +14969,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x77,
    /* .format      = */ VRId_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1
    },
 
@@ -14980,7 +14980,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x7E,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1
    },
 
@@ -14991,7 +14991,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x7F,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1
    },
 
@@ -15002,7 +15002,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x7C,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1
    },
 
@@ -15013,7 +15013,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x7D,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1
    },
 
@@ -15024,7 +15024,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x0E,
    /* .format      = */ VRX_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_IsStore
    },
 
@@ -15035,7 +15035,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x08,
    /* .format      = */ VRX_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_IsStore |
                         S390OpProp_UsesM3
    },
@@ -15047,7 +15047,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x0B,
    /* .format      = */ VRX_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_IsStore |
                         S390OpProp_UsesM3
    },
@@ -15059,7 +15059,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x0A,
    /* .format      = */ VRX_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_IsStore |
                         S390OpProp_UsesM3
    },
@@ -15071,7 +15071,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x09,
    /* .format      = */ VRX_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_IsStore |
                         S390OpProp_UsesM3
    },
@@ -15083,7 +15083,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x3F,
    /* .format      = */ VRSb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_IsStore
    },
 
@@ -15094,7 +15094,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x3E,
    /* .format      = */ VRSa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_IsStore |
                         S390OpProp_UsesRegRangeForTarget
    },
@@ -15106,7 +15106,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x8A,
    /* .format      = */ VRRd_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_VectorStringOp |
@@ -15122,7 +15122,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x64,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -15135,7 +15135,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x65,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -15148,7 +15148,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x67,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM4
@@ -15161,7 +15161,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xD8,
    /* .format      = */ VRRa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsCC
    },
 
@@ -15172,7 +15172,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xD7,
    /* .format      = */ VRRa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM3
@@ -15185,7 +15185,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xD6,
    /* .format      = */ VRRa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM3
@@ -15198,7 +15198,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xD5,
    /* .format      = */ VRRa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM3
@@ -15211,7 +15211,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xD4,
    /* .format      = */ VRRa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_HasExtendedMnemonic |
                         S390OpProp_UsesM3
@@ -15224,7 +15224,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x6D,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_SetsOperand1
    },
 
@@ -15235,7 +15235,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xCB,
    /* .format      = */ VRRa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_UsesTarget |
                         S390OpProp_SetsCC |
                         S390OpProp_VectorFPOp |
@@ -15251,7 +15251,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xCA,
    /* .format      = */ VRRa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z13,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z13,
    /* .properties  = */ S390OpProp_UsesTarget |
                         S390OpProp_SetsCC |
                         S390OpProp_VectorFPOp |
@@ -15267,7 +15267,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0x38,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsSignFlag |
@@ -15286,7 +15286,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0x47,
    /* .format      = */ RXYb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_IsLoad |
                         S390OpProp_LongDispSupported |
                         S390OpProp_BranchOp |
@@ -15300,7 +15300,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0x29,
    /* .format      = */ RRFb_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_SetsCC
    },
 
@@ -15327,7 +15327,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0x4D,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_IsLoad |
                         S390OpProp_LongDispSupported
    },
@@ -15355,7 +15355,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0x84,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_UsesTarget |
                         S390OpProp_IsLoad |
                         S390OpProp_UsesRegPairForTarget |
@@ -15370,7 +15370,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0x3C,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_UsesTarget |
                         S390OpProp_IsLoad |
                         S390OpProp_LongDispSupported |
@@ -15384,7 +15384,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xEC,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_UsesRegPairForTarget |
                         S390OpProp_SetsOperand3
    },
@@ -15396,7 +15396,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0x53,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_UsesTarget |
                         S390OpProp_IsLoad |
@@ -15414,7 +15414,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0x83,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_UsesTarget |
                         S390OpProp_IsLoad |
@@ -15432,7 +15432,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xED,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_SetsOperand3 |
                         S390OpProp_SetsOverflowFlag |
@@ -15446,7 +15446,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xFD,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_SetsOperand3 |
                         S390OpProp_SetsCC |
@@ -15461,7 +15461,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0x39,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_IsLoad |
@@ -15478,7 +15478,7 @@
    /* .opcode[0]   = */ 0xE3,
    /* .opcode[1]   = */ 0x49,
    /* .format      = */ RXYa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_IsStore |
                         S390OpProp_LongDispSupported
    },
@@ -15490,7 +15490,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x71,
    /* .format      = */ VRIf_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM5
@@ -15503,7 +15503,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x85,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_SetsOperand1
    },
 
@@ -15514,7 +15514,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x77,
    /* .format      = */ VRRh_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_UsesM3
    },
@@ -15526,7 +15526,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x50,
    /* .format      = */ VRRi_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM3 |
@@ -15540,7 +15540,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x52,
    /* .format      = */ VRRi_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM3 |
@@ -15554,7 +15554,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x58,
    /* .format      = */ VRIi_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM4
@@ -15567,7 +15567,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x5A,
    /* .format      = */ VRIi_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM4
@@ -15580,7 +15580,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x7A,
    /* .format      = */ VRIf_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM5
@@ -15593,7 +15593,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xC4,
    /* .format      = */ VRRa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM3 |
                         S390OpProp_UsesM4 |
@@ -15608,7 +15608,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xC5,
    /* .format      = */ VRRa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM3 |
                         S390OpProp_UsesM4 |
@@ -15624,7 +15624,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xEF,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM4 |
                         S390OpProp_UsesM5 |
@@ -15640,7 +15640,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xEE,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM4 |
                         S390OpProp_UsesM5 |
@@ -15656,7 +15656,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x9F,
    /* .format      = */ VRRe_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM5 |
                         S390OpProp_UsesM6 |
@@ -15671,7 +15671,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x9E,
    /* .format      = */ VRRe_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM5 |
                         S390OpProp_UsesM6 |
@@ -15686,7 +15686,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x49,
    /* .format      = */ VRIh_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_SetsOperand1
    },
 
@@ -15697,7 +15697,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x35,
    /* .format      = */ VSI_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_IsLoad |
                         S390OpProp_SetsOperand1
    },
@@ -15709,7 +15709,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x37,
    /* .format      = */ VRSd_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_IsLoad |
                         S390OpProp_SetsOperand1
    },
@@ -15721,7 +15721,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x78,
    /* .format      = */ VRIf_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM5
@@ -15734,7 +15734,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0xB8,
    /* .format      = */ VRRd_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM5 |
                         S390OpProp_HasExtendedMnemonic
@@ -15747,7 +15747,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x79,
    /* .format      = */ VRIf_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM5
@@ -15760,7 +15760,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x6E,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_SetsOperand1
    },
 
@@ -15771,7 +15771,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x6C,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_SetsOperand1
    },
 
@@ -15782,7 +15782,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x6F,
    /* .format      = */ VRRc_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_SetsOperand1
    },
 
@@ -15793,7 +15793,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x34,
    /* .format      = */ VSI_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_SetsOperand1
    },
 
@@ -15804,7 +15804,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x5B,
    /* .format      = */ VRIg_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM5
@@ -15817,7 +15817,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x7B,
    /* .format      = */ VRIf_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM5
@@ -15830,7 +15830,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x7E,
    /* .format      = */ VRIf_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM5
@@ -15843,7 +15843,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x73,
    /* .format      = */ VRIf_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM5
@@ -15856,7 +15856,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x59,
    /* .format      = */ VRIg_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM5
@@ -15869,7 +15869,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x3D,
    /* .format      = */ VSI_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_IsStore
    },
 
@@ -15880,7 +15880,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x3F,
    /* .format      = */ VRSd_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_IsStore
    },
 
@@ -15891,7 +15891,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x5F,
    /* .format      = */ VRRg_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_SetsCC
    },
 
@@ -15902,7 +15902,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x3C,
    /* .format      = */ VSI_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z14,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z14,
    /* .properties  = */ S390OpProp_IsStore
    },
 
@@ -15913,7 +15913,7 @@
    /* .opcode[0]   = */ 0xE5,
    /* .opcode[1]   = */ 0x0A,
    /* .format      = */ SSE_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z15,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z15,
    /* .properties  = */ S390OpProp_ImplicitlyUsesGPR0 |
                         S390OpProp_IsLoad |
                         S390OpProp_IsStore |
@@ -15927,7 +15927,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xE5,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z15,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z15,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
@@ -15941,7 +15941,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xF5,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z15,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z15,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
@@ -15955,7 +15955,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0x64,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z15,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z15,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
@@ -15969,7 +15969,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0x74,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z15,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z15,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
@@ -15983,7 +15983,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0x66,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z15,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z15,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
@@ -15997,7 +15997,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0x76,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z15,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z15,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
@@ -16011,7 +16011,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0x67,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z15,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z15,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
@@ -16025,7 +16025,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0x77,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z15,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z15,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
@@ -16039,7 +16039,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0x65,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z15,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z15,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
@@ -16053,7 +16053,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0x75,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z15,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z15,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_SetsCC |
                         S390OpProp_SetsZeroFlag |
@@ -16067,7 +16067,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xE3,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z15,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z15,
    /* .properties  = */ S390OpProp_Is64Bit |
                         S390OpProp_ReadsCC |
                         S390OpProp_IsRegCopy |
@@ -16081,7 +16081,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xC0,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z15,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z15,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_ReadsCC |
                         S390OpProp_IsRegCopy |
@@ -16098,7 +16098,7 @@
    /* .opcode[0]   = */ 0xB9,
    /* .opcode[1]   = */ 0xF0,
    /* .format      = */ RRFa_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z15,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z15,
    /* .properties  = */ S390OpProp_Is32Bit |
                         S390OpProp_ReadsCC |
                         S390OpProp_IsRegCopy |
@@ -16112,7 +16112,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x06,
    /* .format      = */ VRX_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z15,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z15,
    /* .properties  = */ S390OpProp_IsLoad |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM3 |
@@ -16126,7 +16126,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x05,
    /* .format      = */ VRX_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z15,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z15,
    /* .properties  = */ S390OpProp_IsLoad |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM3 |
@@ -16140,7 +16140,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x03,
    /* .format      = */ VRX_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z15,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z15,
    /* .properties  = */ S390OpProp_IsLoad |
                         S390OpProp_UsesTarget |
                         S390OpProp_SetsOperand1 |
@@ -16154,7 +16154,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x02,
    /* .format      = */ VRX_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z15,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z15,
    /* .properties  = */ S390OpProp_IsLoad |
                         S390OpProp_UsesTarget |
                         S390OpProp_SetsOperand1 |
@@ -16168,7 +16168,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x01,
    /* .format      = */ VRX_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z15,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z15,
    /* .properties  = */ S390OpProp_IsLoad |
                         S390OpProp_UsesTarget |
                         S390OpProp_SetsOperand1 |
@@ -16182,7 +16182,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x07,
    /* .format      = */ VRX_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z15,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z15,
    /* .properties  = */ S390OpProp_IsLoad |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM3 |
@@ -16196,7 +16196,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x04,
    /* .format      = */ VRX_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z15,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z15,
    /* .properties  = */ S390OpProp_IsLoad |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_UsesM3 |
@@ -16210,7 +16210,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x0E,
    /* .format      = */ VRX_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z15,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z15,
    /* .properties  = */ S390OpProp_IsStore |
                         S390OpProp_UsesM3 |
                         S390OpProp_HasExtendedMnemonic
@@ -16223,7 +16223,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x0B,
    /* .format      = */ VRX_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z15,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z15,
    /* .properties  = */ S390OpProp_IsStore |
                         S390OpProp_UsesM3
    },
@@ -16235,7 +16235,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x0A,
    /* .format      = */ VRX_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z15,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z15,
    /* .properties  = */ S390OpProp_IsStore |
                         S390OpProp_UsesM3
    },
@@ -16247,7 +16247,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x09,
    /* .format      = */ VRX_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z15,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z15,
    /* .properties  = */ S390OpProp_IsStore |
                         S390OpProp_UsesM3
    },
@@ -16259,7 +16259,7 @@
    /* .opcode[0]   = */ 0xE6,
    /* .opcode[1]   = */ 0x0F,
    /* .format      = */ VRX_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z15,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z15,
    /* .properties  = */ S390OpProp_IsStore |
                         S390OpProp_UsesM3 |
                         S390OpProp_HasExtendedMnemonic
@@ -16272,7 +16272,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x86,
    /* .format      = */ VRId_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z15,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z15,
    /* .properties  = */ S390OpProp_SetsOperand1
    },
 
@@ -16283,7 +16283,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x87,
    /* .format      = */ VRId_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z15,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z15,
    /* .properties  = */ S390OpProp_SetsOperand1
    },
 
@@ -16294,7 +16294,7 @@
    /* .opcode[0]   = */ 0xE7,
    /* .opcode[1]   = */ 0x8B,
    /* .format      = */ VRRd_FORMAT,
-   /* .minimumALS  = */ CPU::Architecture::z15,
+   /* .minimumALS  = */ OMR_PROCESSOR_S390_Z15,
    /* .properties  = */ S390OpProp_SetsCC |
                         S390OpProp_SetsOperand1 |
                         S390OpProp_VectorStringOp |
