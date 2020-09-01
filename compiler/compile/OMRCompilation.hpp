@@ -301,7 +301,7 @@ public:
          TR::Region &heapMemoryRegion,
          TR_Memory *,
          TR_OptimizationPlan *optimizationPlan,
-	 TR::Environment *target
+         TR::Environment *target
          );
 
    TR::SymbolReference * getSymbolReferenceByReferenceNumber(int32_t referenceNumber);

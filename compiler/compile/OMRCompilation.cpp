@@ -302,7 +302,7 @@ OMR::Compilation::Compilation(
       {
       _target = TR::Compiler->target;
       }
-   
+
    //Avoid expensive initialization and uneeded option checking if we are doing AOT Loads
    if (_optimizationPlan && _optimizationPlan->getIsAotLoad())
       {
@@ -403,13 +403,6 @@ OMR::Compilation::Compilation(
       {
       self()->getNodePool().enableNodeGC();
       }
-
-
-//   if (self()->getPersistentInfo()->getRemoteCompilationMode() == JITServer::SERVER)
-//      {
-//      OMRProcessorDesc JITClientProcessorDesc = TR::Compiler->target.cpu.getProcessorDescription();
-//      _target.cpu = TR::CPU(JITClientProcessorDesc);
-//      }
 
    //codegen also needs _methodSymbol
    _codeGenerator = allocateCodeGenerator(self());

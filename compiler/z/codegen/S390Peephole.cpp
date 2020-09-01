@@ -1449,12 +1449,8 @@ bool
 TR_S390PostRAPeephole::LoadAndMaskReduction(TR::InstOpCode::Mnemonic LZOpCode)
    {
    // This optimization relies on hardware instructions introduced in z13
-//   if (!TR::Compiler->target.cpu.getSupportsArch(TR::CPU::z13))
-//      return false;
-//   printf("DCDCDCDC - LoadAndMaskReduction\n");
    if (!_cg->comp()->target().cpu.isAtLeast(OMR_PROCESSOR_S390_Z13))
       return false;
-//   printf("DCDCDCDC - LoadAndMaskReduction: %d\n", TR::Compiler->target.cpu.isAtLeast(OMR_PROCESSOR_S390_Z13));
    if (_cursor->getNext()->getOpCodeValue() == TR::InstOpCode::NILL)
       {
       TR::S390RXInstruction* loadInst = static_cast<TR::S390RXInstruction*> (_cursor);

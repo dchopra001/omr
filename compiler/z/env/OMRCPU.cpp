@@ -33,34 +33,7 @@
 
 OMR::Z::CPU::CPU(const OMRProcessorDesc& processorDescription) : OMR::CPU(processorDescription)
       {
-/*      switch(processorDescription.processor)
-         {
-         case OMR_PROCESSOR_S390_Z10:
-            _supportedArch = z10;
-            break;
-         case OMR_PROCESSOR_S390_Z196:
-            _supportedArch = z196;
-            break;
-         case OMR_PROCESSOR_S390_ZEC12:
-            _supportedArch = zEC12;
-            break;
-         case OMR_PROCESSOR_S390_Z13:
-            _supportedArch = z13;
-            break;
-         case OMR_PROCESSOR_S390_Z14:
-            _supportedArch = z14;
-            break;
-         case OMR_PROCESSOR_S390_Z15:
-            _supportedArch = z15;
-            break;
-         case OMR_PROCESSOR_S390_ZNEXT:
-            _supportedArch = zNext;
-            break;
-         default:
-            TR_ASSERT_FATAL(false, "Unsupported processorDescription.processor type: %s(%d)", TR::CPU::getProcessorName(processorDescription.processor), processorDescription.processor);
-         }
-	 */
-	      _supportedArch = z9;
+      _supportedArch = z9;
       }
 
 TR::CPU
@@ -113,15 +86,12 @@ OMR::Z::CPU::detect(OMRPortLibrary * const omrPortLib)
 bool
 OMR::Z::CPU::isAtLeast(OMRProcessorArchitecture p)
    {
-//   printf("DCDCDCDC - isAtLeast\n"); 
 #if defined(TR_HOST_S390) && (defined(J9ZOS390) || defined(LINUX))
    if (TR::Compiler->omrPortLib == NULL)
       {
-  //    printf("DCDCDCDC - isAtLeast - omrPortLib == NULL\n");
       return self()->is_at_least_old_api(p);
       }
    TR_ASSERT_FATAL(self()->is_at_least_test(p), "processor %s(%d) failed, _supportedArch %s(%d), _processorDescription.processor %s(%d)", TR::CPU::getProcessorName(p), p, TR::CPU::getProcessorName(_supportedArch), _supportedArch, TR::CPU::getProcessorName(_processorDescription.processor), _processorDescription.processor);
-//   printf("DCDCDCDC - isAtLeast - Assert passed.  _processorDescription.processor: %s(%d), p: %s(%d)\n", TR::CPU::getProcessorName(_processorDescription.processor), _processorDescription.processor, TR::CPU::getProcessorName(p), p);
    return _processorDescription.processor >= p;
 #endif
    return false;
