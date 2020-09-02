@@ -5012,9 +5012,15 @@ aloadHelper(TR::Node * node, TR::CodeGenerator * cg, TR::MemoryReference * tempM
    else if ((symRef->isLiteralPoolAddress())
             && (node->getOpCodeValue() == TR::aloadi)
             && constNode->isClassUnloadingConst())
+//	    && cg->canUseRelativeLongInstructions(constNode->getAddress()))
       {
       uintptr_t value = constNode->getAddress();
-      TR::Instruction *unloadableConstInstr = generateRILInstruction(cg, TR::InstOpCode::LARL, node, tempReg, reinterpret_cast<void*>(value));
+      TR::Instruction *unloadableConstInstr;
+      if (cg->canUseRelativeLongInstructions(constNode->getAddress()))
+         unloadableConstInstr = generateRILInstruction(cg, TR::InstOpCode::LARL, node, tempReg, reinterpret_cast<void*>(value));
+      else
+         unloadableConstInstr = genLoadAddressConstantInSnippet(cg, node, value, tempReg, NULL, NULL, NULL, true);
+//      TR::Instruction *unloadableConstInstr = generateRILInstruction(cg, TR::InstOpCode::LARL, node, tempReg, reinterpret_cast<void*>(value));
       TR_OpaqueClassBlock* unloadableClass = NULL;
       if (constNode->isMethodPointerConstant())
          {
@@ -5094,12 +5100,15 @@ aloadHelper(TR::Node * node, TR::CodeGenerator * cg, TR::MemoryReference * tempM
                }
             else
                {
+               
                if (node->getSymbolReference() == comp->getSymRefTab()->findVftSymbolRef())
                   TR::TreeEvaluator::genLoadForObjectHeadersMasked(cg, node, tempReg, tempMR, NULL);
                else if (node->getSymbol()->getSize() == 4 && node->isExtendedTo64BitAtSource())
                   generateRXInstruction(cg, TR::InstOpCode::LLGF, node, tempReg, tempMR);
                else
+                  {
                   generateRXInstruction(cg, TR::InstOpCode::getLoadOpCode(), node, tempReg, tempMR);
+		  }
                }
             }
          }
