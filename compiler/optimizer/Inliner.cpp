@@ -4578,7 +4578,7 @@ void TR_InlinerBase::inlineFromGraph(TR_CallStack *prevCallStack, TR_CallTarget 
       // Must be J9-specific; FE functions would assert otherwise
 
       // assume that all call nodes are the first child of a treetop
-      bool isCall = tt->getNode()->getNumChildren() && tt->getNode()->getChild(0)->getOpCode().isCall();
+      bool isCall = tt->getNode()->getNumChildren() && tt->getNode()->getChild(0)->getOpCode().isFunctionCall();
       if (isCall &&
           tt->getNode()->getChild(0)->getVisitCount() != _visitCount &&
           tt->getNode()->getChild(0)->getInlinedSiteIndex() == thisSiteIndex &&

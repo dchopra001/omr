@@ -310,6 +310,7 @@ public:
              getOpCodeValue() != TR::arraycopy  &&
              getOpCodeValue() != TR::arrayset   &&
              getOpCodeValue() != TR::bitOpMem   &&
+             getOpCodeValue() != TR::arraytranslate &&
              getOpCodeValue() != TR::arraycmp;
       }
 
