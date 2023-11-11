@@ -13787,7 +13787,7 @@ OMR::Z::TreeEvaluator::iRegStoreEvaluator(TR::Node * node, TR::CodeGenerator * c
 
    if (!useLGHI)
       {
-      globalReg = cg->evaluate(value);
+      globalReg = cg->gprClobberEvaluate(value);
       }
    else
       {
