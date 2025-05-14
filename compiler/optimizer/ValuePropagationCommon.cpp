@@ -2567,7 +2567,7 @@ void OMR::ValuePropagation::generateArrayTranslateNode(TR::TreeTop *callTree,TR:
          }
       termCharNode = TR::Node::create(callNode,TR::iconst, 0, termchar);
       }
-   else if (!encode && !isSBCSDecoder)
+   else if (!encode && !isSBCSDecoder && !isDecodeToLatin1)
       {
       arrayTranslateNode->setTermCharNodeIsHint(false);
       arrayTranslateNode->setSourceCellIsTermChar(false);
